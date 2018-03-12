@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // import component
@@ -6,6 +7,9 @@ import './App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/header';
 import Slidenav from './SlideNav/Slidenav';
+
+// import routing
+import MainLayout from './routing'
 
 class App extends Component {
   constructor(props) {
@@ -16,10 +20,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Slidenav/>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js </code> and save to reload.
-        </p>
+        <Router>
+          <MainLayout/>
+        </Router>
         <Footer/>
       </div>
     );
