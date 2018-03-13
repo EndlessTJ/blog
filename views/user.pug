@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= 'user-add'
+        mate(charset="utf-8")
+        mate(name="viewport", content="width=device-width, initial-scale=1,shrink-top-fit-no")
+        mate(name="theme-color", content="#000000")
+        link(rel="manifest", href="manifest.json")
+        link(rel="shortcut icon", href="favicon.ico")
+    body
+        form(action='/adduser' method='post')
+            div.usernamebox
+                span 用户名：
+                input(type='text' name='username' class='username')
+            div.passwordbox
+                span 密码：
+                input(type='password' name='password' class='pass')
+            div.buttonbox
+            button(type='submit' class='adduser') 提交

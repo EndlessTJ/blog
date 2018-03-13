@@ -1,10 +1,6 @@
-var express = require('express');
-var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
-//test
+module.exports = routes = (app) => {
+  app.get('/index', require('./views/index'));
+  app.get('/users', require('./views/users'));
+  app.post('/adduser', require('./post/addUser'))
+};
