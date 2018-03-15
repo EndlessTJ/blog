@@ -6,8 +6,6 @@ import './App.css';
 
 import Footer from './Footer/Footer';
 import Header from './Header/header';
-import Slidenav from './SlideNav/Slidenav';
-
 // import routing
 import MainLayout from './routing'
 
