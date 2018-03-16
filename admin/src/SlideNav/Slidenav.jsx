@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Slidenav.css'
 
 class Slidenav extends Component{
-	constructor() {
-		super()
-	}
 	//jsx 已近react-router的作用
 	render() {
 		return (

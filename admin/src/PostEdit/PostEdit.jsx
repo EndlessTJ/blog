@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './PostEdit.css';
 
 class Postedit extends Component {
-	constructor () {
-		super()
-	}
+
 	render() {
 		return (
 			<div className="postedit">

@@ -9,28 +9,41 @@ class User extends Component{
 			username: '',
 			password: '',
 		};
-		//this.handleChange = this.handleChange.bind(this);
-		//this.passwordChange = this.passwordChange.bind(this)
 	}
 	handleChange (event, type) {
-		console.log(event.target.value)
 		this.formData[type] = event.target.value;
-
-		//this.setState({username: event.target.value});
-		console.log(this.formData)
+	}
+	handleSubmit(e){
+		console.log(this.formData);
+		let data = new FormData();
+		data.append("username", this.formData.username);
+		data.append("password", this.formData.password);
+		fetch('/adduser',{
+			method: 'post',
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded\""
+			},
+			body: data
+		}).then((res) => {
+			if (res.ok){
+				alert("提交成功")
+			}
+		}).then((e) => {
+			console.log(e)
+		});
+		e.preventDefault()
 	}
 	render () {
 		return (
 			<div className="login">
-				<form >
+				<form onSubmit={(e) => this.handleSubmit(e)}>
 					<label>
 						<span>用户名：</span>
-						<input type="text" id="username" value={this.formData.username} onChange={(e) =>this.handleChange(e, 'username')} />
-						<span>数据：{this.formData.username}</span>
+						<input type="text" id="username"  onChange={(e) =>this.handleChange(e, 'username')} />
 					</label>
 					<label>
 						<span>密码：</span>
-						<input type="password" id="password" value={this.formData.password} onChange={(e) =>this.handleChange(e, 'password')} />
+						<input type="password" id="password"  onChange={(e) =>this.handleChange(e, 'password')} />
 					</label>
 					<button type="submit" id="btn_submit" className="button">提交</button>
 				</form>

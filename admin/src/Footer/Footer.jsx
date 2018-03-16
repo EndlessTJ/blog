@@ -16,9 +16,9 @@ class Footer extends Component {
 		clearInterval(this.timerID)
 	}
 	tick() {
-		this.setState(
-			this.state = {date: new Date()}
-		)
+		this.setState({
+			data: new Date()
+		})
 	}
 	parseTime() {
 		let year = this.state.date.getFullYear();
@@ -39,7 +39,7 @@ class Footer extends Component {
 					<span className="time">
 						{this.parseTime()}
 					</span>
-					<span className="other">tjidd专属版权©️2018</span>
+					<span className="other">tjidd专属版权 <b>©</b>️2018</span>
 				</div>
 			</div>
 		)
