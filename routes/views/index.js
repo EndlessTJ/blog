@@ -1,5 +1,5 @@
 
 
 module.exports = function (req, res) {
-	res.render('index', { title: 'Express' });
+	res.render('develop', { title: 'Express' });
 };

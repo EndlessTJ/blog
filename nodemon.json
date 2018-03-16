@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "ignore": ["angular/*", "public/*", "db/*"],
+  "execMap": {
+  }
+}
