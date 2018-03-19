@@ -105,6 +105,13 @@ function build(previousFileSizes) {
 	console.log('Creating an optimized production build...');
 
 	let compiler = webpack(config);
+	const watching = compiler.watch({
+		aggregateTimeout: 300,
+		poll: 1000
+	}, (err, stats) => {
+			// 在这里打印 watch/build 结果...
+			console.log(err);
+	});
 	return new Promise((resolve, reject) => {
 		compiler.run((err, stats) => {
 			if (err) {

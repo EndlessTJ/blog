@@ -339,10 +339,10 @@ module.exports = {
 		tls: 'empty',
 		child_process: 'empty',
 	},
-	watch: true,
+	/*watch: true,
 	watchOptions: {
 		poll: 1000, //检测代码修改时间，以毫秒为单位
 		aggregeateTimeout: 500, //防止重复保存而发生重复编译错误，这里设置的500为半秒内重复保存，不进行打包操作
 		ignored: /node_modules/ //不监听目录，使用正则匹配
-	}
+	}*/
 };

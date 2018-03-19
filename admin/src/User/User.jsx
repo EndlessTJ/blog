@@ -1,60 +1,34 @@
 import React, { Component } from 'react';
 import './User.css';
+import Header from '../Header/header';
 
 class User extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '' };
-    this.formData = {
-      username: '',
-      password: ''
-    };
-  }
-  handleChange(event, type) {
-    this.formData[type] = event.target.value;
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     //console.log(this.formData);
-    var data = new FormData();
-    data.append('username', this.formData.username);
-    data.append('password', this.formData.password);
-    console.log(data);
+    var data = new FormData(this.formData);
+    var headers = new Headers('Content-Type', 'application/json');
     fetch('/adduser', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded"'
-      },
-      body: data
-    })
-      .then(res => {
-        if (res.ok) {
-          alert('提交成功');
-        }
-      })
-      .then(e => {
-        console.log(e);
-      });
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({ username: 'tianjin' })
+    }).then(() => {});
     e.preventDefault();
   }
   render() {
     return (
       <div className="login">
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <form onSubmit={this.handleSubmit} ref={el => (this.formData = el)}>
           <label>
             <span>用户名：</span>
-            <input
-              type="text"
-              id="username"
-              onChange={e => this.handleChange(e, 'username')}
-            />
+            <input type="text" id="username" name="username" />
           </label>
           <label>
             <span>密码：</span>
-            <input
-              type="password"
-              id="password"
-              onChange={e => this.handleChange(e, 'password')}
-            />
+            <input type="password" id="password" name="password" />
           </label>
           <button type="submit" id="btn_submit" className="button">
             提交

@@ -1,7 +1,8 @@
 var User = require('../../model/User');
 
 module.exports = function (req, res) {
-	console.log(req.body);
+	//console.log('请求',req);
+		console.log("数据",req.body);
 		User.create(req.body,function (err) {
 			if (err){
 				console.log(err);
