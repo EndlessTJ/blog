@@ -8,23 +8,34 @@ class User extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
-    //console.log(this.formData);
     var data = new FormData(this.formData);
-    var headers = new Headers('Content-Type', 'application/json');
-    fetch('/adduser', {
+    var init = {
       method: 'POST',
-      headers: headers,
-      body: JSON.stringify({ username: 'tianjin' })
-    }).then(() => {});
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+      },
+      body: data
+    };
+    fetch('/adduser', init).then(() => {});
     e.preventDefault();
   }
   render() {
     return (
       <div className="login">
-        <form onSubmit={this.handleSubmit} ref={el => (this.formData = el)}>
+        <form
+          onSubmit={this.handleSubmit}
+          ref={el => (this.formData = el)}
+          enctype="application/x-www-form-urlencoded"
+        >
           <label>
             <span>用户名：</span>
-            <input type="text" id="username" name="username" />
+            <input
+              type="text"
+              id="username"
+              ref={el => (this.formData = el)}
+              name="username"
+            />
           </label>
           <label>
             <span>密码：</span>

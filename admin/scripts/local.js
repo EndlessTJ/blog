@@ -53,7 +53,7 @@ measureFileSizesBeforeBuild(paths.distBulid)
 		return build(previousFileSizes);
 	})
 	.then(
-		({ stats, previousFileSizes, warnings }) => {
+		({ stats, previousFileSizes, warnings ,compiler}) => {
 			if (warnings.length) {
 				console.log(chalk.yellow('Compiled with warnings.\n'));
 				console.log(warnings.join('\n\n'));
@@ -79,7 +79,6 @@ measureFileSizesBeforeBuild(paths.distBulid)
 				WARN_AFTER_BUNDLE_GZIP_SIZE,
 				WARN_AFTER_CHUNK_GZIP_SIZE
 			);
-			console.log();
 
 			const appPackage = require(paths.appPackageJson);
 			const publicUrl = paths.publicUrl;
@@ -92,6 +91,13 @@ measureFileSizesBeforeBuild(paths.distBulid)
 				buildFolder,
 				useYarn
 			);
+			const watching = compiler.watch({
+				aggregateTimeout: 300,
+				poll: 1000
+			}, (err, stats) => {
+				// 在这里打印 watch/build 结果...
+				console.log("编译完成");
+			});
 		},
 		err => {
 			console.log(chalk.red('Failed to compile.\n'));
@@ -105,13 +111,6 @@ function build(previousFileSizes) {
 	console.log('Creating an optimized production build...');
 
 	let compiler = webpack(config);
-	const watching = compiler.watch({
-		aggregateTimeout: 300,
-		poll: 1000
-	}, (err, stats) => {
-			// 在这里打印 watch/build 结果...
-			console.log(err);
-	});
 	return new Promise((resolve, reject) => {
 		compiler.run((err, stats) => {
 			if (err) {
@@ -144,6 +143,7 @@ function build(previousFileSizes) {
 				stats,
 				previousFileSizes,
 				warnings: messages.warnings,
+				compiler
 			});
 		});
 	});
