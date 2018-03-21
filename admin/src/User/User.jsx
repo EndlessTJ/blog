@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './User.css';
-import Header from '../Header/header';
 
 class User extends Component {
   constructor(props) {
@@ -12,9 +11,6 @@ class User extends Component {
     var init = {
       method: 'POST',
       mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-      },
       body: data
     };
     fetch('/adduser', init).then(() => {});
@@ -26,16 +22,11 @@ class User extends Component {
         <form
           onSubmit={this.handleSubmit}
           ref={el => (this.formData = el)}
-          enctype="application/x-www-form-urlencoded"
+          enctype="multipart/form-data"
         >
           <label>
             <span>用户名：</span>
-            <input
-              type="text"
-              id="username"
-              ref={el => (this.formData = el)}
-              name="username"
-            />
+            <input type="text" id="username" name="username" />
           </label>
           <label>
             <span>密码：</span>
