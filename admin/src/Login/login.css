@@ -3,7 +3,8 @@
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background-color: #00897b;
+  /*background-color: #00897b;*/
+  background-color: #00796b;
   position: relative;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
@@ -11,9 +12,8 @@
 }
 .login-panel {
   position: absolute;
-  bottom: 48%;
+  bottom: 45%;
   width: 22rem;
-  min-width: 19rem;
   margin: auto;
   background-color: #fff;
   transition: all ease 0.3s;
@@ -94,4 +94,10 @@
 }
 .login-footer-item {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 375px) {
+  .login-panel {
+    width: 18rem;
+  }
 }
