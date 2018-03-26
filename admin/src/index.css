@@ -128,14 +128,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a {
+  text-decoration: none;
+}
 #root {
   height: 100%;
 }
-/*.button{
-  border:none;
+.button {
+  border: none;
   background: none;
   box-shadow: none;
-  outline:none;
+  outline: none;
   font-family: Roboto, sans-serif;
   font-size: 0.875rem;
   line-height: 2.25rem;
@@ -153,7 +156,7 @@ table {
   border-radius: 2px;
   color: #fff;
   background: #018786;
-}*/
+}
 input,
 label,
 textarea,

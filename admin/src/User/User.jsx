@@ -26,7 +26,7 @@ class User extends Component {
         >
           <label>
             <span>用户名：</span>
-            <input type="text" id="username" name="username" />
+            <input type="text" name="username" />
           </label>
           <label>
             <span>密码：</span>

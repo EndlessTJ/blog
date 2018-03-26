@@ -7,13 +7,17 @@ import './Login.css';
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.doLogin = this.doLogin.bind(this);
   }
-
+  doLogin(event) {
+    document.cookie = 'isAuth = true';
+    event.preventDefault();
+  }
   render() {
     return (
       <div className="login-main">
         <div className="login-panel">
-          <form>
+          <form onSubmit={this.doLogin}>
             <div className="login-form-body">
               <label className="login-label-container">
                 <input
