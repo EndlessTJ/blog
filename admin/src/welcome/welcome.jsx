@@ -4,10 +4,6 @@ import './welcome.css';
 // import routing
 
 class Welcome extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

@@ -13,7 +13,7 @@ import Welcome from './welcome/welcome';
 const MainLayout = () => (
   <div>
     <Slidenav />
-    <Route path="/main" component={Welcome} />
+    <Route exact path="/main" component={Welcome} />
     <Route path="/main/comment" component={Comment} />
     <Route path="/main/label" component={Label} />
     <Route path="/main/postlist" component={Postlist} />

@@ -22,7 +22,7 @@ class User extends Component {
         <form
           onSubmit={this.handleSubmit}
           ref={el => (this.formData = el)}
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
         >
           <label>
             <span>用户名：</span>
