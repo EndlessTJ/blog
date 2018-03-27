@@ -44,6 +44,7 @@
   background: #1fe8b5;
   height: 2px;
 }
+
 .login-bottom-line:after {
   content: '';
   display: block;
@@ -55,6 +56,20 @@
   transform: scale(0.5);
   background: #999;
   transition: background ease 0.3s;
+}
+.login-input:focus + .login-bottom-line:before {
+  content: '输入不符合规范';
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  right: 0px;
+  bottom: 8px;
+  color: #ff7fab;
+  transition: all ease 0.3s;
+}
+.login-input-valid:focus + .login-bottom-line:before {
+  content: '';
+  height: 0;
 }
 .login-form-footer {
   width: 100%;
