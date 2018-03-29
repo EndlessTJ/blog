@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Login.css';
 // import routing
 
@@ -8,7 +8,8 @@ class Login extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      activeDate: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
@@ -16,26 +17,34 @@ class Login extends Component {
   }
   handleSubmit(e) {
     //document.cookie = 'isAuth = true';
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let Init = {
-      method: 'POST',
-      headers: headers,
-      mode: 'cors',
-      body: JSON.stringify(this.state)
-    };
-    fetch('/adduser', Init)
-      .then(response => {
-        console.log(response);
-        //response.json()
-      })
-      .then(result => {
-        console.log(result);
-      });
+    this.setState(
+      {
+        activeDate: new Date()
+      },
+      () => {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let Init = {
+          method: 'POST',
+          headers: headers,
+          mode: 'cors',
+          body: JSON.stringify(this.state)
+        };
+        fetch('/login', Init)
+          .then(response => {
+            return response.json();
+          })
+          .then(result => {
+            if (result.success) {
+              this.props.history.push('/main');
+            }
+            console.log(result);
+          });
+      }
+    );
     e.preventDefault();
   }
   handleUsername(e) {
-    console.log(e.target.value);
     let regex = /^[a-zA-z]\w{4,15}$/g;
     this.usernameReg = regex.test(e.target.value);
     this.setState({
@@ -107,4 +116,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

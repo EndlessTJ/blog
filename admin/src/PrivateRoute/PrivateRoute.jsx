@@ -7,8 +7,8 @@ import './PrivateRoute.css';
 class Privateroute extends Component {
   constructor(props) {
     super(props);
-    this.isAuth =
-      document.cookie.slice(document.cookie.indexOf('=') + 1) === 'true';
+    this.isAuth = true;
+    //document.cookie.slice(document.cookie.indexOf('=') + 1) === 'true';
   }
   render() {
     const Main = this.props.component;
