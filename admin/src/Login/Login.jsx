@@ -26,6 +26,7 @@ class Login extends Component {
         headers.append('Content-Type', 'application/json');
         let Init = {
           method: 'POST',
+          credentials: 'include',
           headers: headers,
           mode: 'cors',
           body: JSON.stringify(this.state)

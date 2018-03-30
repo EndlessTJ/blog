@@ -29,7 +29,19 @@ module.exports = function (req, res) {
 				if (user.password === content.filters.user.password) {
 					content.success = true;
 					content.data.user = user.adminMessage;
+					console.log(user);
+					user.activeDate = content.filters.user.activeDate;
+					user.save();
+					req.session.user_id = user._id;
+					res.cookie('user_id', user._id, {
+						signed: true,
+						httpOnly: true,
+						maxAge: 7200000,
+						//secure: true
+					});
+
 					console.log('验证通过');
+
 					return res.json(content)
 				} else {
 					console.log('提示：','密码错误！');
