@@ -53,7 +53,7 @@ class Login extends Component {
     });
   }
   handlePassword(e) {
-    let regex = /^([a-z]|[0-9]\w){6,12}$/g;
+    let regex = /^([a-zA-z]|[0-9]\w){6,12}$/g;
     this.passwordReg = regex.test(e.target.value);
     this.setState({
       password: e.target.value

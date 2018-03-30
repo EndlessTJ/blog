@@ -1,10 +1,22 @@
 const User = require('../../model/User');
-const crypto = require('crypto');
+const hashObj = require('../hashPassword');
 
+
+/*
+* hash用户密码验证数据库密码
+* */
+const passwordCompare = function (userpassword, salt, hashpassword) {
+	const checkResult = hashObj.sha512(userpassword, salt);
+	return (checkResult.passwordHash === hashpassword)
+};
+
+
+// http 请求处理
 module.exports = function (req, res) {
 		const content = {};
 		const filters = {};
 		content.section = 'login';
+		//将请求数据取出单独储存，避免多次操作req（有大量数据），影响性能
 		content.filters = {
 			user: req.body
 		};
@@ -26,7 +38,7 @@ module.exports = function (req, res) {
 				return res.json(content)
 			}
 			if (user) {
-				if (user.password === content.filters.user.password) {
+				if (passwordCompare(content.filters.user.password, user.salt, user.password)) {
 					content.success = true;
 					content.data.user = user.adminMessage;
 					console.log(user);
