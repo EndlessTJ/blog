@@ -39,7 +39,6 @@ class Login extends Component {
             if (result.success) {
               this.props.history.push('/main');
             }
-            console.log(result);
           });
       }
     );
