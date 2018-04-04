@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 import './PrivateRoute.css';
-
+import Main from '../Main/Main';
 // import component
 
 class Privateroute extends Component {
@@ -13,6 +13,7 @@ class Privateroute extends Component {
   }
   componentDidMount() {
     let headers = new Headers();
+    let self = this;
     headers.append('Content-Type', 'application/json');
     let Init = {
       method: 'POST',
@@ -20,40 +21,43 @@ class Privateroute extends Component {
       headers: headers,
       mode: 'cors'
     };
-    fetch('/islogin', Init)
+    this.auth = fetch('/islogin', Init)
       .then(response => {
         return response.json();
       })
       .then(result => {
-        if (result.success) {
-          this.setState({
+        if (!result.success) {
+          self.props.history.push('/login');
+        } else {
+          console.log('state改变了');
+          self.setState({
             isAuth: true
           });
         }
       });
   }
   render() {
-    const Main = this.props.component;
+    //const Main = this.props.component;
+    console.log(this.auth);
     console.log(this.state.isAuth);
-    return (
-      <Route
-        path={this.props.path}
-        render={prop => {
-          console.log('编译完成');
-          return this.state.isAuth ? (
-            <Main {...prop} />
-          ) : (
-            <Redirect
-              to={{
-                pathname: '/login',
-                state: { from: prop.location }
-              }}
-            />
-          );
-        }}
-      />
-    );
+    if (this.state.isAuth) {
+      return (
+        <Router>
+          <div>
+            {/*<Route
+              path={this.props.path}
+              render={prop => {
+			          return <Main {...prop} />
+		          }}
+            />*/}
+            <Route path="/main" component={Main} />
+          </div>
+        </Router>
+      );
+    } else {
+      return <div>正在加载。。。。</div>;
+    }
   }
 }
 
-export default Privateroute;
+export default withRouter(Privateroute);
