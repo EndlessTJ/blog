@@ -15,8 +15,7 @@ class App extends Component {
         <Router>
           <div className="app-container">
             <Route path="/login" component={Login} />
-            <Route path="/auth" component={Privateroute} />
-            {/*<Privateroute path="/main" component={Main} />*/}
+            <Privateroute path="/main" component={Main} />
           </div>
         </Router>
       </div>

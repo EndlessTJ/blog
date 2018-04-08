@@ -10,11 +10,7 @@ import Header from '../Header/header';
 import MainLayout from '../routing';
 
 class Main extends Component {
-  componentWillMount() {
-    console.log('main组件即将加载');
-  }
   render() {
-    console.log('main组件已经加载');
     return (
       <div className="App">
         <Header />

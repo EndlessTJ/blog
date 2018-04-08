@@ -1,0 +1,13 @@
+.postList-container {
+  padding: 1rem;
+  position: relative;
+  width: 70%;
+  float: right;
+}
+h1 {
+  font-size: 24px;
+  color: #444;
+  text-align: left;
+  margin: 20px 20px 40px 0;
+  border-bottom: 1px solid #000;
+}

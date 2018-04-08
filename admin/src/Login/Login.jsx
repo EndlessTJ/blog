@@ -37,7 +37,7 @@ class Login extends Component {
           })
           .then(result => {
             if (result.success) {
-              this.props.history.push('/auth');
+              this.props.history.push('/main');
             }
           });
       }

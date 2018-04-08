@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import './PrivateRoute.css';
-import Main from '../Main/Main';
+
 // import component
 
 class Privateroute extends Component {
@@ -21,7 +21,7 @@ class Privateroute extends Component {
       headers: headers,
       mode: 'cors'
     };
-    this.auth = fetch('/islogin', Init)
+    fetch('/islogin', Init)
       .then(response => {
         return response.json();
       })
@@ -29,7 +29,6 @@ class Privateroute extends Component {
         if (!result.success) {
           self.props.history.push('/login');
         } else {
-          console.log('state改变了');
           self.setState({
             isAuth: true
           });
@@ -37,26 +36,15 @@ class Privateroute extends Component {
       });
   }
   render() {
-    //const Main = this.props.component;
-    console.log(this.auth);
-    console.log(this.state.isAuth);
-    if (this.state.isAuth) {
-      return (
-        <Router>
-          <div>
-            {/*<Route
-              path={this.props.path}
-              render={prop => {
-			          return <Main {...prop} />
-		          }}
-            />*/}
-            <Route path="/main" component={Main} />
-          </div>
-        </Router>
-      );
-    } else {
-      return <div>正在加载。。。。</div>;
-    }
+    const Main = this.props.component;
+    return (
+      <Route
+        path={this.props.path}
+        render={prop => {
+          return <Main auth={this.state.isAuth} {...prop} />;
+        }}
+      />
+    );
   }
 }
 
