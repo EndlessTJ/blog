@@ -1,13 +1,64 @@
 .postList-container {
-  padding: 1rem;
+  padding: 2rem;
   position: relative;
-  width: 70%;
-  float: right;
-}
-h1 {
-  font-size: 24px;
-  color: #444;
   text-align: left;
-  margin: 20px 20px 40px 0;
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 290px;
+  margin-right: 60px;
+  box-sizing: border-box;
+}
+.postList-card {
+  /*可优化css*/
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0, 40, 100, 0.12);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+h1.postList-title {
+  /*font-size: 24px;
+  color: #242e33;
+  text-align: left;
+  margin: 20px 20px 30px 0;
   border-bottom: 1px solid #000;
+  padding:10px 0;*/
+  font-size: 24px;
+  color: #242e33;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 40, 100, 0.12);
+  padding: 0.5rem 1.5rem;
+}
+section.postList-content-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+}
+h2.postList-sub-title {
+  font-size: 18px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #3e515b;
+}
+.postList-message {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 13px;
+  color: #7897a7;
+}
+.postList-message-item {
+  margin-right: 20px;
+}
+.button-rows {
+  float: right;
+  margin-top: -30px;
 }

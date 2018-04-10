@@ -1,37 +1,38 @@
-.Footer{
-    width:100%;
-    height:80px;
-    background: #006064;
-    overflow: hidden;
-    position: absolute;
-    bottom:0;
-    z-index: 100;
-    text-align: center;
-    box-sizing: border-box;
-    padding:10px 250px;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-
+.footer {
+  width: 100%;
+  height: 72px;
+  position: absolute;
+  bottom: 0;
+  background: #006064;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px 250px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.Logo{
-    width:60px;
-    height:60px;
-    overflow: hidden;
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
 }
-.logo-image{
-    width:100%;
-    height:100%;
+.footer-logo-image {
+  width: 100%;
+  height: 100%;
 }
-.message{
-    margin:0 20px;
-    font-size:14px;
-    font-weight:300;
+.footer-message {
+  margin: 0 20px;
+  font-size: 14px;
+  font-weight: 300;
 }
-.message>span{
-    display: block;
-    margin:5px 0;
+.footer-message > span {
+  display: block;
+  margin: 5px 0;
 }
-.time{
-    min-width:160px;
+.footer-time {
+  min-width: 160px;
 }

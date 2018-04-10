@@ -11,7 +11,7 @@ import User from './User/User';
 import Welcome from './welcome/welcome';
 
 const MainLayout = () => (
-  <div>
+  <div className="main-container">
     <Slidenav />
     <Route exact path="/main" component={Welcome} />
     <Route path="/main/comment" component={Comment} />

@@ -1,0 +1,109 @@
+.buttons {
+  color: rgba(0, 0, 0, 0.87);
+  background: #fff;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 12px;
+  min-width: 88px;
+}
+.buttons-btn {
+  border: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  font-size: inherit;
+  font-weight: inherit;
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  text-align: center;
+}
+.buttons-btn:active {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+.buttons-btn-inner {
+  height: 36px;
+  border-radius: 2px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  top: 0px;
+}
+.buttons-btn-inner:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.buttons-btn-text {
+  position: relative;
+  opacity: 1;
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0px;
+  user-select: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #fff;
+}
+.buttons-default {
+  background-color: #fff;
+}
+.buttons-primary {
+  background-color: rgb(0, 188, 212);
+}
+.buttons-warning {
+  background-color: rgb(255, 64, 129);
+}
+.buttons-disable {
+  box-shadow: none;
+  background-color: rgb(229, 229, 229);
+}
+.buttons-disable > .buttons-btn-inner > .buttons-btn-text {
+  color: rgba(0, 0, 0, 0.3);
+}
+.buttons-default > .buttons-btn-inner:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.buttons-default > .buttons-btn-inner > .buttons-btn-text {
+  color: rgb(0, 0, 0);
+}
+/*
+.buttons-cover-layer{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.buttons-cover-layer-animate{
+  position: absolute;
+  top:30px;
+  left: -100px;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background: rgba(255,255,255,0);
+}
+.buttons-btn:active>.buttons-cover-layer>.buttons-cover-layer-animate{
+  animation: buttons-animate .45s linear 0s alternate;
+  background: rgba(255,255,255,.20);
+}
+
+@keyframes buttons-animate {
+  from {transform: scale(1)} to {transform: scale(1.2)}
+}*/

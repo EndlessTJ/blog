@@ -2,14 +2,49 @@ import React, { Component } from 'react';
 import './PostEdit.css';
 
 class Postedit extends Component {
-
-	render() {
-		return (
-			<div className="postedit">
-				这是文章编辑
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div className="postedit-container">
+        <div className="postedit-edit-card">
+          <h1 className="postedit-title">文章编辑部</h1>
+          <form className="postedit-form">
+            <div className="postedit-form-body">
+              <label className="form-label">
+                <span className="form-input-label">文章标题</span>
+                <input type="text" placeholder="文章标题" />
+              </label>
+              <label className="form-label">
+                <span className="form-input-label">作者</span>
+                <input type="text" placeholder="请输入作者" />
+              </label>
+              <label className="form-label">
+                <span className="form-textarea-label">文章内容</span>
+                <textarea />
+              </label>
+              <label className="from-label">
+                <span className="from-input-label">选择标签</span>
+                <select name="">
+                  <option value="">标签1</option>
+                  <option value="">标签2</option>
+                  <option value="">标签3</option>
+                  <option value="">标签4</option>
+                  <option value="">标签5</option>
+                </select>
+              </label>
+              <label className="form-label">
+                <span className="from-input-label">是否顶置</span>
+                <input type="checkbox" />
+              </label>
+              <label className="from-label">
+                <span className="from-input-label">是否推荐</span>
+                <input type="checkbox" />
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Postedit
+export default Postedit;
