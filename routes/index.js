@@ -7,8 +7,6 @@ module.exports = routes = (app) => {
   app.get('/', require('./views/index'));
   app.get('/main', require('./views/index'));
   app.get('/login', require('./views/index'));
-
-
   app.post('/login', formdata.array(),require('./post/login'));
   app.post('/islogin', formdata.array(),require('./post/islogin'))
 };
