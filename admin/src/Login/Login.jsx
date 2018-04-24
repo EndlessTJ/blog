@@ -31,13 +31,13 @@ class Login extends Component {
           mode: 'cors',
           body: JSON.stringify(this.state)
         };
-        fetch('/login', Init)
+        fetch('admin/login', Init)
           .then(response => {
             return response.json();
           })
           .then(result => {
             if (result.success) {
-              this.props.history.push('/main');
+              this.props.history.push('/admin/main');
             }
           });
       }
@@ -95,7 +95,10 @@ class Login extends Component {
                 <span className="login-bottom-line" />
               </label>
               <p>
-                忘记密码？<Link className="login-forget" to="/postedit">
+                忘记密码？<Link
+                  className="login-forget"
+                  to="/admin/main/postedit"
+                >
                   戳一戳
                 </Link>
               </p>

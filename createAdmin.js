@@ -1,6 +1,6 @@
 
 	// const User = require('./model/User');
-	const hashObject = require('./routes/hashPassword');
+	const hashObject = require('./routes/admin/hashPassword');
 
 
 /*

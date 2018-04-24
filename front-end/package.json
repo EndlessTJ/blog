@@ -1,16 +1,26 @@
 {
-  "name": "front-end",
-  "version": "0.0.0",
+  "name": "TJblog",
+  "version": "0.0.1",
+  "author": "TianJin",
+  "private": true,
+  "description": "TianJin blog website ",
+  "keywords": ["post", "blog"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EndlessTJ/blog"
+  },
+  "engines": {"node": "v9.10.1"},
+  "contributors": [{"name": "TianJin", "email": "tianjindd@gmail.com"}],
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "local": "ng build --watch --output-path dist-local --enviornment ",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",

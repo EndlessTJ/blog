@@ -1,12 +1,17 @@
 var multer = require('multer');
 var formdata = multer();
 module.exports = routes = (app) => {
-  /*
-  * 后端全局路由匹配
-  * */
-  app.get('/', require('./views/index'));
-  app.get('/main', require('./views/index'));
-  app.get('/login', require('./views/index'));
-  app.post('/login', formdata.array(),require('./post/login'));
-  app.post('/islogin', formdata.array(),require('./post/islogin'))
+	/*
+	* 全局路由匹配
+	* */
+	// 后台路由
+	/*app.get('admin', require('./admin/views/index'));
+	app.get('admin/main', require('./admin/views/index'));
+	app.get('admin/login', require('./admin/views/index'));
+	app.post('admin/login', formdata.array(),require('./admin/post/login'));
+	app.post('admin/islogin', formdata.array(),require('./admin/post/islogin'))*/
+
+	// 前台路由
+	console.log('加载前台路由')
+	app.get('/', require('./front-end/views/index'))
 };

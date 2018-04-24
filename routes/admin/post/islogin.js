@@ -1,4 +1,4 @@
-const User = require('../../model/User');
+const User = require('../../../model/User');
 const hashObj = require('../hashPassword');
 
 // http 请求处理

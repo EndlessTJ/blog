@@ -21,13 +21,13 @@ class Privateroute extends Component {
       headers: headers,
       mode: 'cors'
     };
-    fetch('/islogin', Init)
+    fetch('/admin/islogin', Init)
       .then(response => {
         return response.json();
       })
       .then(result => {
         if (!result.success) {
-          self.props.history.push('/login');
+          self.props.history.push('admin/login');
         } else {
           self.setState({
             isAuth: true
