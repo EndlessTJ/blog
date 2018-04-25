@@ -1,5 +1,11 @@
 extends layout
-
 block content
+  app-root
+block script
   noscript You need to enable JavaScript to run this app.
+  script(type="text/javascript" src="/dist-local/inline.bundle.js")
+  script(type="text/javascript" src="/dist-local/polyfills.bundle.js")
+  script(type="text/javascript" src="/dist-local/styles.bundle.js")
+  script(type="text/javascript" src="/dist-local/vendor.bundle.js")
+  script(type="text/javascript" src="/dist-local/main.bundle.js")
 

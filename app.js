@@ -25,8 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('EndlessTJ'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'admin/dist-local'))); // 后台打包文件文件
-app.use(express.static(path.join(__dirname, 'front-end/dist-local'))); // 前端打包静态文件
+app.use(express.static(path.join(__dirname, 'front-end'))); // 前端打包静态文件
+app.use(express.static(path.join(__dirname, 'admin'))); // 后台打包文件文件
 app.use(session({
   'secret': 'EndlessTJ',
   cookie: {

@@ -5,13 +5,12 @@ module.exports = routes = (app) => {
 	* 全局路由匹配
 	* */
 	// 后台路由
-	/*app.get('admin', require('./admin/views/index'));
-	app.get('admin/main', require('./admin/views/index'));
-	app.get('admin/login', require('./admin/views/index'));
-	app.post('admin/login', formdata.array(),require('./admin/post/login'));
-	app.post('admin/islogin', formdata.array(),require('./admin/post/islogin'))*/
+	app.get('/admin', require('./admin/views/index'));
+	app.get('/admin/main', require('./admin/views/index'));
+	app.get('/admin/login', require('./admin/views/index'));
+	app.post('/admin/login', formdata.array(),require('./admin/post/login'));
+	app.post('/admin/islogin', formdata.array(),require('./admin/post/islogin'));
 
 	// 前台路由
-	console.log('加载前台路由')
 	app.get('/', require('./front-end/views/index'))
 };

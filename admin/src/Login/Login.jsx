@@ -31,7 +31,7 @@ class Login extends Component {
           mode: 'cors',
           body: JSON.stringify(this.state)
         };
-        fetch('admin/login', Init)
+        fetch('/admin/login', Init)
           .then(response => {
             return response.json();
           })
