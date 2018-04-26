@@ -31,7 +31,7 @@ class Slidenav extends Component {
         <div className="slideNav-menu">
           <ActiveLink to="/main/postlist" label="文章列表" />
           <ActiveLink to="/main/postedit" label="添加文章" />
-          <ActiveLink to="/admin/main/comment" label="评论管理" />
+          <ActiveLink to="/main/comment" label="评论管理" />
           <ActiveLink to="/main/label" label="标签管理" />
           <ActiveLink to="/main/user" label="添加用户" />
         </div>

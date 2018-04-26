@@ -12,6 +12,7 @@ class Privateroute extends Component {
     };
   }
   componentDidMount() {
+    console.log('check auth');
     let headers = new Headers();
     let self = this;
     headers.append('Content-Type', 'application/json');
@@ -21,7 +22,7 @@ class Privateroute extends Component {
       headers: headers,
       mode: 'cors'
     };
-    /*fetch('/admin/islogin', Init)
+    fetch('/admin/islogin', Init)
       .then(response => {
         return response.json();
       })
@@ -29,22 +30,29 @@ class Privateroute extends Component {
         if (!result.success) {
           self.props.history.push('/admin/login');
         } else {
-          self.setState({
+          self.props.history.push('/admin/main');
+          /*self.setState({
             isAuth: true
-          });
+          });*/
         }
-      });*/
+      });
   }
   render() {
-    const Main = this.props.component;
-    return (
-      <Route
-        path={this.props.path}
-        render={prop => {
-          return <Main auth={this.state.isAuth} {...prop} />;
-        }}
-      />
-    );
+    return <div>加载中。。。。</div>;
+    /*const Main = this.props.component;
+    console.log('加载次数');
+    if (this.state.isAuth){
+	    return (
+        <Route
+          path={this.props.path}
+          render={prop => {
+				    return <Main auth={this.state.isAuth} {...prop} />;
+			    }}
+        />
+	    );
+    } else {
+      return <div>加载中。。。</div>
+    }*/
   }
 }
 
