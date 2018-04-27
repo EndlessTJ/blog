@@ -25,7 +25,7 @@ class User extends Component {
           encType="multipart/form-data"
         >
           <label>
-            <span>用户名：</span>
+            <span>用户名sd：</span>
             <input type="text" name="username" />
           </label>
           <label>

@@ -6,8 +6,7 @@ module.exports = routes = (app) => {
 	* */
 	// 后台路由
 	app.get('/admin', require('./admin/views/index'));
-	app.get('/admin/main', require('./admin/views/index'));
-	app.get('/admin/login', require('./admin/views/index'));
+	app.get('/admin/*', require('./admin/views/index'));
 	app.post('/admin/login', formdata.array(),require('./admin/post/login'));
 	app.post('/admin/islogin', formdata.array(),require('./admin/post/islogin'));
 

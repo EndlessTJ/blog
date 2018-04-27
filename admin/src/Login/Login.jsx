@@ -112,7 +112,7 @@ class Login extends Component {
         </div>
         <footer className="login-footer login-copyright">
           <p className="login-footer-item">POWER BY TIANJIN</p>
-          <p className="login-footer-item">© 2018 TJ. 保留所有权利 </p>
+          <p className="login-footer-item">© 2018 TJ. 保留所有权利</p>
         </footer>
       </div>
     );

@@ -11,6 +11,9 @@ import Header from '../Header/header';
 import MainLayout from '../routing';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className="App">

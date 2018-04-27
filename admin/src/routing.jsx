@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // 添加需要路由的组件
 import Comment from './Comment/Comment';
@@ -13,13 +13,12 @@ import Welcome from './welcome/welcome';
 const MainLayout = () => (
   <div className="main-container">
     <Slidenav />
-    <Route exact path="/admin/main" render={() => <Redirect to="/main" />} />
-    <Route exact path="/main" component={Welcome} />
-    <Route path="/main/comment" component={Comment} />
-    <Route path="/main/label" component={Label} />
-    <Route path="/main/postlist" component={Postlist} />
-    <Route path="/main/postedit" component={Postedit} />
-    <Route path="/main/user" component={User} />
+    <Route exact path="/admin/main" component={Welcome} />
+    <Route path="/admin/main/comment" component={Comment} />
+    <Route path="/admin/main/label" component={Label} />
+    <Route path="/admin/main/postlist" component={Postlist} />
+    <Route path="/admin/main/postedit" component={Postedit} />
+    <Route path="/admin/main/user" component={User} />
   </div>
 );
 
