@@ -14,6 +14,15 @@ const db = require('./public/lib/dbconnect');
 
 const app = express();
 
+// 设置static的options项
+const stactOPtions = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['pug', 'htm', 'html'],
+  index: false,
+  redirect: false
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -24,9 +33,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('EndlessTJ'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'front-end'))); // 前端打包静态文件
-app.use(express.static(path.join(__dirname, 'admin'))); // 后台打包文件文件
+app.use(express.static(path.join(__dirname, 'public'), stactOPtions));
+app.use(express.static(path.join(__dirname, 'front-end/dist-local'), stactOPtions)); // 前端打包静态文件
+app.use(express.static(path.join(__dirname, 'admin/dist-local'), stactOPtions)); // 后台打包文件文件
 
 app.use(session({
   'secret': 'EndlessTJ',
