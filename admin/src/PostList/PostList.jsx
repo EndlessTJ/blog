@@ -6,7 +6,6 @@ import Button from '../Buttons/Buttons';
 
 class Postlist extends Component {
   constructor(props) {
-    console.log('加载postlist');
     super(props);
     this.state = {
       data: [

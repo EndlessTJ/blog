@@ -21,7 +21,7 @@ const stactOPtions = {
   extensions: ['pug', 'htm', 'html'],
   index: false,
   redirect: false
-}
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
