@@ -68,7 +68,7 @@ class Postlist extends Component {
                     创建时间：<b>{value.createDate}</b>
                   </span>
                 </div>
-                <div className="button-rows">
+                <div className="postList-button-rows">
                   <Button buttonClass="buttons-default" text="查看" />
                   <Button buttonClass="buttons-primary" text="编辑" />
                   <Button buttonClass="buttons-warning" text="删除" />

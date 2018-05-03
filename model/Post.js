@@ -8,10 +8,9 @@ const POstSchma = new Schema({
 	CreateDate: {type: Date, required: true},
 	UpdateDate: {type: Date, required: true},
 	brief: {type: 'String'},
-	content: {type: 'String', required},
+	content: {type: 'String', required: true},
 	topped: { type: Boolean, default: false},
-	epic: { type: Boolean, default: false},
-
+	recommend: { type: Boolean, default: false},
 });
 POstSchma.virtual('adminMessage').get(function () {
 	return {

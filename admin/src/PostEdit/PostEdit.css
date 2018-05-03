@@ -32,3 +32,8 @@ h1.postedit-title {
   padding: 2rem 3rem;
   box-sizing: border-box;
 }
+.postEdit-button-rows {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

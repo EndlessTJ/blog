@@ -1,7 +1,32 @@
 import React, { Component } from 'react';
 import './PostEdit.css';
 
+// import components
+import Button from '../Buttons/Buttons';
+
 class Postedit extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      post: {
+        title: '',
+        author: '',
+        content: '',
+        label: '',
+        topped: false,
+        recommend: false
+      }
+    };
+  }
+  /*
+  *
+  *数据处理函数
+  *
+  */
+  handleTitle() {}
+  handleAuthor() {}
+  handleContent() {}
+  handleLable() {}
   render() {
     return (
       <div className="postedit-container">
@@ -32,11 +57,11 @@ class Postedit extends Component {
               <label className="form-label">
                 <span className="form-input-label">选择标签:</span>
                 <select name="" className="form-control form-select">
-                  <option value="">标签1</option>
-                  <option value="">标签2</option>
-                  <option value="">标签3</option>
-                  <option value="">标签4</option>
-                  <option value="">标签5</option>
+                  <option value="">javascript</option>
+                  <option value="">前端</option>
+                  <option value="">nodejs</option>
+                  <option value="">Python</option>
+                  <option value="">机器学习</option>
                 </select>
               </label>
               <label className="form-label">
@@ -47,6 +72,9 @@ class Postedit extends Component {
                 <span className="form-input-label">是否推荐:</span>
                 <input type="checkbox" className="form-control form-radio" />
               </label>
+              <div className="postEdit-button-rows">
+                <Button buttonClass="buttons-primary" text="发布文章" />
+              </div>
             </div>
           </form>
         </div>
