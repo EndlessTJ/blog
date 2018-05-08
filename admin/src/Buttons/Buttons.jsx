@@ -8,7 +8,10 @@ class Buttons extends Component {
   render() {
     return (
       <div className="buttons">
-        <button className={`buttons-btn ${this.props.buttonClass}`}>
+        <button
+          type={this.props.buttonType || 'button'}
+          className={`buttons-btn ${this.props.buttonClass}`}
+        >
           {/*<span className="buttons-cover-layer">
 							<div className="buttons-cover-layer-animate"></div>
 						</span>*/}
