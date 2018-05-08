@@ -55,6 +55,7 @@ class Postedit extends Component {
         return response.json();
       })
       .then(result => {
+        console.log('fanhui', result);
         if (result.success) {
           console.log('结果', result);
         }
