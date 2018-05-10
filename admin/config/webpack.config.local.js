@@ -316,10 +316,10 @@ module.exports = {
 			},
 			minify: true,
 			// For unknown URLs, fallback to the index page
-			navigateFallback: publicUrl + '/index.html',
+			//navigateFallback: publicUrl + '/index.html', //TJ modify disable index.html
 			// Ignores URLs starting from /__ (useful for Firebase):
 			// https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
-			navigateFallbackWhitelist: [/^(?!\/__).*/],
+			//navigateFallbackWhitelist: [/^(?!\/__).*/], //TJ modify disable index.html
 			// Don't precache sourcemaps (they're large) and build asset manifest:
 			staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
 		}),
