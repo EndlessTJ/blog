@@ -1,0 +1,17 @@
+.blog-header{
+  width:100%;
+  overflow: hidden;
+  position: relative;
+  padding:15px 30px;
+  box-sizing: border-box;
+  background-color: #414148;
+}
+.logo{
+  width:30px;
+  height:30px;
+  background: #fff;
+  border-radius: 50%;
+}
+.social-share {
+
+}
