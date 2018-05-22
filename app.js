@@ -18,12 +18,11 @@ const app = express();
 const staticOptions = {
 	dotfiles: 'ignore',
   etag: false,
-  extensions: ['pug', 'htm', 'html'],
+  extensions: ['pug'],
   index: false,
   redirect: false
 };
 
-console.log(staticOptions)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

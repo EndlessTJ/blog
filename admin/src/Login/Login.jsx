@@ -16,7 +16,6 @@ class Login extends Component {
     this.handlePassword = this.handlePassword.bind(this);
   }
   handleSubmit(e) {
-    //document.cookie = 'isAuth = true';
     this.setState(
       {
         activeDate: new Date()
@@ -51,6 +50,7 @@ class Login extends Component {
       username: e.target.value
     });
   }
+
   handlePassword(e) {
     let regex = /^([a-zA-z]|[0-9]\w){6,12}$/g;
     this.passwordReg = regex.test(e.target.value);
