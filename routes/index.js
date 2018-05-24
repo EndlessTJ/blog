@@ -9,8 +9,10 @@ module.exports = routes = (app) => {
 	app.get('/admin/*', require('./admin/views/index'));
 	app.post('/admin/login', formdata.array(),require('./admin/post/login'));
 	app.post('/admin/islogin', formdata.array(),require('./admin/post/islogin'));
-	app.post('/admin/addpost',require('./admin/post/addPosts'))
+	app.post('/admin/addpost',require('./admin/post/addPosts'));
 
 	// 前台路由
-	app.get('/', require('./front-end/views/index'))
+	app.get('/', require('./front-end/views/index'));
+	app.get('/index', require('./front-end/views/index'));
+	app.get('/index/*', require('./front-end/views/index'))
 };

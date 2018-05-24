@@ -160,14 +160,14 @@ exports.IndexComponent = IndexComponent;
 /***/ "./src/app/component/template/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".blog-header{\n  width:100%;\n  overflow: hidden;\n  position: relative;\n  padding:15px 30px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background-color: #414148;\n}\n.logo{\n  width:30px;\n  height:30px;\n  background: #fff;\n  border-radius: 50%;\n}\n.social-share {\n\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/component/template/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<header class=\"blog-header\" id=\"header\">\n  <div class=\"logo\"></div>\n  <div class=\"social-share\"></div>\n</header>\n<div id=\"body\">\n  <router-outlet></router-outlet>\n</div>\n<footer id=\"footer\">\n  <p>版权©️所有2018</p>\n  <p>power by TJ</p>\n</footer>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<header class=\"blog-header\" id=\"header\">\n  <div class=\"logo\"></div>\n  <div class=\"social-share\">\n\n  </div>\n</header>\n<div id=\"body\">\n  <router-outlet></router-outlet>\n</div>\n<footer id=\"footer\">\n  <p>版权©️所有2018</p>\n  <p>power by TJ</p>\n</footer>\n\n"
 
 /***/ }),
 

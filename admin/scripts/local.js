@@ -91,6 +91,13 @@ measureFileSizesBeforeBuild(paths.distBulid)
 				buildFolder,
 				useYarn
 			);
+			const watching = compiler.watch({
+				aggregateTimeout: 300,
+				poll: 1000
+			}, (err, stats) => {
+				// 在这里打印 watch/build 结果...
+				console.log("编译完成");
+			});
 		},
 		err => {
 			console.log(chalk.red('Failed to compile.\n'));
