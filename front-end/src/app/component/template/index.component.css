@@ -1,0 +1,122 @@
+.container{
+  margin-top:30px;
+}
+.header{
+  width:240px;
+  background: #ffffff;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-sizing: border-box;
+  position: absolute;
+  top:0;
+}
+.header>.title{
+  width:100%;
+  text-align: center;
+  padding:20px 0;
+  background: #414148;
+  font-size:20px;
+  color: #fff;
+}
+.nav-bar{
+  width:100%;
+  box-sizing: border-box;
+  padding:15px;
+  background: #fff;
+}
+.nav-item{
+  display: block;
+  font-size: 14px;
+  color: #444;
+  padding-right:15px;
+  font-weight: 400;
+  margin:8px 0;
+}
+.recommend{
+  width:240px;
+  float: left;
+  margin-top:200px;
+}
+.aside-header{
+  width:100%;
+  box-sizing: border-box;
+  padding:1rem;
+  font-size:14px;
+  color: #414148;
+  font-weight:600;
+  border-bottom:1px solid #414148;
+}
+.aside-header>span{
+  display: inline-block;
+  vertical-align: middle;
+  width:22px;
+  height:22px;
+  background: #8D6E63;
+  margin-right:5px;
+  border-radius: 50%;
+}
+.recommend-list{
+  width:100%;
+  padding:1rem;
+}
+.recommend-link{
+  display: block;
+  font-size:15px;
+  color:#795548;
+  margin-bottom:15px;
+}
+.recommend-link:hover{
+  color: #3E2723;
+  text-decoration: underline;
+}
+.main{
+  float: right;
+  width:calc(100% - 255px);
+  margin:0 auto;
+  box-sizing: border-box;
+}
+section.post-article-item{
+  padding:40px;
+  text-align: center;
+}
+.article-section-title{
+  padding:20px 0;
+}
+.article-section-title>h1>a{
+  font-size:22px;
+  font-weight:600;
+  color: #444;
+  transition: .4s all ease;
+}
+.article-section-title>h1>a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+.article-meta{
+  margin-top:15px;
+  font-size:12px;
+  color: #999;
+}
+.article-content{
+  text-align: left;
+  color: #666;
+  line-height: 25px;
+  font-size:15px;
+}
+.button-rows{
+  padding:15px 0;
+  box-sizing: border-box;
+  margin-top:25px;
+}
+.button{
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #414148;
+  line-height: 2;
+  border: 2px solid #414148;
+  transition: .2s background-color ease-in-out;
+}
+.button:hover{
+  background: #414148;
+  color: #fff;
+}
