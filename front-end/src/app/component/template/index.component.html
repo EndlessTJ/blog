@@ -1,78 +1,16 @@
-<div class="container">
-  <div class="header">
-    <h1 class="title">TJ-blog</h1>
-    <nav class="nav-bar">
-      <a class="nav-item" href="">首页</a>
-      <a class="nav-item" href="">目录</a>
-      <a class="nav-item" href="">标签</a>
-      <a class="nav-item" href="">归档</a>
-    </nav>
-  </div>
-
-  <aside class="sidebar recommend">
-    <h2 class="aside-header"><span></span>推荐阅读</h2>
-    <div class="recommend-list">
-      <a class="recommend-link" href="" >Vultr注册及购买图文教程</a>
-      <a class="recommend-link" href="">Vultr快速安装ss完整图文教程</a>
-      <a class="recommend-link" href="">Vultr快速安装ss完整图文教程</a>
+<div class="post-list">
+  <section class="post-article-item" *ngFor="let post of posts">
+    <header class="article-section-title">
+      <h1><a href="">{{post.title}}</a></h1>
+      <div class="article-meta"><span></span>发表于 {{post.date}}</div>
+    </header>
+    <div class="article-content">
+      <p>{{post.brief}}</p>
     </div>
-  </aside>
-  <div class="main post-list">
-    <section class="post-article-item">
-      <header class="article-section-title">
-        <h1><a href="">最新Vultr注册及VPS购买图文教程</a></h1>
-        <div class="article-meta"><span></span>发表于 2017-09-28</div>
-      </header>
-      <div class="article-content">
-        <p>前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...</p>
+    <footer>
+      <div class="button-rows">
+        <a routerLink="" class="button">阅读全文»</a>
       </div>
-      <footer>
-        <div class="button-rows">
-          <a href="" class="button">阅读全文»</a>
-        </div>
-      </footer>
-    </section>
-    <section class="post-article-item">
-      <header class="article-section-title">
-        <h1><a href="">最新Vultr注册及VPS购买图文教程</a></h1>
-        <div class="article-meta"><span></span>发表于 2017-09-28</div>
-      </header>
-      <div class="article-content">
-        <p>前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...</p>
-      </div>
-      <footer>
-        <div class="button-rows">
-          <a href="" class="button">阅读全文»</a>
-        </div>
-      </footer>
-    </section>
-    <section class="post-article-item">
-      <header class="article-section-title">
-        <h1><a href="">最新Vultr注册及VPS购买图文教程</a></h1>
-        <div class="article-meta"><span></span>发表于 2017-09-28</div>
-      </header>
-      <div class="article-content">
-        <p>前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...</p>
-      </div>
-      <footer>
-        <div class="button-rows">
-          <a href="" class="button">阅读全文»</a>
-        </div>
-      </footer>
-    </section>
-    <section class="post-article-item">
-      <header class="article-section-title">
-        <h1><a href="">最新Vultr注册及VPS购买图文教程</a></h1>
-        <div class="article-meta"><span></span>发表于 2017-09-28</div>
-      </header>
-      <div class="article-content">
-        <p>前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...</p>
-      </div>
-      <footer>
-        <div class="button-rows">
-          <a href="" class="button">阅读全文»</a>
-        </div>
-      </footer>
-    </section>
-  </div>
+    </footer>
+  </section>
 </div>

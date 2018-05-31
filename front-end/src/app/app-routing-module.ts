@@ -4,10 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 // import component
 
 import { IndexComponent } from './component/index.component';
+import { CategoryComponent } from './component/category.component';
+import { LabelComponent } from './component/label.component';
+import { ReadmeComponent } from './component/readme.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: 'index', component: IndexComponent }
+  { path: 'index', component: IndexComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'label', component: LabelComponent },
+  { path: 'readme', component: ReadmeComponent }
 ];
 
 @NgModule({

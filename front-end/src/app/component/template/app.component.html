@@ -8,7 +8,30 @@
   </div>
 </header>
 <div id="body">
-  <router-outlet></router-outlet>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">TJ-blog</h1>
+      <nav class="nav-bar">
+        <a class="nav-item index" routerLink="/index" routerLinkActive="active" >首页</a>
+        <a class="nav-item category" routerLink="/category" routerLinkActive="active" >目录</a>
+        <a class="nav-item label" routerLink="/label" routerLinkActive="active" >标签</a>
+        <a class="nav-item readme" routerLink="/readme" routerLinkActive="active" >关于我</a>
+      </nav>
+    </div>
+
+    <aside class="sidebar recommend">
+      <h2 class="aside-header"><span></span>推荐阅读</h2>
+      <div class="recommend-list">
+        <a class="recommend-link" href="" >Vultr注册及购买图文教程</a>
+        <a class="recommend-link" href="">Vultr快速安装ss完整图文教程</a>
+        <a class="recommend-link" href="">Vultr快速安装ss完整图文教程</a>
+      </div>
+    </aside>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
 </div>
 <footer class="footer">
   <div class="footer-inner container">

@@ -33,6 +33,125 @@
   min-height: 100%;
   overflow: hidden;
 }
+
+.container{
+  margin-top:30px;
+}
+.header{
+  width:240px;
+  background: #ffffff;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-sizing: border-box;
+  position: absolute;
+  top:0;
+}
+.header>.title{
+  width:100%;
+  text-align: center;
+  padding:20px 0;
+  background: #414148;
+  font-size:20px;
+  color: #fff;
+}
+.nav-bar{
+  width:100%;
+  box-sizing: border-box;
+  padding:15px 0;
+  background: #fff;
+}
+.nav-item{
+  position: relative;
+  display: block;
+  font-size: 14px;
+  color: #444;
+  line-height: 2rem;
+  padding-right:15px;
+  font-weight: 400;
+  padding-left: 42px;
+}
+.nav-item:hover{
+  background-color: rgba(0,0,0,.05);
+}
+.nav-item.active:after{
+  position: absolute;
+  content: '';
+  width:7px;
+  height:7px;
+  top: 13px;
+  right:15px;
+  background-color: rgba(0,0,0,.3);
+  border-radius: 50%;
+}
+.nav-item:before{
+  position: absolute;
+  left: 20px;
+  top:7px;
+  content: '';
+  width:16px;
+  height:16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .7;
+}
+.index.nav-item:before{
+  background-image: url("/images/blog-nav-index.svg");
+}
+.category.nav-item:before{
+  background-image: url("/images/blog-nav-category.svg");
+}
+.label.nav-item:before{
+  background-image: url("/images/blog-nav-label.svg");
+}
+.readme.nav-item:before{
+  background-image: url("/images/blog-nav-readme.svg");
+  top:8px;
+}
+.recommend{
+  width:240px;
+  float: left;
+  margin-top:226px;
+}
+.aside-header{
+  width:100%;
+  box-sizing: border-box;
+  padding:1rem;
+  font-size:14px;
+  color: #414148;
+  font-weight:600;
+  border-bottom:1px solid #414148;
+}
+.recommend>.aside-header>span{
+  display: inline-block;
+  vertical-align: middle;
+  width:16px;
+  height:16px;
+  background: url("/images/blog-recommend.svg") no-repeat center;
+  background-size: contain;
+  margin-right:8px;
+}
+.recommend-list{
+  width:100%;
+  padding:1rem;
+  box-sizing: border-box;
+}
+.recommend-link{
+  display: block;
+  font-size:15px;
+  color:#795548;
+  margin-bottom:15px;
+}
+.recommend-link:hover{
+  color: #3E2723;
+  text-decoration: underline;
+}
+.main{
+  float: right;
+  width:calc(100% - 255px);
+  margin:0 auto;
+  box-sizing: border-box;
+}
+
 .footer{
   width:100%;
   padding-top:15px;

@@ -9,12 +9,18 @@ import {AppRoutingModule} from './app-routing-module'
 // import component
 import { AppComponent } from './component/app.component';
 import { IndexComponent } from './component/index.component';
+import { CategoryComponent } from './component/category.component';
+import { LabelComponent } from './component/label.component';
+import { ReadmeComponent } from './component/readme.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    CategoryComponent,
+    LabelComponent,
+    ReadmeComponent
   ],
   imports: [
     BrowserModule,
