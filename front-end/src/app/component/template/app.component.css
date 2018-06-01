@@ -22,13 +22,30 @@
   flex-wrap: nowrap;
 }
 .share-item{
-  width:20px;
-  height: 20px;
-  border-radius: 8px;
-  background: #fff;
+  width:30px;
+  height: 30px;
+  opacity:.9;
+  box-sizing:border-box;
+  border-radius: 10px;
+  background-color: rgba(121,85,72,.48);
   margin:0 10px;
-  border:2px solid #00B7FF;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+.share-item.twitter{
+  background-image: url(/images/blog-twitter-light.svg);
+}
+.share-item.github{
+  background-image: url(/images/blog-github-light.svg);
+}
+.share-item.weibo{
+  background-image: url(/images/blog-weibo-light.svg);
+}
+.share-item.rss{
+  background-image: url(/images/blog-rss-light.svg);
+}
+
 #body{
   min-height: 100%;
   overflow: hidden;

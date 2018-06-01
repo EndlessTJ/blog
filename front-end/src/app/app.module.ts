@@ -12,6 +12,7 @@ import { IndexComponent } from './component/index.component';
 import { CategoryComponent } from './component/category.component';
 import { LabelComponent } from './component/label.component';
 import { ReadmeComponent } from './component/readme.component';
+import { ArticleComponent } from './component/article.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ReadmeComponent } from './component/readme.component';
     IndexComponent,
     CategoryComponent,
     LabelComponent,
-    ReadmeComponent
+    ReadmeComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

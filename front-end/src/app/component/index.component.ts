@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-const posts = [
+const post = [
   {
     title: '最新Vultr注册及VPS购买图文教程',
     date: '2017-09-28',
@@ -25,8 +25,9 @@ const posts = [
 })
 
 export class IndexComponent implements OnInit {
-  post: object;
+  posts: object;
   ngOnInit () {
-    this.post = posts
+    this.posts = post
+    console.log(this.posts)
   }
 }
