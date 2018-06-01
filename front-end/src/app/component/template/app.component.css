@@ -24,7 +24,6 @@
 .share-item{
   width:30px;
   height: 30px;
-  opacity:.9;
   box-sizing:border-box;
   border-radius: 10px;
   background-color: rgba(121,85,72,.48);
@@ -79,7 +78,7 @@
 .nav-item{
   position: relative;
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   color: #444;
   line-height: 2rem;
   padding-right:15px;
@@ -92,8 +91,8 @@
 .nav-item.active:after{
   position: absolute;
   content: '';
-  width:7px;
-  height:7px;
+  width:6px;
+  height:6px;
   top: 13px;
   right:15px;
   background-color: rgba(0,0,0,.3);
@@ -114,8 +113,8 @@
 .index.nav-item:before{
   background-image: url("/images/blog-nav-index.svg");
 }
-.category.nav-item:before{
-  background-image: url("/images/blog-nav-category.svg");
+.archive.nav-item:before{
+  background-image: url("/images/blog-nav-archive.svg");
 }
 .label.nav-item:before{
   background-image: url("/images/blog-nav-label.svg");
@@ -135,7 +134,7 @@
   padding:1rem;
   font-size:14px;
   color: #414148;
-  font-weight:600;
+  font-weight:400;
   border-bottom:1px solid #414148;
 }
 .recommend>.aside-header>span{
@@ -154,7 +153,7 @@
 }
 .recommend-link{
   display: block;
-  font-size:15px;
+  font-size:14px;
   color:#795548;
   margin-bottom:15px;
 }

@@ -14,7 +14,7 @@ module.exports = routes = (app) => {
 	// 前台路由
 	app.get('/', require('./front-end/views/index'));
 	app.get('/index', require('./front-end/views/index'));
-	app.get('/category', require('./front-end/views/index'));
+	app.get('/archive', require('./front-end/views/index'));
 	app.get('/label', require('./front-end/views/index'));
 	app.get('/readme', require('./front-end/views/index'));
 };

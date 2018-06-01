@@ -33,14 +33,14 @@ var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var router_1 = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 // import component
 var index_component_1 = __webpack_require__("./src/app/component/index.component.ts");
-var category_component_1 = __webpack_require__("./src/app/component/category.component.ts");
+var archive_component_1 = __webpack_require__("./src/app/component/archive.component.ts");
 var label_component_1 = __webpack_require__("./src/app/component/label.component.ts");
 var readme_component_1 = __webpack_require__("./src/app/component/readme.component.ts");
 var article_component_1 = __webpack_require__("./src/app/component/article.component.ts");
 var routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component: index_component_1.IndexComponent },
-    { path: 'category', component: category_component_1.CategoryComponent },
+    { path: 'archive', component: archive_component_1.ArchiveComponent },
     { path: 'label', component: label_component_1.LabelComponent },
     { path: 'readme', component: readme_component_1.ReadmeComponent },
     { path: 'post/:id', component: article_component_1.ArticleComponent }
@@ -80,7 +80,7 @@ var app_routing_module_1 = __webpack_require__("./src/app/app-routing-module.ts"
 // import component
 var app_component_1 = __webpack_require__("./src/app/component/app.component.ts");
 var index_component_1 = __webpack_require__("./src/app/component/index.component.ts");
-var category_component_1 = __webpack_require__("./src/app/component/category.component.ts");
+var archive_component_1 = __webpack_require__("./src/app/component/archive.component.ts");
 var label_component_1 = __webpack_require__("./src/app/component/label.component.ts");
 var readme_component_1 = __webpack_require__("./src/app/component/readme.component.ts");
 var article_component_1 = __webpack_require__("./src/app/component/article.component.ts");
@@ -92,7 +92,7 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 index_component_1.IndexComponent,
-                category_component_1.CategoryComponent,
+                archive_component_1.ArchiveComponent,
                 label_component_1.LabelComponent,
                 readme_component_1.ReadmeComponent,
                 article_component_1.ArticleComponent
@@ -143,6 +143,36 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
+/***/ "./src/app/component/archive.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var ArchiveComponent = /** @class */ (function () {
+    function ArchiveComponent() {
+    }
+    ArchiveComponent = __decorate([
+        core_1.Component({
+            selector: 'app-archive',
+            template: __webpack_require__("./src/app/component/template/archive.component.html"),
+            styles: [__webpack_require__("./src/app/component/template/archive.component.css")]
+        })
+    ], ArchiveComponent);
+    return ArchiveComponent;
+}());
+exports.ArchiveComponent = ArchiveComponent;
+
+
+/***/ }),
+
 /***/ "./src/app/component/article.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -169,36 +199,6 @@ var ArticleComponent = /** @class */ (function () {
     return ArticleComponent;
 }());
 exports.ArticleComponent = ArticleComponent;
-
-
-/***/ }),
-
-/***/ "./src/app/component/category.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-var CategoryComponent = /** @class */ (function () {
-    function CategoryComponent() {
-    }
-    CategoryComponent = __decorate([
-        core_1.Component({
-            selector: 'app-category',
-            template: __webpack_require__("./src/app/component/template/category.component.html"),
-            styles: [__webpack_require__("./src/app/component/template/category.component.css")]
-        })
-    ], CategoryComponent);
-    return CategoryComponent;
-}());
-exports.CategoryComponent = CategoryComponent;
 
 
 /***/ }),
@@ -319,14 +319,28 @@ exports.ReadmeComponent = ReadmeComponent;
 /***/ "./src/app/component/template/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".blog-header{\n  width:100%;\n  overflow: hidden;\n  position: relative;\n  padding:15px 30px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-box-shadow: 0 3px 6px 2px rgba(0,0,0,.2);\n          box-shadow: 0 3px 6px 2px rgba(0,0,0,.2);\n  background-color: #414148;\n}\n.logo{\n  width:30px;\n  height:30px;\n  background: #fff;\n  border-radius: 50%;\n  float: left;\n}\n.social-share {\n  float: right;\n  margin:0 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n}\n.share-item{\n  width:30px;\n  height: 30px;\n  opacity:.9;\n  -webkit-box-sizing:border-box;\n          box-sizing:border-box;\n  border-radius: 10px;\n  background-color: rgba(121,85,72,.48);\n  margin:0 10px;\n  background-size: 70% 70%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n.share-item.twitter{\n  background-image: url(/images/blog-twitter-light.svg);\n}\n.share-item.github{\n  background-image: url(/images/blog-github-light.svg);\n}\n.share-item.weibo{\n  background-image: url(/images/blog-weibo-light.svg);\n}\n.share-item.rss{\n  background-image: url(/images/blog-rss-light.svg);\n}\n#body{\n  min-height: 100%;\n  overflow: hidden;\n}\n.container{\n  margin-top:30px;\n}\n.header{\n  width:240px;\n  background: #ffffff;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n          box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: absolute;\n  top:0;\n}\n.header>.title{\n  width:100%;\n  text-align: center;\n  padding:20px 0;\n  background: #414148;\n  font-size:20px;\n  color: #fff;\n}\n.nav-bar{\n  width:100%;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding:15px 0;\n  background: #fff;\n}\n.nav-item{\n  position: relative;\n  display: block;\n  font-size: 14px;\n  color: #444;\n  line-height: 2rem;\n  padding-right:15px;\n  font-weight: 400;\n  padding-left: 42px;\n}\n.nav-item:hover{\n  background-color: rgba(0,0,0,.05);\n}\n.nav-item.active:after{\n  position: absolute;\n  content: '';\n  width:7px;\n  height:7px;\n  top: 13px;\n  right:15px;\n  background-color: rgba(0,0,0,.3);\n  border-radius: 50%;\n}\n.nav-item:before{\n  position: absolute;\n  left: 20px;\n  top:7px;\n  content: '';\n  width:16px;\n  height:16px;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center;\n  opacity: .7;\n}\n.index.nav-item:before{\n  background-image: url(\"/images/blog-nav-index.svg\");\n}\n.category.nav-item:before{\n  background-image: url(\"/images/blog-nav-category.svg\");\n}\n.label.nav-item:before{\n  background-image: url(\"/images/blog-nav-label.svg\");\n}\n.readme.nav-item:before{\n  background-image: url(\"/images/blog-nav-readme.svg\");\n  top:8px;\n}\n.recommend{\n  width:240px;\n  float: left;\n  margin-top:226px;\n}\n.aside-header{\n  width:100%;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding:1rem;\n  font-size:14px;\n  color: #414148;\n  font-weight:600;\n  border-bottom:1px solid #414148;\n}\n.recommend>.aside-header>span{\n  display: inline-block;\n  vertical-align: middle;\n  width:16px;\n  height:16px;\n  background: url(\"/images/blog-recommend.svg\") no-repeat center;\n  background-size: contain;\n  margin-right:8px;\n}\n.recommend-list{\n  width:100%;\n  padding:1rem;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.recommend-link{\n  display: block;\n  font-size:15px;\n  color:#795548;\n  margin-bottom:15px;\n}\n.recommend-link:hover{\n  color: #3E2723;\n  text-decoration: underline;\n}\n.main{\n  float: right;\n  width:calc(100% - 255px);\n  margin:0 auto;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.footer{\n  width:100%;\n  padding-top:15px;\n}\n.footer-inner{\n  padding-left: 255px;\n}\n.footer-inner>p{\n  text-align: center;\n  font-size:15px;\n  color: #797979;\n  padding:6px 0;\n}\n"
+module.exports = ".blog-header{\n  width:100%;\n  overflow: hidden;\n  position: relative;\n  padding:15px 30px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-box-shadow: 0 3px 6px 2px rgba(0,0,0,.2);\n          box-shadow: 0 3px 6px 2px rgba(0,0,0,.2);\n  background-color: #414148;\n}\n.logo{\n  width:30px;\n  height:30px;\n  background: #fff;\n  border-radius: 50%;\n  float: left;\n}\n.social-share {\n  float: right;\n  margin:0 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n}\n.share-item{\n  width:30px;\n  height: 30px;\n  -webkit-box-sizing:border-box;\n          box-sizing:border-box;\n  border-radius: 10px;\n  background-color: rgba(121,85,72,.48);\n  margin:0 10px;\n  background-size: 70% 70%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n.share-item.twitter{\n  background-image: url(/images/blog-twitter-light.svg);\n}\n.share-item.github{\n  background-image: url(/images/blog-github-light.svg);\n}\n.share-item.weibo{\n  background-image: url(/images/blog-weibo-light.svg);\n}\n.share-item.rss{\n  background-image: url(/images/blog-rss-light.svg);\n}\n#body{\n  min-height: 100%;\n  overflow: hidden;\n}\n.container{\n  margin-top:30px;\n}\n.header{\n  width:240px;\n  background: #ffffff;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n          box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: absolute;\n  top:0;\n}\n.header>.title{\n  width:100%;\n  text-align: center;\n  padding:20px 0;\n  background: #414148;\n  font-size:20px;\n  color: #fff;\n}\n.nav-bar{\n  width:100%;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding:15px 0;\n  background: #fff;\n}\n.nav-item{\n  position: relative;\n  display: block;\n  font-size: 13px;\n  color: #444;\n  line-height: 2rem;\n  padding-right:15px;\n  font-weight: 400;\n  padding-left: 42px;\n}\n.nav-item:hover{\n  background-color: rgba(0,0,0,.05);\n}\n.nav-item.active:after{\n  position: absolute;\n  content: '';\n  width:6px;\n  height:6px;\n  top: 13px;\n  right:15px;\n  background-color: rgba(0,0,0,.3);\n  border-radius: 50%;\n}\n.nav-item:before{\n  position: absolute;\n  left: 20px;\n  top:7px;\n  content: '';\n  width:16px;\n  height:16px;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center;\n  opacity: .7;\n}\n.index.nav-item:before{\n  background-image: url(\"/images/blog-nav-index.svg\");\n}\n.archive.nav-item:before{\n  background-image: url(\"/images/blog-nav-archive.svg\");\n}\n.label.nav-item:before{\n  background-image: url(\"/images/blog-nav-label.svg\");\n}\n.readme.nav-item:before{\n  background-image: url(\"/images/blog-nav-readme.svg\");\n  top:8px;\n}\n.recommend{\n  width:240px;\n  float: left;\n  margin-top:226px;\n}\n.aside-header{\n  width:100%;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding:1rem;\n  font-size:14px;\n  color: #414148;\n  font-weight:400;\n  border-bottom:1px solid #414148;\n}\n.recommend>.aside-header>span{\n  display: inline-block;\n  vertical-align: middle;\n  width:16px;\n  height:16px;\n  background: url(\"/images/blog-recommend.svg\") no-repeat center;\n  background-size: contain;\n  margin-right:8px;\n}\n.recommend-list{\n  width:100%;\n  padding:1rem;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.recommend-link{\n  display: block;\n  font-size:14px;\n  color:#795548;\n  margin-bottom:15px;\n}\n.recommend-link:hover{\n  color: #3E2723;\n  text-decoration: underline;\n}\n.main{\n  float: right;\n  width:calc(100% - 255px);\n  margin:0 auto;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.footer{\n  width:100%;\n  padding-top:15px;\n}\n.footer-inner{\n  padding-left: 255px;\n}\n.footer-inner>p{\n  text-align: center;\n  font-size:15px;\n  color: #797979;\n  padding:6px 0;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/component/template/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<header class=\"blog-header\" id=\"header\">\n  <div class=\"logo\"></div>\n  <div class=\"social-share\">\n    <a class=\"share-item twitter\" target=\"_blank\" href=\"https://twitter.com/JinWuZhiJing\"></a>\n    <a class=\"share-item github\" target=\"_blank\" href=\"https://github.com/EndlessTJ\"></a>\n    <a class=\"share-item weibo\" target=\"_blank\" href=\"https://www.weibo.com/5036519119/profile?topnav=1&wvr=6&is_all=1\"></a>\n    <a class=\"share-item rss\" target=\"_blank\" href=\"\"></a>\n  </div>\n</header>\n<div id=\"body\">\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 class=\"title\">TJ-blog</h1>\n      <nav class=\"nav-bar\">\n        <a class=\"nav-item index\" routerLink=\"/index\" routerLinkActive=\"active\" >首页</a>\n        <a class=\"nav-item category\" routerLink=\"/category\" routerLinkActive=\"active\" >归档</a>\n        <a class=\"nav-item label\" routerLink=\"/label\" routerLinkActive=\"active\" >标签</a>\n        <a class=\"nav-item readme\" routerLink=\"/readme\" routerLinkActive=\"active\" >关于我</a>\n      </nav>\n    </div>\n\n    <aside class=\"sidebar recommend\">\n      <h2 class=\"aside-header\"><span></span>推荐阅读</h2>\n      <div class=\"recommend-list\">\n        <a class=\"recommend-link\" href=\"\" >Vultr注册及购买图文教程</a>\n        <a class=\"recommend-link\" href=\"\">Vultr快速安装ss完整图文教程</a>\n        <a class=\"recommend-link\" href=\"\">Vultr快速安装ss完整图文教程</a>\n      </div>\n    </aside>\n    <div class=\"main\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n\n</div>\n<footer class=\"footer\">\n  <div class=\"footer-inner container\">\n    <p>版权©️所有2018</p>\n    <p>power by TJ</p>\n  </div>\n</footer>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<header class=\"blog-header\" id=\"header\">\n  <div class=\"logo\"></div>\n  <div class=\"social-share\">\n    <a class=\"share-item twitter\" target=\"_blank\" href=\"https://twitter.com/JinWuZhiJing\"></a>\n    <a class=\"share-item github\" target=\"_blank\" href=\"https://github.com/EndlessTJ\"></a>\n    <a class=\"share-item weibo\" target=\"_blank\" href=\"https://www.weibo.com/5036519119/profile?topnav=1&wvr=6&is_all=1\"></a>\n    <a class=\"share-item rss\" target=\"_blank\" href=\"\"></a>\n  </div>\n</header>\n<div id=\"body\">\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 class=\"title\">TJ-blog</h1>\n      <nav class=\"nav-bar\">\n        <a class=\"nav-item index\" routerLink=\"/index\" routerLinkActive=\"active\" >首页</a>\n        <a class=\"nav-item archive\" routerLink=\"/archive\" routerLinkActive=\"active\" >归档</a>\n        <a class=\"nav-item label\" routerLink=\"/label\" routerLinkActive=\"active\" >标签</a>\n        <a class=\"nav-item readme\" routerLink=\"/readme\" routerLinkActive=\"active\" >关于我</a>\n      </nav>\n    </div>\n\n    <aside class=\"sidebar recommend\">\n      <h2 class=\"aside-header\"><span></span>推荐阅读</h2>\n      <div class=\"recommend-list\">\n        <a class=\"recommend-link\" href=\"\" >Vultr注册及购买图文教程</a>\n        <a class=\"recommend-link\" href=\"\">Vultr快速安装ss完整图文教程</a>\n        <a class=\"recommend-link\" href=\"\">Vultr快速安装ss完整图文教程</a>\n      </div>\n    </aside>\n    <div class=\"main\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n\n</div>\n<footer class=\"footer\">\n  <div class=\"footer-inner container\">\n    <p>版权©️所有2018</p>\n    <p>power by TJ</p>\n  </div>\n</footer>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/component/template/archive.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/component/template/archive.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"archive\">\n  <section class=\"archive-inner\">\n    <div class=\"archive-list\">\n      <p class=\"archive-count\">共计日志100篇</p>\n      <div class=\"year\">\n        <h2 class=\"year-title\"></h2>\n        <div class=\"month\">\n          <h3 class=\"month-title\"></h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\"></span>\n            <p class=\"post-title\"></p>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </section>\n</div>\n"
 
 /***/ }),
 
@@ -341,20 +355,6 @@ module.exports = ""
 /***/ (function(module, exports) {
 
 module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/component/template/category.component.css":
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/component/template/category.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"category\">\n  这里是catee\n</div>\n"
 
 /***/ }),
 

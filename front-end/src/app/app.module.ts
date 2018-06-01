@@ -9,7 +9,7 @@ import {AppRoutingModule} from './app-routing-module'
 // import component
 import { AppComponent } from './component/app.component';
 import { IndexComponent } from './component/index.component';
-import { CategoryComponent } from './component/category.component';
+import { ArchiveComponent } from './component/archive.component';
 import { LabelComponent } from './component/label.component';
 import { ReadmeComponent } from './component/readme.component';
 import { ArticleComponent } from './component/article.component';
@@ -19,7 +19,7 @@ import { ArticleComponent } from './component/article.component';
   declarations: [
     AppComponent,
     IndexComponent,
-    CategoryComponent,
+    ArchiveComponent,
     LabelComponent,
     ReadmeComponent,
     ArticleComponent
