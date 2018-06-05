@@ -31,6 +31,10 @@
   background-size: 70% 70%;
   background-repeat: no-repeat;
   background-position: center;
+  transition: border-radius .3s ease;
+}
+.share-item:hover{
+  border-radius: 50%;
 }
 .share-item.twitter{
   background-image: url(/images/blog-twitter-light.svg);

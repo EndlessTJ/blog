@@ -1,0 +1,84 @@
+.tags{
+  padding: 40px;
+  position: relative;
+  box-sizing: border-box;
+  color: #444;
+}
+.title{
+  text-align: center;
+  font-size:24px;
+  font-weight:500;
+  margin:30px 0;
+  color: #795548;
+}
+.tags-count{
+  text-align: center;
+  font-size:16px;
+  margin:20px 0;
+}
+.tags-container{
+  text-align: center;
+  padding:15px 30px;
+}
+.tags-label{
+  display: inline-block;
+  font-size:14px;
+  color: #444;
+  margin:10px;
+  border-bottom:1px solid #444;
+  line-height: 1.5em;
+  transition: transform .5s ease;
+}
+.tags-label:hover{
+  transform: scale(1.2);
+}
+.tags-list{
+  margin:30px 0;
+  position: relative;
+}
+.tags-list-name{
+  color: #795548;
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.tags-list-name:before{
+  content: '';
+  position: absolute;
+  width:20px;
+  height:22px;
+  left: -32px;
+  background-image: url(/images/blog-tag-color.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.post{
+  margin:15px 0;
+  border-bottom: 1px dashed #999;
+  padding-left: 28px;
+  transition: border-bottom .5s ease;
+}
+.post:hover{
+  border-bottom-color: #444;
+}
+.post>a{
+  color: #444;
+  font-size:14px;
+  line-height: 2.5em;
+  position: relative;
+}
+.post>a:before{
+  content: '';
+  position: absolute;
+  width:6px;
+  height:6px;
+  left: -23px;
+  top:6px;
+  border-radius: 50%;
+  background: #999;
+  transition: background .5s ease;
+}
+.post:hover>a:before{
+  background: #444;
+}
