@@ -304,9 +304,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var data = {
+    title: 'Vultr VPS主机快速安装Shadowsocks（ss）完整图文教程',
+    publisthData: '2017-09-29',
+    tags: ['vultr', 'vps', 'vultr教程'],
+    content: '没有注册和购买vultr vps服务器，请看最新Vultr注册及VPS购买图文教程\n' +
+        '\n' +
+        '购买后没有搭建ss客户端的请看Vultr-VPS主机快速安装Shadowsocks（ss）完整图文教程\n' +
+        '\n' +
+        '购买后没有搭建ssr客户端的请看Vultr快速安装SSR完整图文教程',
+    prevArticle: '没有注册和购买vultr ',
+    nextArticle: 'vps服务器',
+    prevLink: '',
+    nextLink: ''
+};
 var ArticleComponent = /** @class */ (function () {
     function ArticleComponent() {
     }
+    ArticleComponent.prototype.ngOnInit = function () {
+        this.data = data;
+    };
     ArticleComponent = __decorate([
         core_1.Component({
             selector: 'app-article',
@@ -432,8 +449,8 @@ var LabelComponent = /** @class */ (function () {
     function LabelComponent() {
     }
     LabelComponent.prototype.ngOnInit = function () {
-        this.tags_count = this.tags.length;
         this.tags = tags;
+        this.tags_count = this.tags.length;
         this.tags_list = tags_list;
     };
     LabelComponent = __decorate([
@@ -511,14 +528,14 @@ module.exports = "<section class=\"archive\">\n  <div class=\"archive-inner\">\n
 /***/ "./src/app/component/template/article.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".article{\n  padding:40px;\n  position: relative;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  color: #444;\n}\n.title{\n  text-align: center;\n  font-size:20px;\n  margin:20px 0;\n}\n.article-mate{\n  margin:15px 0 25px;\n  font-size:12px;\n  color: #999;\n  text-align: center;\n}\n.calendar{\n  display: inline-block;\n  width:14px;\n  height:14px;\n  margin-right:5px;\n  opacity: .4;\n  background-image: url(/images/blog-calendar.svg);\n  background-repeat: no-repeat;\n  background-size: contain;\n  vertical-align: bottom;\n}\n.content{\n  padding:10px 20px;\n  font-size: 14px;\n}\n.footer{\n  margin:30px 0 15px;\n  position: relative;\n  text-align: center;\n}\n.divide{\n  font-size:14px;\n  color: #999;\n  position: relative;\n}\n.tags-rows{\n  margin-top:30px;\n  margin-bottom:10px;\n}\n.tag-item{\n  font-size:14px;\n  color: #795548;\n  margin:10px;\n  border-bottom:1px solid #795548;\n  line-height: 1.5em;\n  padding-left: 20px;\n  position: relative;\n}\n.tag-item:before{\n  content: '';\n  position: absolute;\n  width:15px;\n  height:15px;\n  background-image: url(\"/images/blog-tag-color.svg\");\n  background-position: center;\n  background-size: 90% 100%;\n  background-repeat: no-repeat;\n  left: 0;\n  top:2px;\n}\n.pagination{\n  border-top:1px solid ;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/component/template/article.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<section class=\"article\">\n  <article class=\"article-container\">\n    <h2 class=\"title\">{{data.title}}</h2>\n    <p class=\"article-mate\"><span class=\"calendar\"></span>发表于{{data.publisthData}}</p>\n    <div class=\"content\">\n      {{data.content}}\n    </div>\n    <div class=\"footer\">\n      <div class=\"divide\">---------------  没有~(≧▽≦)/~啦啦啦  ---------------</div>\n      <div class=\"tags-rows\">\n        <a class=\"tag-item\" *ngFor=\"let tag of data.tags\">{{tag}}</a>\n      </div>\n    </div>\n    <div class=\"pagination\">\n      <div class=\"page-prev\"><a routerLink=\"{{data.prevLink}}\">{{data.prevArticle}}</a></div>\n      <div class=\"page-next\"><a routerLink=\"{{data.prevLink}}\">{{data.nextArticle}}</a></div>\n    </div>\n  </article>\n</section>\n"
 
 /***/ }),
 

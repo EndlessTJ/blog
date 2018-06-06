@@ -52,8 +52,8 @@ export class LabelComponent implements OnInit{
   tags: Array<string>;
   tags_list: Array<object>;
   ngOnInit () {
-    this.tags_count = this.tags.length;
     this.tags = tags;
+    this.tags_count = this.tags.length;
     this.tags_list = tags_list
   }
 }

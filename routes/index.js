@@ -17,4 +17,5 @@ module.exports = routes = (app) => {
 	app.get('/archive', require('./front-end/views/index'));
 	app.get('/label', require('./front-end/views/index'));
 	app.get('/readme', require('./front-end/views/index'));
+	app.get('/post/:id', require('./front-end/views/index'));
 };
