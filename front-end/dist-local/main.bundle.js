@@ -156,9 +156,127 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var archive = [
+    {
+        year: '2017',
+        dataYear: [
+            {
+                month: '12月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+            {
+                month: '11月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+            {
+                month: '9月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+        ]
+    },
+    {
+        year: '2017',
+        dataYear: [
+            {
+                month: '12月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+            {
+                month: '11月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+            {
+                month: '9月',
+                dataMonth: [
+                    {
+                        date: '12-11',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-12',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                    {
+                        date: '12-13',
+                        title: 'Debian/Ububtu一键安装最新BBR加速图文教程'
+                    },
+                ]
+            },
+        ]
+    },
+];
 var ArchiveComponent = /** @class */ (function () {
     function ArchiveComponent() {
     }
+    ArchiveComponent.prototype.ngOnInit = function () {
+        this.post_count = 100;
+        this.archive = archive;
+    };
     ArchiveComponent = __decorate([
         core_1.Component({
             selector: 'app-archive',
@@ -267,10 +385,56 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var tags = ['CentOS', 'Debian', 'CentOS', 'Shadowrocket', 'Ububtu', 'bbr', 'ss', 'ssr', 'ss客户端', 'surge', 'vps', 'vultr', 'vultr教程'];
+var tags_list = [
+    {
+        tag: 'CentOS',
+        post_title: [
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+        ]
+    },
+    {
+        tag: 'Debian',
+        post_title: [
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+        ]
+    },
+    {
+        tag: 'Shadowrocket',
+        post_title: [
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+        ]
+    },
+    {
+        tag: 'Ububtu',
+        post_title: [
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+            'Vultr VPS主机快速安装SSR完整图文教程',
+        ]
+    },
+];
 var LabelComponent = /** @class */ (function () {
     function LabelComponent() {
     }
     LabelComponent.prototype.ngOnInit = function () {
+        this.tags_count = this.tags.length;
+        this.tags = tags;
+        this.tags_list = tags_list;
     };
     LabelComponent = __decorate([
         core_1.Component({
@@ -340,7 +504,7 @@ module.exports = ".archive{\n  padding:40px;\n  -webkit-box-sizing: border-box;\
 /***/ "./src/app/component/template/archive.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"archive\">\n  <div class=\"archive-inner\">\n    <div class=\"archive-list\">\n      <a class=\"archive-count\">共计日志100篇</a>\n      <div class=\"year\">\n        <h2 class=\"year-title\">2017</h2>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"year\">\n        <h2 class=\"year-title\">2017</h2>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n        <div class=\"month\">\n          <h3 class=\"month-title\">12月</h3>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n          <div class=\"archive-item\">\n            <span class=\"post-mate\">12-20</span>\n            <a class=\"post-title\">Debian/Ububtu一键安装最新BBR加速图文教程</a>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</section>\n"
+module.exports = "<section class=\"archive\">\n  <div class=\"archive-inner\">\n    <div class=\"archive-list\">\n      <a class=\"archive-count\">共计日志{{post_count}}篇</a>\n      <div class=\"year\" *ngFor=\"let yearDatas of archive\">\n        <h2 class=\"year-title\">{{yearDatas.year}}</h2>\n        <div class=\"month\" *ngFor=\"let monthDatas of yearDatas.dataYear\">\n          <h3 class=\"month-title\">{{monthDatas.month}}</h3>\n          <div class=\"archive-item\" *ngFor=\"let datas of monthDatas.dataMonth\">\n            <span class=\"post-mate\">{{datas.date}}</span>\n            <a class=\"post-title\">{{datas.title}}</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -382,7 +546,7 @@ module.exports = ".tags{\n  padding: 40px;\n  position: relative;\n  -webkit-box
 /***/ "./src/app/component/template/label.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"tags\">\n  <div class=\"tags-inner\">\n    <h2 class=\"title\">Tags</h2>\n    <p class=\"tags-count\">共34个标签</p>\n    <div class=\"tags-container\">\n      <a class=\"tags-label\" href=\"\">CentOS</a>\n      <a class=\"tags-label\" href=\"\"> Debian </a>\n      <a class=\"tags-label\" href=\"\">CentOS</a>\n      <a class=\"tags-label\" href=\"\"> Shadowrocket</a>\n      <a class=\"tags-label\" href=\"\">Ububtu </a>\n      <a class=\"tags-label\" href=\"\">bbr</a>\n      <a class=\"tags-label\" href=\"\">ss</a>\n      <a class=\"tags-label\" href=\"\">ssr</a>\n      <a class=\"tags-label\" href=\"\"> ss客户端</a>\n      <a class=\"tags-label\" href=\"\">surge</a>\n      <a class=\"tags-label\" href=\"\">vps</a>\n      <a class=\"tags-label\" href=\"\">vultr</a>\n      <a class=\"tags-label\" href=\"\">vultr教程</a>\n    </div>\n    <div class=\"tags-list\">\n      <h3 class=\"tags-list-name\">CentOS</h3>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n    </div>\n    <div class=\"tags-list\">\n      <h3 class=\"tags-list-name\">CentOS</h3>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n    </div>\n    <div class=\"tags-list\">\n      <h3 class=\"tags-list-name\">CentOS</h3>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n      <div class=\"post\"><a href=\"\">Vultr VPS主机快速安装SSR完整图文教程</a></div>\n    </div>\n  </div>\n</section>\n"
+module.exports = "<section class=\"tags\">\n  <div class=\"tags-inner\">\n    <h2 class=\"title\">Tags</h2>\n    <p class=\"tags-count\">共{{tags_count}}个标签</p>\n    <div class=\"tags-container\">\n      <a class=\"tags-label\" *ngFor=\"let tag of tags\" href=\"\">{{tag}}</a>\n    </div>\n    <div class=\"tags-list\" *ngFor=\"let tagList of tags_list\">\n      <h3 class=\"tags-list-name\">{{tagList.tag}}</h3>\n      <div class=\"post\" *ngFor=\"let post of tagList.post_title\"><a href=\"\">{{post}}</a></div>\n    </div>\n  </div>\n</section>\n"
 
 /***/ }),
 
