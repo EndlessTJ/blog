@@ -1,0 +1,69 @@
+.readme{
+  padding:40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  color: #444;
+}
+.header{
+  font-size:20px;
+  line-height: 2em;
+  border-bottom:2px solid #444444;
+}
+.content{
+  overflow: hidden;
+  margin-top:40px;
+}
+.avatar{
+  width:80px;
+  height:80px;
+  border-radius: 50%;
+  float: left;
+  background-color: #3e515b;
+  border:2px solid #ff4081;
+}
+.person-message{
+  float: left;
+  margin-left: 30px;
+}
+.person-message>.name{
+  font-size:28px;
+  font-weight:600;
+  padding-left: 4px;
+  line-height: 1.5em;
+  border-bottom:2px solid #444;
+  margin-bottom:8px;
+}
+.contact{
+  margin-top:20px;
+  font-size:14px;
+}
+.contact>li{
+  margin:10px 0;
+  position: relative;
+}
+.contact>li>a.contact-twitter{
+  background-image: url(/images/blog-twitter-light.svg);
+}
+.contact>li>a.contact-github{
+  background-image: url(/images/blog-github-light.svg);
+}
+.contact>li>a.contact-weibo{
+  background-image: url(/images/blog-weibo-light.svg);
+}
+.contact>li>a{
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgba(121,85,72,.48);
+  margin: 0 10px;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+

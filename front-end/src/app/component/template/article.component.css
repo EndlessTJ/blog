@@ -68,5 +68,25 @@
   top:2px;
 }
 .pagination{
-  border-top:1px solid ;
+  border-top:1px solid #ccc;
+  display: flex;
+  justify-content:space-between;
+  padding-top: 15px;
+}
+.page-prev,.page-next{
+  font-size: 14px;
+  font-weight: 600;
+}
+.page-prev>a{
+  margin-left:10px;
+  color: #666;
+  font-weight:400;
+}
+.page-next>a{
+  margin-right:10px;
+  color: #666;
+  font-weight:400;
+}
+.page-prev>a:hover,.page-next>a:hover{
+  color: #444;
 }
