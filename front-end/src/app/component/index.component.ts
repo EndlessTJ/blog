@@ -1,4 +1,6 @@
 import {Component, OnInit} from "@angular/core";
+import { HttpService } from '../service/http.service';
+
 const post = [
   {
     title: '最新Vultr注册及VPS购买图文教程',

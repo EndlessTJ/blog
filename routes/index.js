@@ -12,10 +12,13 @@ module.exports = routes = (app) => {
 	app.post('/admin/addpost',require('./admin/post/addPosts'));
 
 	// 前台路由
+	/*页面请求路由*/
 	app.get('/', require('./front-end/views/index'));
 	app.get('/index', require('./front-end/views/index'));
 	app.get('/archive', require('./front-end/views/index'));
 	app.get('/label', require('./front-end/views/index'));
 	app.get('/readme', require('./front-end/views/index'));
 	app.get('/post/:id', require('./front-end/views/index'));
+	/*数据请求路由*/
+	app.post('/getPost',require('./front-end/post/getPosts')); //获取文章内容
 };
