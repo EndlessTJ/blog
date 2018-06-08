@@ -345,12 +345,19 @@ var ArchiveComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticleComponent", function() { return ArticleComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/http.service */ "./src/app/service/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var data = {
     title: 'Vultr VPS主机快速安装Shadowsocks（ss）完整图文教程',
@@ -367,17 +374,32 @@ var data = {
     nextLink: ''
 };
 var ArticleComponent = /** @class */ (function () {
-    function ArticleComponent() {
+    function ArticleComponent(route, http) {
+        this.route = route;
+        this.http = http;
     }
     ArticleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            var id = params['id'];
+            console.log(id);
+            _this.http.post("/getarticle/" + id).subscribe(function (result) {
+                console.log(result);
+            });
+        });
         this.data = data;
+    };
+    ArticleComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
     };
     ArticleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-article',
             template: __webpack_require__(/*! ./template/article.component.html */ "./src/app/component/template/article.component.html"),
             styles: [__webpack_require__(/*! ./template/article.component.css */ "./src/app/component/template/article.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _service_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
     ], ArticleComponent);
     return ArticleComponent;
 }());
@@ -397,12 +419,17 @@ var ArticleComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IndexComponent", function() { return IndexComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/http.service */ "./src/app/service/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var post = [
     {
@@ -422,18 +449,25 @@ var post = [
     }
 ];
 var IndexComponent = /** @class */ (function () {
-    function IndexComponent() {
+    function IndexComponent(http) {
+        this.http = http;
     }
     IndexComponent.prototype.ngOnInit = function () {
-        this.posts = post;
-        console.log(this.posts);
+        var _this = this;
+        this.http.post('/getPost').subscribe(function (result) {
+            if (result.success) {
+                _this.posts = result.data.post;
+            }
+            console.log(post);
+        });
     };
     IndexComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-index',
             template: __webpack_require__(/*! ./template/index.component.html */ "./src/app/component/template/index.component.html"),
             styles: [__webpack_require__(/*! ./template/index.component.css */ "./src/app/component/template/index.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_service_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], IndexComponent);
     return IndexComponent;
 }());
@@ -644,7 +678,7 @@ module.exports = "\nsection.post-article-item{\n  padding:40px;\n  text-align: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"post-list\">\n  <section class=\"post-article-item\" *ngFor=\"let post of posts\">\n    <header class=\"article-section-title\">\n      <h1><a href=\"\">{{post.title}}</a></h1>\n      <div class=\"article-meta\"><span class=\"calendar\"></span>发表于 {{post.date}}</div>\n    </header>\n    <div class=\"article-content\">\n      <p>{{post.brief}}</p>\n    </div>\n    <footer>\n      <div class=\"button-rows\">\n        <a routerLink=\"/post/tjdd\" class=\"button\">阅读全文»</a>\n      </div>\n    </footer>\n  </section>\n</div>\n"
+module.exports = "<div class=\"post-list\">\n  <section class=\"post-article-item\" *ngFor=\"let post of posts\">\n    <header class=\"article-section-title\">\n      <h1><a href=\"\">{{post.title}}</a></h1>\n      <div class=\"article-meta\"><span class=\"calendar\"></span>发表于 {{post.date | date: 'yyyy-MM-dd'}}</div>\n    </header>\n    <div class=\"article-content\">\n      <p>{{post.brief}}</p>\n    </div>\n    <footer>\n      <div class=\"button-rows\">\n        <a routerLink=\"/post/{{post._id}}\" class=\"button\">阅读全文»</a>\n      </div>\n    </footer>\n  </section>\n</div>\n"
 
 /***/ }),
 
@@ -689,6 +723,60 @@ module.exports = ".readme{\n  padding:40px;\n  box-sizing: border-box;\n  positi
 /***/ (function(module, exports) {
 
 module.exports = "<section class=\"readme\">\n  <div class=\"readme-inner\">\n    <header class=\"header\">\n      About Me\n    </header>\n    <div class=\"content\">\n      <div class=\"avatar\"></div>\n      <div class=\"person-message\">\n        <h2 class=\"name\">田进</h2>\n        <p class=\"person-tags\">Web Developer, 入门级梅吹，足球🐶</p>\n        <ul class=\"contact\">\n          <li>邮箱：tianjindd@gmail.com,tainjin520@163.com</li>\n          <li>联系我：<a class=\"contact-twitter\" href=\"\"></a><a class=\"contact-github\" href=\"\"></a><a class=\"contact-weibo\" href=\"\"></a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</section>\n"
+
+/***/ }),
+
+/***/ "./src/app/service/http.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/service/http.service.ts ***!
+  \*****************************************/
+/*! exports provided: HttpService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpService", function() { return HttpService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+};
+var HttpService = /** @class */ (function () {
+    function HttpService(http) {
+        this.http = http;
+    }
+    HttpService.prototype.post = function (url, params, options) {
+        if (!options) {
+            options = httpOptions;
+        }
+        return this.http.post(url, params, options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (post) { return console.log('post请求返回内容', post); }));
+    };
+    HttpService.prototype.get = function (url) {
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (post) { return console.log('get请求返回内容', post); }));
+    };
+    HttpService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], HttpService);
+    return HttpService;
+}());
+
+
 
 /***/ }),
 

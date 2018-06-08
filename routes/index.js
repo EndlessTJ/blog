@@ -20,5 +20,6 @@ module.exports = routes = (app) => {
 	app.get('/readme', require('./front-end/views/index'));
 	app.get('/post/:id', require('./front-end/views/index'));
 	/*数据请求路由*/
-	app.post('/getPost',require('./front-end/post/getPosts')); //获取文章内容
+	app.post('/getPost',require('./front-end/post/getPosts')); //获取摘要内容
+	app.post('/getarticle/:id',require('./front-end/post/getArticle')); //获取文章内容
 };

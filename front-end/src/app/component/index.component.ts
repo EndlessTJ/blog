@@ -27,9 +27,16 @@ const post = [
 })
 
 export class IndexComponent implements OnInit {
-  posts: object;
+  posts: Array<object>;
+  constructor (
+    private http: HttpService
+  ) {}
   ngOnInit () {
-    this.posts = post
-    console.log(this.posts)
+    this.http.post('/getPost').subscribe((result) => {
+      if (result.success) {
+        this.posts = result.data.post
+      }
+      console.log(post)
+    });
   }
 }

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Subscription } from "rxjs";
+import { HttpService } from '../service/http.service';
+
 const data = {
   title: 'Vultr VPS主机快速安装Shadowsocks（ss）完整图文教程',
   publisthData: '2017-09-29',
@@ -18,9 +22,25 @@ const data = {
   templateUrl: './template/article.component.html',
   styleUrls: ['./template/article.component.css']
 })
-export class ArticleComponent implements OnInit{
+export class ArticleComponent implements OnInit, OnDestroy{
   data: object;
+  private sub: Subscription;
+  constructor (
+    private route: ActivatedRoute,
+    private http: HttpService
+  ) {}
   ngOnInit () {
+    this.sub = this.route.params.subscribe((params) => {
+      const id = params['id'];
+      console.log(id)
+      this.http.post(`/getarticle/${id}`).subscribe((result) => {
+        console.log(result)
+      })
+    });
     this.data = data
+  }
+
+  ngOnDestroy () {
+    this.sub.unsubscribe()
   }
 }

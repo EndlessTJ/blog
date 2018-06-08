@@ -11,11 +11,11 @@ module.exports = function (req, res) {
 		content.post.CreateDate = new Date();
 		content.post.UpdateDate = new Date();
 
-		Post.create(content.post, function (err, res) {
+		Post.create(content.post, function (err, data) {
 			if (err) {
 				console.log('数据库出错:',err)
 			} else {
-				console.log('返回结果', res);
+				console.log('返回结果', data);
 				res.json(content)
 			}
 		});
