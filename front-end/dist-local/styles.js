@@ -1,13 +1,21 @@
-webpackJsonp(["styles"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./src/styles.css ***!
+  \**********************************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\nbody,\nhtml {\n  height: 100%;\n  width: 100%;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\na {\n  text-decoration: none;\n}\n#root {\n  height: 100%;\n}\ninput,\nlabel,\ntextarea,\nselect,\nbutton {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  display: inline-block;\n  background: none;\n  vertical-align: middle;\n  white-space: normal;\n  line-height: 1;\n  font-size: 14px;\n}\ninput:focus {\n  outline: 0;\n}\nbutton {\n  outline: 0;\n}\ninput,\ntextarea {\n  -webkit-box-sizing: content-box;\n  box-sizing: content-box;\n}\nbutton,\ninput[type='reset'],\ninput[type='button'],\ninput[type='submit'],\ninput[type='checkbox'],\ninput[type='radio'] {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\ninput[type='search'] {\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n  -webkit-box-sizing: content-box;\n  box-sizing: content-box;\n}\n::-webkit-search-decoration {\n  display: none;\n}\nbutton,\ninput[type='reset'],\ninput[type='submit'],\ninput[type='button'] {\n  overflow: visible;\n  width: auto;\n}\nselect[multiple] {\n  vertical-align: top;\n}\ntextarea {\n  vertical-align: top;\n  overflow: auto;\n}\n::-webkit-file-upload-button {\n  padding: 0;\n  border: 0;\n  background: none;\n}\ninput:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0px 1000px white inset !important;\n}\n/*\nset placeholder color*/\n::-webkit-input-placeholder {\n  /* WebKit browsers */\n  color: #999;\n  font-weight: 200;\n}\n:-moz-placeholder {\n  /* Mozilla Firefox 4 to 18 */\n  color: #999;\n  font-weight: 200;\n}\n::-moz-placeholder {\n  /* Mozilla Firefox 19+ */\n  color: #999;\n  font-weight: 200;\n}\n:-ms-input-placeholder {\n  /* Internet Explorer 10+ */\n  color: #999;\n  font-weight: 200;\n}\n/*同一style*/\nbody{\n  background: #eeeeee;\n}\naside,section{\n  background: #fff;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n          box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n  margin-bottom:15px;\n}\n.container {\n  position: relative;\n  width:70%;\n  padding:0 1rem;\n  margin: 0 auto;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\nbody,\nhtml {\n  height: 100%;\n  width: 100%;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\na {\n  text-decoration: none;\n}\n#root {\n  height: 100%;\n}\ninput,\nlabel,\ntextarea,\nselect,\nbutton {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  display: inline-block;\n  background: none;\n  vertical-align: middle;\n  white-space: normal;\n  line-height: 1;\n  font-size: 14px;\n}\ninput:focus {\n  outline: 0;\n}\nbutton {\n  outline: 0;\n}\ninput,\ntextarea {\n  box-sizing: content-box;\n}\nbutton,\ninput[type='reset'],\ninput[type='button'],\ninput[type='submit'],\ninput[type='checkbox'],\ninput[type='radio'] {\n  box-sizing: border-box;\n}\ninput[type='search'] {\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n  box-sizing: content-box;\n}\n::-webkit-search-decoration {\n  display: none;\n}\nbutton,\ninput[type='reset'],\ninput[type='submit'],\ninput[type='button'] {\n  overflow: visible;\n  width: auto;\n}\nselect[multiple] {\n  vertical-align: top;\n}\ntextarea {\n  vertical-align: top;\n  overflow: auto;\n}\n::-webkit-file-upload-button {\n  padding: 0;\n  border: 0;\n  background: none;\n}\ninput:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0px 1000px white inset !important;\n}\n/*\nset placeholder color*/\n::-webkit-input-placeholder {\n  /* WebKit browsers */\n  color: #999;\n  font-weight: 200;\n}\n:-moz-placeholder {\n  /* Mozilla Firefox 4 to 18 */\n  color: #999;\n  font-weight: 200;\n}\n::-moz-placeholder {\n  /* Mozilla Firefox 19+ */\n  color: #999;\n  font-weight: 200;\n}\n:-ms-input-placeholder {\n  /* Internet Explorer 10+ */\n  color: #999;\n  font-weight: 200;\n}\n/*同一style*/\nbody{\n  background: #eeeeee;\n}\naside,section{\n  background: #fff;\n  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);\n  margin-bottom:15px;\n}\n.container {\n  position: relative;\n  width:70%;\n  padding:0 1rem;\n  margin: 0 auto;\n  box-sizing: border-box;\n}\n"
 
 /***/ }),
 
 /***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -35,14 +43,26 @@ var isOldIE = memoize(function () {
 	return window && document && document.all && !window.atob;
 });
 
+var getTarget = function (target) {
+  return document.querySelector(target);
+};
+
 var getElement = (function (fn) {
 	var memo = {};
 
-	return function(selector) {
-		if (typeof memo[selector] === "undefined") {
-			var styleTarget = fn.call(this, selector);
+	return function(target) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target);
 			// Special case to return head of iframe instead of iframe itself
-			if (styleTarget instanceof window.HTMLIFrameElement) {
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
 				try {
 					// This will throw an exception if access to iframe is blocked
 					// due to cross-origin restrictions
@@ -51,19 +71,17 @@ var getElement = (function (fn) {
 					styleTarget = null;
 				}
 			}
-			memo[selector] = styleTarget;
+			memo[target] = styleTarget;
 		}
-		return memo[selector]
+		return memo[target]
 	};
-})(function (target) {
-	return document.querySelector(target)
-});
+})();
 
 var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__("./node_modules/style-loader/lib/urls.js");
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -79,7 +97,7 @@ module.exports = function(list, options) {
 	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
 
 	// By default, add <style> tags to the <head> element
-	if (!options.insertInto) options.insertInto = "head";
+        if (!options.insertInto) options.insertInto = "head";
 
 	// By default, add <style> tags to the bottom of the target
 	if (!options.insertAt) options.insertAt = "bottom";
@@ -203,7 +221,9 @@ function removeStyleElement (style) {
 function createStyleElement (options) {
 	var style = document.createElement("style");
 
-	options.attrs.type = "text/css";
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
 
 	addAttrs(style, options.attrs);
 	insertStyleElement(options, style);
@@ -214,7 +234,9 @@ function createStyleElement (options) {
 function createLinkElement (options) {
 	var link = document.createElement("link");
 
-	options.attrs.type = "text/css";
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
 	options.attrs.rel = "stylesheet";
 
 	addAttrs(link, options.attrs);
@@ -381,6 +403,10 @@ function updateLink (link, options, obj) {
 /***/ }),
 
 /***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 
@@ -447,7 +473,7 @@ module.exports = function (css) {
 			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
 
 		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
 		  return fullMatch;
 		}
 
@@ -477,44 +503,46 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ "./src/styles.css":
+/*!************************!*\
+  !*** ./src/styles.css ***!
+  \************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// load the styles
-var content = __webpack_require__("./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!./styles.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css");
+
 if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
+
 var transform;
+var insertInto;
+
+
 
 var options = {"hmr":true}
+
 options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
 if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/raw-loader/index.js!../node_modules/postcss-loader/lib/index.js??embedded!./styles.css", function() {
-			var newContent = require("!!../node_modules/raw-loader/index.js!../node_modules/postcss-loader/lib/index.js??embedded!./styles.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+
+if(false) {}
 
 /***/ }),
 
 /***/ 2:
+/*!******************************!*\
+  !*** multi ./src/styles.css ***!
+  \******************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/jinta/Documents/webstorm/blog/front-end/src/styles.css */"./src/styles.css");
 
 
 /***/ })
 
-},[2]);
-//# sourceMappingURL=styles.bundle.js.map
+},[[2,"runtime"]]]);
+//# sourceMappingURL=styles.js.map
