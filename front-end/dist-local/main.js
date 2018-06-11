@@ -359,20 +359,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var data = {
-    title: 'Vultr VPS主机快速安装Shadowsocks（ss）完整图文教程',
-    publisthData: '2017-09-29',
-    tags: ['vultr', 'vps', 'vultr教程'],
-    content: '没有注册和购买vultr vps服务器，请看最新Vultr注册及VPS购买图文教程\n' +
-        '\n' +
-        '购买后没有搭建ss客户端的请看Vultr-VPS主机快速安装Shadowsocks（ss）完整图文教程\n' +
-        '\n' +
-        '购买后没有搭建ssr客户端的请看Vultr快速安装SSR完整图文教程',
-    prevArticle: '没有注册和购买vultr ',
-    nextArticle: 'vps服务器',
-    prevLink: '',
-    nextLink: ''
-};
 var ArticleComponent = /** @class */ (function () {
     function ArticleComponent(route, http) {
         this.route = route;
@@ -382,12 +368,12 @@ var ArticleComponent = /** @class */ (function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
             var id = params['id'];
-            console.log(id);
             _this.http.post("/getarticle/" + id).subscribe(function (result) {
-                console.log(result);
+                if (result.success) {
+                    _this.data = result.data.article;
+                }
             });
         });
-        this.data = data;
     };
     ArticleComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
@@ -431,23 +417,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var post = [
-    {
-        title: '最新Vultr注册及VPS购买图文教程',
-        date: '2017-09-28',
-        brief: '前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...'
-    },
-    {
-        title: '最新Vultr注册及VPS购买图文教程',
-        date: '2017-09-28',
-        brief: '前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...'
-    },
-    {
-        title: '最新Vultr注册及VPS购买图文教程',
-        date: '2017-09-28',
-        brief: '前言：今天给大家介绍一下如何购买Vultr的VPS，网上也有教程不过都有点太早了，而且不够全面。以下我将详细介绍如何注册Vultr、建立VPS。 Vultr是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux ...'
-    }
-];
 var IndexComponent = /** @class */ (function () {
     function IndexComponent(http) {
         this.http = http;
@@ -458,7 +427,6 @@ var IndexComponent = /** @class */ (function () {
             if (result.success) {
                 _this.posts = result.data.post;
             }
-            console.log(post);
         });
     };
     IndexComponent = __decorate([
@@ -656,7 +624,7 @@ module.exports = ".article{\n  padding:40px;\n  position: relative;\n  box-sizin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"article\">\n  <article class=\"article-container\">\n    <h2 class=\"title\">{{data.title}}</h2>\n    <p class=\"article-mate\"><span class=\"calendar\"></span>发表于{{data.publisthData}}</p>\n    <div class=\"content\">\n      {{data.content}}\n    </div>\n    <div class=\"footer\">\n      <div class=\"divide\">---------------  没有~(≧▽≦)/~啦啦啦  ---------------</div>\n      <div class=\"tags-rows\">\n        <a class=\"tag-item\" *ngFor=\"let tag of data.tags\">{{tag}}</a>\n      </div>\n    </div>\n    <div class=\"pagination\">\n      <div class=\"page-prev\">‹<a routerLink=\"{{data.prevLink}}\">{{data.prevArticle}}</a></div>\n      <div class=\"page-next\"><a routerLink=\"{{data.prevLink}}\">{{data.nextArticle}}</a>›</div>\n    </div>\n  </article>\n</section>\n"
+module.exports = "<section class=\"article\">\n  <article class=\"article-container\">\n    <h2 class=\"title\" *ngIf=\"data\">{{data.title}}</h2>\n    <p class=\"article-mate\" *ngIf=\"data\"><span class=\"calendar\"></span>发表于{{data.publishData | date: 'yyyy-MM-dd'}}</p>\n    <div class=\"content\" *ngIf=\"data\">\n      {{data.content}}\n    </div>\n    <div class=\"footer\">\n      <div class=\"divide\">---------------  没有~(≧▽≦)/~啦啦啦  ---------------</div>\n      <div class=\"tags-rows\" *ngIf=\"data\">\n        <a class=\"tag-item\" *ngFor=\"let tag of tags\">{{tag}}</a>\n      </div>\n    </div>\n    <div class=\"pagination\" *ngIf=\"data\">\n      <div class=\"page-prev\">‹<a routerLink=\"{{data.prevLink}}\">{{data.prevArticle}}</a></div>\n      <div class=\"page-next\"><a routerLink=\"{{data.prevLink}}\">{{data.nextArticle}}</a>›</div>\n    </div>\n  </article>\n</section>\n"
 
 /***/ }),
 

@@ -1,17 +1,17 @@
 <section class="article">
   <article class="article-container">
-    <h2 class="title">{{data.title}}</h2>
-    <p class="article-mate"><span class="calendar"></span>发表于{{data.publisthData}}</p>
-    <div class="content">
+    <h2 class="title" *ngIf="data">{{data.title}}</h2>
+    <p class="article-mate" *ngIf="data"><span class="calendar"></span>发表于{{data.publishData | date: 'yyyy-MM-dd'}}</p>
+    <div class="content" *ngIf="data">
       {{data.content}}
     </div>
     <div class="footer">
       <div class="divide">---------------  没有~(≧▽≦)/~啦啦啦  ---------------</div>
-      <div class="tags-rows">
-        <a class="tag-item" *ngFor="let tag of data.tags">{{tag}}</a>
+      <div class="tags-rows" *ngIf="data">
+        <a class="tag-item" *ngFor="let tag of tags">{{tag}}</a>
       </div>
     </div>
-    <div class="pagination">
+    <div class="pagination" *ngIf="data">
       <div class="page-prev">‹<a routerLink="{{data.prevLink}}">{{data.prevArticle}}</a></div>
       <div class="page-next"><a routerLink="{{data.prevLink}}">{{data.nextArticle}}</a>›</div>
     </div>
