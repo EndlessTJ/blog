@@ -64,3 +64,55 @@ h2.postList-sub-title {
   float: right;
   margin-top: -30px;
 }
+
+.button {
+  color: #fff;
+  background: #fff;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 12px;
+  min-width: 88px;
+  border: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  outline: none;
+  font-size: inherit;
+  font-weight: inherit;
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  text-align: center;
+}
+.button:active {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+.button:hover {
+  opacity: 0.8;
+}
+.buttons-default {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.buttons-default:hover {
+  background-color: #f7f7f7;
+}
+.buttons-primary {
+  background-color: rgb(0, 188, 212);
+}
+.buttons-primary:hover {
+  background-color: rgba(0, 188, 212, 0.7);
+}
+.buttons-warning {
+  background-color: rgb(255, 64, 129);
+}
+.buttons-warning:hover {
+  background-color: rgba(255, 64, 129, 0.7);
+}

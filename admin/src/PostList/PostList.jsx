@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import './PostList.css';
-
-//import component
-import Button from '../Buttons/Buttons';
 
 class Postlist extends Component {
   constructor(props) {
@@ -10,6 +8,10 @@ class Postlist extends Component {
     this.state = {
       data: []
     };
+    this.deletePost = this.deletePost.bind(this);
+  }
+  deletePost(postId, event) {
+    console.log('删除', postId, event);
   }
   componentDidMount() {
     let headers = new Headers();
@@ -51,7 +53,9 @@ class Postlist extends Component {
     return (
       <div className="postList-container">
         <div className="postList-card">
-          <h1 className="postList-title">博客档案馆</h1>
+          <h1 className="postList-title" onClick={this.observePost}>
+            博客档案馆
+          </h1>
           <div className="postList-content">
             {postList.map((value, index) => (
               <section className="postList-content-item">
@@ -71,9 +75,24 @@ class Postlist extends Component {
                   </span>
                 </div>
                 <div className="postList-button-rows">
-                  <Button buttonClass="buttons-default" text="查看" />
-                  <Button buttonClass="buttons-primary" text="编辑" />
-                  <Button buttonClass="buttons-warning" text="删除" />
+                  <Link
+                    to={`/admin/previewpost/${value._id}`}
+                    className="button buttons-default"
+                  >
+                    查看
+                  </Link>
+                  <Link
+                    to={`/admin/editpost/${value._id}`}
+                    className="button buttons-primary"
+                  >
+                    编辑
+                  </Link>
+                  <button
+                    onClick={e => this.deletePost(value._id, e)}
+                    className="button buttons-warning"
+                  >
+                    删除
+                  </button>
                 </div>
               </section>
             ))}

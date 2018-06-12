@@ -9,6 +9,7 @@ import Postedit from './PostEdit/PostEdit';
 import Slidenav from './SlideNav/Slidenav';
 import User from './User/User';
 import Welcome from './welcome/welcome';
+import PreviewPost from './preview/PreviewPost';
 
 const MainLayout = () => (
   <div className="main-container">
@@ -19,6 +20,8 @@ const MainLayout = () => (
     <Route path="/admin/main/postlist" component={Postlist} />
     <Route path="/admin/main/postedit" component={Postedit} />
     <Route path="/admin/main/user" component={User} />
+    <Route path="/admin/main/previewpost/:postId" component={PreviewPost} />
+    <Route path="/admin/main/editpost/:postId" component={Postedit} />
   </div>
 );
 
