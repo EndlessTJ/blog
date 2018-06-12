@@ -10,6 +10,7 @@ module.exports = routes = (app) => {
 	app.post('/admin/login', formdata.array(),require('./admin/post/login'));
 	app.post('/admin/islogin', formdata.array(),require('./admin/post/islogin'));
 	app.post('/admin/addpost',require('./admin/post/addPosts'));
+	// app.post('/admin/postlist',require('./admin/post/postList'));
 
 	// 前台路由
 	/*页面请求路由*/
