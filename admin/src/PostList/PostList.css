@@ -40,6 +40,8 @@ section.postList-content-item {
   position: relative;
 }
 h2.postList-sub-title {
+  width: 65%;
+
   font-size: 18px;
   font-weight: 500;
   overflow: hidden;

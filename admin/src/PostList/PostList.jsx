@@ -8,50 +8,52 @@ class Postlist extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          author: 'TJ',
-          createDate: '2018-08-08',
-          editDate: ['2018-09-09', '2019-03-03'],
-          title: ' angular vs react',
-          digest: 'it is a article about fonts frameworks!',
-          article:
-            'it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!',
-          like: 5,
-          comment: 6
-        },
-        {
-          author: 'TJ',
-          createDate: '2018-08-08',
-          editDate: ['2018-09-09', '2019-03-03'],
-          title: ' angular vs react',
-          digest: 'it is a article about fonts frameworks!',
-          article:
-            'it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!',
-          like: 5,
-          comment: 6
-        },
-        {
-          author: 'TJ',
-          createDate: '2018-08-08',
-          editDate: ['2018-09-09', '2019-03-03'],
-          title: ' angular vs react',
-          digest: 'it is a article about fonts frameworks!',
-          article:
-            'it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!it is a article about fonts frameworks!',
-          like: 5,
-          comment: 6
-        }
-      ]
+      data: []
     };
   }
+  componentDidMount() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let Init = {
+      method: 'POST',
+      credentials: 'include',
+      headers: headers,
+      mode: 'cors'
+    };
+    fetch('/getPost', Init)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('有一些错误');
+        }
+      })
+      .then(result => {
+        if (result.success) {
+          this.setState({
+            data: result.data.post
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
+    const postList = this.state.data;
+    const formatDate = function(date) {
+      let new_date = new Date(date);
+      let year = new_date.getFullYear();
+      let month = new_date.getMonth() + 1;
+      let day = new_date.getDate();
+      return `${year}-${month}-${day}`;
+    };
     return (
       <div className="postList-container">
         <div className="postList-card">
           <h1 className="postList-title">博客档案馆</h1>
           <div className="postList-content">
-            {this.state.data.map((value, index) => (
+            {postList.map((value, index) => (
               <section className="postList-content-item">
                 <h2 className="postList-sub-title">{value.title}</h2>
                 <div className="postList-message">
@@ -59,13 +61,13 @@ class Postlist extends Component {
                     作者：<b>{value.author}</b>
                   </span>
                   <span className="postList-message-item">
-                    喜欢：<b>{value.like}</b>
+                    喜欢：<b>开发中。。</b>
                   </span>
                   <span className="postList-message-item">
-                    评论：<b>{value.comment}</b>
+                    评论：<b>开发中。。</b>
                   </span>
                   <span className="postList-message-item">
-                    创建时间：<b>{value.createDate}</b>
+                    创建时间：<b>{formatDate(value.date)}</b>
                   </span>
                 </div>
                 <div className="postList-button-rows">
