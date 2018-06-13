@@ -7,7 +7,11 @@ import Button from '../Buttons/Buttons';
 class Postedit extends Component {
   constructor(props) {
     super(props);
+    const postId = this.props.match.params.postId
+      ? this.props.match.params.postId
+      : '';
     this.state = {
+      postId: postId,
       title: '',
       author: '',
       content: '',
@@ -39,7 +43,6 @@ class Postedit extends Component {
     post.label = this.state.label;
     post.topped = this.state.topped;
     post.recommend = this.state.recommend;
-    console.log('触发');
     // 请求后台
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -48,19 +51,49 @@ class Postedit extends Component {
       credentials: 'include',
       headers: headers,
       mode: 'cors',
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(post)
     };
-    fetch('/admin/addpost', Init)
+    let url = this.state.postId
+      ? `/updatepost/${this.state.postId}`
+      : `/admin/addpost`;
+    fetch(url, Init)
       .then(response => {
         return response.json();
       })
       .then(result => {
-        console.log('fanhui', result);
         if (result.success) {
-          console.log('结果', result);
         }
       });
     e.preventDefault();
+  }
+  componentDidMount() {
+    if (this.state.postId) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      let Init = {
+        method: 'POST',
+        credentials: 'include',
+        headers: headers,
+        mode: 'cors'
+      };
+      let url = `/getarticle/${this.state.postId}`;
+      fetch(url, Init)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('有一些错误');
+          }
+        })
+        .then(result => {
+          if (result.success) {
+            console.log(result);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
   render() {
     return (

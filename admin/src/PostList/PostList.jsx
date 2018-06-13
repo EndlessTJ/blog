@@ -76,13 +76,13 @@ class Postlist extends Component {
                 </div>
                 <div className="postList-button-rows">
                   <Link
-                    to={`/admin/previewpost/${value._id}`}
+                    to={`/admin/main/previewpost/${value._id}`}
                     className="button buttons-default"
                   >
                     查看
                   </Link>
                   <Link
-                    to={`/admin/editpost/${value._id}`}
+                    to={`/admin/main/editpost/${value._id}`}
                     className="button buttons-primary"
                   >
                     编辑
