@@ -9,7 +9,7 @@ const session = require('express-session');
 const routes = require('./routes');
 
 // 链接数据库
-const db = require('./public/lib/dbconnect');
+const mongoose = require('./public/lib/dbconnect');
 
 
 const app = express();

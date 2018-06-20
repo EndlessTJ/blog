@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 const CommentSchema = new Schema({
-	user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-	post: {type: Schema.Types.ObjectId, ref: 'Post'},
+	user: {type: ObjectId, ref: 'User', required: true},
+	post: {type: ObjectId, ref: 'Post'},
 	content: {type: 'String', required: true, trim: true},
-	reply: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
+	reply: [{type: ObjectId, ref: 'Comment'}],
 	CreateDate: {type: Date, required: true},
 });
 /*CommentSchema.virtual('adminMessage').get(function () {

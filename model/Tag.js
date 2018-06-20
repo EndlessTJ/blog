@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const ObjectId  =  Schema.Types.ObjectId;
 const TagSchema = new Schema({
 	label: {type: String, required: true, trim: true, index: true},
-	post: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+	post: [{type: ObjectId, ref: 'Post'}],
 	CreateDate: {type: Date, required: true},
 });
 /*TagSchema.virtual('adminMessage').get(function () {
