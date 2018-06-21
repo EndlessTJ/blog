@@ -11,9 +11,9 @@ import User from './User/User';
 import Welcome from './welcome/welcome';
 import PreviewPost from './preview/PreviewPost';
 
-const MainLayout = () => (
+const MainLayout = props => (
   <div className="main-container">
-    <Slidenav />
+    <Slidenav user={props.user} />
     <Route exact path="/admin/main" component={Welcome} />
     <Route path="/admin/main/comment" component={Comment} />
     <Route path="/admin/main/label" component={Label} />

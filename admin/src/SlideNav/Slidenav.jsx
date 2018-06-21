@@ -4,6 +4,10 @@ import './Slidenav.css';
 
 class ActiveLink extends Component {
   render() {
+    const locations = {
+      pathname: this.props.to,
+      state: { user: this.props.user }
+    };
     return (
       <Route
         path={this.props.to}
@@ -15,7 +19,7 @@ class ActiveLink extends Component {
                 : 'slideNav-menu-item'
             }
           >
-            <Link to={this.props.to}>{this.props.label}</Link>
+            <Link to={locations}>{this.props.label}</Link>
           </div>
         )}
       />
@@ -25,15 +29,38 @@ class ActiveLink extends Component {
 
 class Slidenav extends Component {
   //jsx 已近react-router的作用
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <nav className="slideNav-nav">
         <div className="slideNav-menu">
-          <ActiveLink to="/admin/main/postlist" label="文章列表" />
-          <ActiveLink to="/admin/main/postedit" label="添加文章" />
-          <ActiveLink to="/admin/main/comment" label="评论管理" />
-          <ActiveLink to="/admin/main/label" label="标签管理" />
-          <ActiveLink to="/admin/main/user" label="添加用户" />
+          <ActiveLink
+            to="/admin/main/postlist"
+            user={this.props.user}
+            label="文章列表"
+          />
+          <ActiveLink
+            to="/admin/main/postedit"
+            user={this.props.user}
+            label="添加文章"
+          />
+          <ActiveLink
+            to="/admin/main/comment"
+            user={this.props.user}
+            label="评论管理"
+          />
+          <ActiveLink
+            to="/admin/main/label"
+            user={this.props.user}
+            label="标签管理"
+          />
+          <ActiveLink
+            to="/admin/main/user"
+            user={this.props.user}
+            label="添加用户"
+          />
         </div>
       </nav>
     );

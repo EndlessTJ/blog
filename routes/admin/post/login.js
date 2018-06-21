@@ -48,7 +48,8 @@ module.exports = function (req, res) {
 						}
 						content.success = true;
 						content.data.user = user.adminMessage;
-						user.activeDate = content.filters.user.activeDate;
+						console.log(user.activeDate);
+						user.activeDate.push(content.filters.user.activeDate);
 						user.save();
 						req.session.user_id = user._id;
 						res.cookie('userId', user._id, {

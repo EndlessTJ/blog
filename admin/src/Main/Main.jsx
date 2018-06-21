@@ -19,7 +19,7 @@ class Main extends Component {
       <div className="App">
         <Header />
         <Router>
-          <MainLayout />
+          <MainLayout user={this.props.location.state.userData} />
         </Router>
         <Footer />
       </div>

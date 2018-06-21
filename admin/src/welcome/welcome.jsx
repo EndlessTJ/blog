@@ -5,6 +5,7 @@ import './welcome.css';
 
 class Welcome extends Component {
   render() {
+    console.log(this.props.location.state);
     return (
       <div>
         <h3>welcome to admin tianjin</h3>

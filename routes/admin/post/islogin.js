@@ -40,8 +40,6 @@ module.exports = function (req, res) {
 
 	} else if (req.session.user_id) {
 		const check_id = req.session.user_id;
-		console.log('checkid',check_id);
-
 
 		User.findById(check_id).exec((err, user) => {
 			if (err) {

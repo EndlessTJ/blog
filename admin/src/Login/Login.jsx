@@ -36,7 +36,10 @@ class Login extends Component {
           })
           .then(result => {
             if (result.success) {
-              this.props.history.push('/admin/main');
+              this.props.history.push({
+                pathname: '/admin/main',
+                state: { userData: result.data.user }
+              });
             }
           });
       }
