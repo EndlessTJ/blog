@@ -8,7 +8,8 @@ class Privateroute extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuth: false
+      isAuth: false,
+      userData: {}
     };
   }
   componentDidMount() {
@@ -28,11 +29,12 @@ class Privateroute extends Component {
       .then(result => {
         if (!result.success) {
           self.props.history.push('/admin/login');
-        } /*else {
+        } else {
           self.setState({
-            isAuth: true
+            isAuth: true,
+            userData: result.data
           });
-        }*/
+        }
       });
   }
   render() {
@@ -41,7 +43,7 @@ class Privateroute extends Component {
       <Route
         path={this.props.path}
         render={prop => {
-          return <Main auth={this.state.isAuth} {...prop} />;
+          return <Main userData={this.state} {...prop} />;
         }}
       />
     );

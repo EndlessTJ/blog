@@ -5,11 +5,12 @@ import { formatDate } from '../data-service/date';
 class Welcome extends Component {
   render() {
     const user = this.props.location.state;
+    console.log(user);
     return (
       <div className="welcome-container main-view">
         <h3 className="welcome-title">
-          welcome to admin{' '}
-          <span className="nickname">{user.userData.nickname}</span>
+          welcome to admin
+          <span className="nickname">{user ? user.userData.nickname : ''}</span>
         </h3>
         <div className="welcome-website-message">
           <section className="welcome-page-view welcome-card">
@@ -33,9 +34,13 @@ class Welcome extends Component {
           </section>
           <section className="welcome-recent-login welcome-card">
             <h4>最近登录时间</h4>
-            {user.userData.activeDate.map((value, index) => (
-              <p>{formatDate(value, 'text', true)}</p>
-            ))}
+            {user ? (
+              user.userData.activeDate.map((value, index) => (
+                <p>{formatDate(value, 'text', true)}</p>
+              ))
+            ) : (
+              <p>没有数据</p>
+            )}
           </section>
         </div>
       </div>

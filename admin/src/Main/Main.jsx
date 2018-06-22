@@ -14,12 +14,14 @@ class Main extends Component {
     super(props);
   }
   render() {
+    console.log(this.props);
     const userData = this.props.location.state
       ? this.props.location.state.userData
       : {};
+    const nickname = userData.nickname ? userData.nickname : '';
     return (
       <div>
-        <Header />
+        <Header nickname={nickname} />
         <Router>
           <MainLayout user={userData} />
         </Router>
