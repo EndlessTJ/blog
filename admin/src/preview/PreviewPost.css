@@ -1,12 +1,3 @@
-.preview-article {
-  height: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  position: relative;
-  text-align: left;
-  margin-left: 290px;
-  overflow-y: scroll;
-}
 .preview-article-inner {
   margin-top: 40px;
   border: 1px solid rgba(0, 40, 100, 0.12);

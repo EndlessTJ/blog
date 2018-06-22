@@ -97,9 +97,9 @@ class Postedit extends Component {
   }
   render() {
     return (
-      <div className="postedit-container">
-        <div className="postedit-edit-card">
-          <h1 className="postedit-title">文章编辑部</h1>
+      <div className="postedit-container main-view">
+        <div className="postedit-edit-card main-view-panel">
+          <h1 className="postedit-title main-view-title">文章编辑部</h1>
           <form className="postedit-form" onSubmit={this.handleSubmit}>
             <div className="postedit-form-body">
               <label className="form-label">
@@ -168,7 +168,7 @@ class Postedit extends Component {
                   checked={this.state.recommend}
                 />
               </label>
-              <div className="postEdit-button-rows">
+              <div className="postedit-button-rows">
                 <Button
                   buttonClass="buttons-primary"
                   buttonType="submit"

@@ -3,36 +3,6 @@
   height: 100%;
   overflow: hidden;
 }
-
-.App-intro {
-  font-size: large;
-}
 .app-container {
   height: 100%;
-}
-
-/*form的一些公用样式*/
-.form-label {
-  display: block;
-  margin: 2rem 0;
-}
-.form-input-label,
-.form-textarea-label {
-  display: inline-block;
-  width: 4.5em;
-  text-align: right;
-  font-size: 16px;
-  color: #000;
-  margin-right: 20px;
-}
-.form-input,
-.form-select {
-  width: 70%;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0;
-}
-.form-textarea {
-  width: 70%;
-  height: auto;
-  min-height: 16rem;
 }

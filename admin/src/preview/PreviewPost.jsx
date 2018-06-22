@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatDate } from '../data-service/date';
 import './PreviewPost.css';
 
 class PreviewPost extends Component {
@@ -40,23 +41,13 @@ class PreviewPost extends Component {
   }
   render() {
     const article = this.state.data;
-    const formatDate = function(date) {
-      let new_date = new Date(date);
-      let year = new_date.getFullYear();
-      let month =
-        new_date.getMonth() + 1 > 10
-          ? new_date.getMonth() + 1 > 10
-          : '0' + (new_date.getMonth() + 1);
-      let day = new_date.getDate();
-      return `${year}-${month}-${day}`;
-    };
     return (
-      <div className="preview-article">
+      <div className="preview-article main-view">
         <div className="preview-article-inner">
           <h2 className="preview-article-title">{article.title}</h2>
           <div className="preview-article-mate">
             <span className="calendar" />
-            {formatDate(article.publishData)}
+            {formatDate(article.publishData, 'symbol', false)}
           </div>
           <article className="preview-article-content">
             {article.content}

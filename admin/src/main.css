@@ -1,0 +1,101 @@
+.main-view {
+  padding: 2rem;
+  position: relative;
+  text-align: left;
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 290px;
+  margin-right: 60px;
+  box-sizing: border-box;
+}
+
+/*主视图panel的一些公用样式*/
+.main-view-panel {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0, 40, 100, 0.12);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+h1.main-view-title {
+  font-size: 24px;
+  color: #242e33;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 40, 100, 0.12);
+  padding: 0.5rem 1.5rem;
+}
+
+/*form的一些公用样式*/
+.form-label {
+  display: block;
+  margin: 2rem 0;
+}
+.form-input-label,
+.form-textarea-label {
+  display: inline-block;
+  width: 4.5em;
+  text-align: right;
+  font-size: 16px;
+  color: #000;
+  margin-right: 20px;
+}
+.form-input,
+.form-select {
+  width: 70%;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+}
+.form-textarea {
+  width: 70%;
+  height: auto;
+  min-height: 16rem;
+}
+
+/*button的一些公用样式*/
+.button {
+  color: #fff;
+  background: #fff;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 12px;
+  min-width: 88px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  cursor: pointer;
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+.button:active {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+.button:hover {
+  opacity: 0.8;
+}
+.buttons-default {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.buttons-default:hover {
+  background-color: #f7f7f7;
+}
+.buttons-primary {
+  background-color: rgb(0, 188, 212);
+}
+.buttons-primary:hover {
+  background-color: rgba(0, 188, 212, 0.7);
+}
+.buttons-warning {
+  background-color: rgb(255, 64, 129);
+}
+.buttons-warning:hover {
+  background-color: rgba(255, 64, 129, 0.7);
+}

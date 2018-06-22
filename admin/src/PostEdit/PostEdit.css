@@ -1,38 +1,8 @@
-.postedit-container {
-  /*可优化css*/
-  height: 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  position: relative;
-  text-align: left;
-  margin-left: 290px;
-  overflow-y: scroll;
-}
-.postedit-edit-card {
-  /*可优化css*/
-  position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(0, 40, 100, 0.12);
-  border-radius: 3px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  margin-bottom: 1.5rem;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-h1.postedit-title {
-  /*可优化css*/
-  font-size: 24px;
-  color: #242e33;
-  text-align: left;
-  border-bottom: 1px solid rgba(0, 40, 100, 0.12);
-  padding: 0.5rem 1.5rem;
-}
 .postedit-form-body {
   padding: 2rem 3rem;
   box-sizing: border-box;
 }
-.postEdit-button-rows {
+.postedit-button-rows {
   display: flex;
   justify-content: center;
   margin-top: 40px;

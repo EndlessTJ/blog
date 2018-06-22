@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { formatDate } from '../data-service/date';
 import './PostList.css';
 
 class Postlist extends Component {
@@ -43,17 +44,13 @@ class Postlist extends Component {
   }
   render() {
     const postList = this.state.data;
-    const formatDate = function(date) {
-      let new_date = new Date(date);
-      let year = new_date.getFullYear();
-      let month = new_date.getMonth() + 1;
-      let day = new_date.getDate();
-      return `${year}-${month}-${day}`;
-    };
     return (
-      <div className="postList-container">
-        <div className="postList-card">
-          <h1 className="postList-title" onClick={this.observePost}>
+      <div className="postList-container main-view">
+        <div className="postList-card main-view-panel">
+          <h1
+            className="postList-title main-view-title"
+            onClick={this.observePost}
+          >
             博客档案馆
           </h1>
           <div className="postList-content">
@@ -71,7 +68,7 @@ class Postlist extends Component {
                     评论：<b>开发中。。</b>
                   </span>
                   <span className="postList-message-item">
-                    创建时间：<b>{formatDate(value.date)}</b>
+                    创建时间：<b>{formatDate(value.date, 'symbol', false)}</b>
                   </span>
                 </div>
                 <div className="postList-button-rows">
