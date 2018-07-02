@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
 import './App.css';
 import './main.css';
 
@@ -10,10 +12,13 @@ import Login from './Login/Login';
 import Privateroute from './PrivateRoute/PrivateRoute';
 //
 class App extends Component {
+  static propTypes = {
+    store: PropTypes.object.isRequired
+  };
   render() {
     return (
-      <div className="App">
-        <Router>
+      <Provider store={this.props.store}>
+        <div className="App">
           <div className="app-container">
             <Route
               exact
@@ -23,8 +28,8 @@ class App extends Component {
             <Route exact path="/admin/login" component={Login} />
             <Privateroute path="/admin/main" component={Main} />
           </div>
-        </Router>
-      </div>
+        </div>
+      </Provider>
     );
   }
 }
