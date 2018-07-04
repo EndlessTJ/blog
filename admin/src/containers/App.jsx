@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import './App.css';
-import './main.css';
+import '../App.css';
+import '../main.css';
 
 // import component
 
-import Main from './Main/Main';
-import Login from './Login/Login';
-import Privateroute from './PrivateRoute/PrivateRoute';
-//
+import Main from '../components/Main';
+import LoginPage from '../containers/LoginPage';
+
 class App extends Component {
   static propTypes = {
     store: PropTypes.object.isRequired
@@ -25,8 +24,8 @@ class App extends Component {
               path="/admin"
               render={() => <Redirect to="/admin/main" />}
             />
-            <Route exact path="/admin/login" component={Login} />
-            {/*{this.props.isLogin ? <Route exact path"/admin/main" component={Main} />: <Redirect to="/admin/login"/>}*/}
+            <Route exact path="/admin/login" component={LoginPage} />
+            <Route exact path="/admin/main" component={Main} />
           </div>
         </div>
       </Provider>

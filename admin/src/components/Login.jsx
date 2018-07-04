@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import './Login.css';
+import '../Login/Login.css';
 // import routing
 
 class Login extends Component {
@@ -11,40 +11,14 @@ class Login extends Component {
       password: '',
       activeDate: null
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
   }
-  handleSubmit(e) {
-    this.setState(
-      {
-        activeDate: new Date()
-      },
-      () => {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        let Init = {
-          method: 'POST',
-          credentials: 'include',
-          headers: headers,
-          mode: 'cors',
-          body: JSON.stringify(this.state)
-        };
-        fetch('/admin/login', Init)
-          .then(response => {
-            return response.json();
-          })
-          .then(result => {
-            if (result.success) {
-              this.props.history.push({
-                pathname: '/admin/main',
-                state: { userData: result.data.user }
-              });
-            }
-          });
-      }
-    );
-    e.preventDefault();
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loginState) {
+      this.props.history.push('/admin/main');
+    }
   }
   handleUsername(e) {
     let regex = /^[a-zA-z]\w{4,15}$/g;
@@ -62,10 +36,29 @@ class Login extends Component {
     });
   }
   render() {
+    const self = this;
     return (
       <div className="login-main">
         <div className="login-panel">
-          <form onSubmit={this.handleSubmit}>
+          <form
+            onSubmit={e => {
+              self.setState(
+                {
+                  activeDate: new Date()
+                },
+                () => {
+                  const postParam = {
+                    url: '/admin/login',
+                    requestType: 'ADMIN_LOGIN',
+                    data: self.state
+                  };
+                  this.props.handleSubmit(postParam);
+                }
+              );
+
+              e.preventDefault();
+            }}
+          >
             <div className="login-form-body">
               <label className="login-label-container">
                 <input
@@ -98,10 +91,7 @@ class Login extends Component {
                 <span className="login-bottom-line" />
               </label>
               <p>
-                忘记密码？<Link
-                  className="login-forget"
-                  to="/admin/main/postedit"
-                >
+                忘记密码？<Link className="login-forget" to="/admin">
                   戳一戳
                 </Link>
               </p>
