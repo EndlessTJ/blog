@@ -1,9 +1,31 @@
 import { combineReducers } from 'redux';
 import * as ActionTypes from '../actions';
 
+const requestState = (state = { state: false }, action) => {
+  if (action.type === ActionTypes.REQUEST_POSTS) {
+    return {
+      ...state,
+      state: true
+    };
+  } else if (action.actionType === ActionTypes.RECEIVE_POSTS) {
+    return {
+      ...state,
+      state: false
+    };
+  } else {
+    return state;
+  }
+};
+
 const loginState = (state = { loginState: false }, action) => {
   switch (action.type) {
     case ActionTypes.ADMIN_LOGIN:
+      return {
+        ...state,
+        loginState: true
+      };
+      break;
+    case ActionTypes.LOGIN_CHECK:
       return {
         ...state,
         loginState: true
@@ -17,7 +39,7 @@ const loginState = (state = { loginState: false }, action) => {
 const user = (state = {}, action) => {
   switch (action.type) {
     case ActionTypes.ADMIN_LOGIN:
-      let posts = ActionTypes.receivePosts().posts;
+      let posts = action.posts.data.user;
       return {
         ...state,
         posts
@@ -31,9 +53,7 @@ const user = (state = {}, action) => {
 const postList = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:
-      let postList = ActionTypes.receivePosts().posts.map(post =>
-        Object.keys(post)
-      );
+      let postList = action.posts.data.post.map(post => post._id);
       return {
         ...state,
         postList
@@ -46,7 +66,7 @@ const postList = (state = [], action) => {
 const posts = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:
-      let posts = ActionTypes.receivePosts().posts;
+      let posts = action.posts.data.post;
       return {
         ...state,
         posts
@@ -60,7 +80,7 @@ const posts = (state = [], action) => {
 const comments = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_COMMENTS:
-      let comments = ActionTypes.receivePosts().posts;
+      let comments = action.posts;
       return {
         ...state,
         comments
@@ -73,7 +93,7 @@ const comments = (state = [], action) => {
 const tags = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_TAGS:
-      let tags = ActionTypes.receivePosts().posts;
+      let tags = action.posts;
       return {
         ...state,
         tags
@@ -85,6 +105,7 @@ const tags = (state = [], action) => {
 };
 
 const rootReducer = combineReducers({
+  requestState,
   loginState,
   user,
   postList,

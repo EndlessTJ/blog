@@ -7,7 +7,7 @@ import '../main.css';
 
 // import component
 
-import Main from '../components/Main';
+import MainPage from '../containers/MainPage';
 import LoginPage from '../containers/LoginPage';
 
 class App extends Component {
@@ -25,7 +25,7 @@ class App extends Component {
               render={() => <Redirect to="/admin/main" />}
             />
             <Route exact path="/admin/login" component={LoginPage} />
-            <Route exact path="/admin/main" component={Main} />
+            <Route exact path="/admin/main" component={MainPage} />
           </div>
         </div>
       </Provider>
