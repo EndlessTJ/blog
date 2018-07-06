@@ -8,6 +8,8 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/header';
 import SlideNav from './Slidenav';
 import Welcome from '../containers/WelcomePage';
+import Comment from '../containers/CommentPage';
+import Label from '../containers/LabelPage';
 // import routing
 
 class Main extends Component {
@@ -25,13 +27,14 @@ class Main extends Component {
             <div className="main-container">
               <SlideNav />
               <Route exact path="/admin/main" component={Welcome} />
-              {/*<Route path="/admin/main/comment" component={Comment} />
-                <Route path="/admin/main/label" component={Label} />
-                <Route path="/admin/main/postlist" component={Postlist} />
-                <Route path="/admin/main/postedit" component={Postedit} />
-                <Route path="/admin/main/user" component={User} />
-                <Route path="/admin/main/previewpost/:postId" component={PreviewPost} />
-                <Route path="/admin/main/editpost/:postId" component={Postedit} />*/}
+              <Route exact path="/admin/main/index" component={Welcome} />
+              <Route path="/admin/main/comment" component={Comment} />
+              <Route path="/admin/main/label" component={Label} />
+              {/*<Route path="/admin/main/postlist" component={Postlist} />
+              <Route path="/admin/main/postedit" component={Postedit} />
+              <Route path="/admin/main/user" component={User} />
+              <Route path="/admin/main/previewpost/:postId" component={PreviewPost} />
+              <Route path="/admin/main/editpost/:postId" component={Postedit} />*/}
             </div>
             <Footer />
           </div>

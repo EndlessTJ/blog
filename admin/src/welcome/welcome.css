@@ -43,6 +43,7 @@
 }
 .post-item > a {
   color: #444;
+  line-height: 1.2em;
 }
 .post-item > a:hover {
   border-bottom: 1px solid #444;

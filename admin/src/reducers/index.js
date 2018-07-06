@@ -39,12 +39,18 @@ const loginState = (state = { loginState: false }, action) => {
 const user = (state = {}, action) => {
   switch (action.type) {
     case ActionTypes.ADMIN_LOGIN:
-      let posts = action.posts.data.user;
+      let users = action.posts.data.user;
       return {
         ...state,
-        posts
+        users
       };
       break;
+    case ActionTypes.LOGIN_CHECK:
+      users = action.posts.data.user;
+      return {
+        ...state,
+        users
+      };
     default:
       return state;
   }

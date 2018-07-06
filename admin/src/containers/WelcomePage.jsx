@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
 import Welcome from '../components/Welcome';
+import { formatDate } from '../middleware';
 
-/*
-* @firstAccess 判断是否是第一次进入该组件，因为第一次进入mapstateToProps会得到初始化的state，在Main组件的需要知道是第几次得到的，以便进行登录判断
-*
-* */
 const mapStateToProps = state => {
-  console.log(state);
+  const activeDate = state.user.users.activeDate.map(value => {
+    return formatDate(value, 'text', true);
+  });
   return {
-    nickname: '',
+    nickname: state.user.users.nickname,
     pageView: 234,
-    postList: [],
-    activeDate: []
+    userRise: 23,
+    posts: state.posts.posts,
+    activeDate: activeDate
   };
 };
 const mapDispatchToProps = dispatch => {};
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

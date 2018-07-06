@@ -4,10 +4,10 @@ import { fetchPosts } from '../actions';
 
 const firstAccess = { accessState: true };
 
-/*
-* @firstAccess 判断是否是第一次进入该组件，因为第一次进入mapstateToProps会得到初始化的state，在Main组件的需要知道是第几次得到的，以便进行登录判断
-*
-* */
+/**
+ * @firstAccess {boolean}判断是否是第一次进入该组件，因为第一次进入mapstateToProps会得到初始化的state，在Main组件的需要知道是第几次得到的，以便进行登录判断
+ *
+ * */
 const mapStateToProps = state => {
   if (firstAccess.accessState) {
     firstAccess.accessState = false;
