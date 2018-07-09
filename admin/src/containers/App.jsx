@@ -25,7 +25,7 @@ class App extends Component {
               render={() => <Redirect to="/admin/main" />}
             />
             <Route exact path="/admin/login" component={LoginPage} />
-            <Route exact path="/admin/main" component={MainPage} />
+            <Route path="/admin/main" component={MainPage} />
           </div>
         </div>
       </Provider>

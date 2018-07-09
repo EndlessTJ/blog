@@ -8,7 +8,7 @@ class SlideNav extends Component {
       <nav className="slideNav-nav">
         <div className="slideNav-menu">
           <div className="slideNav-menu-item">
-            <NavLink to="/admin/main/index" activeClassName="slideNav-active">
+            <NavLink to="/admin/main" activeClassName="slideNav-active">
               首页
             </NavLink>
           </div>

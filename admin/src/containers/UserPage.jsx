@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Label from '../components/Label';
+import User from '../components/User';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Label);
+)(User);
