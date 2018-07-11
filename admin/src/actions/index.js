@@ -10,6 +10,7 @@ export const DRAFT_POST = 'DRAFT_POSTS';
 export const LOGIN_CHECK = 'LOGIN_CHECK';
 export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 
 export const requestPost = requestType => ({
   type: REQUEST_POSTS,

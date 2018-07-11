@@ -82,6 +82,56 @@ const posts = (state = [], action) => {
       return state;
   }
 };
+const addPostState = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.ADD_POST:
+      let addPostState = action.posts.data.post;
+      return {
+        ...state,
+        addPostState
+      };
+    default:
+      return state;
+  }
+};
+
+const editPostState = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.EDIT_POST:
+      let editPostState = action.posts.data.post;
+      return {
+        ...state,
+        editPostState
+      };
+    default:
+      return state;
+  }
+};
+const draftPostState = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.DRAFT_POST:
+      let draftPostState = action.posts.data.post;
+      return {
+        ...state,
+        draftPostState
+      };
+    default:
+      return state;
+  }
+};
+
+const article = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.RECEIVE_ARTICLE:
+      let article = action.posts.data.article;
+      return {
+        ...state,
+        article
+      };
+    default:
+      return state;
+  }
+};
 
 const comments = (state = [], action) => {
   switch (action.type) {
@@ -117,7 +167,11 @@ const rootReducer = combineReducers({
   postList,
   posts,
   comments,
-  tags
+  tags,
+  addPostState,
+  editPostState,
+  draftPostState,
+  article
 });
 
 export default rootReducer;

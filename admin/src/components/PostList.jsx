@@ -6,53 +6,25 @@ import '../PostList/PostList.css';
 class Postlist extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: []
-    };
     this.deletePost = this.deletePost.bind(this);
   }
   deletePost(postId, event) {
     console.log('删除', postId, event);
   }
   componentDidMount() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let Init = {
-      method: 'POST',
-      credentials: 'include',
-      headers: headers,
-      mode: 'cors'
+    console.log(233);
+    const requestPostList = {
+      url: '/getPost',
+      requestType: 'FETCH_POSTS'
     };
-    fetch('/getPost', Init)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('有一些错误');
-        }
-      })
-      .then(result => {
-        if (result.success) {
-          this.setState({
-            data: result.data.post
-          });
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.props.fetchData(requestPostList);
   }
   render() {
-    const postList = this.state.data;
+    const postList = this.props.posts ? this.props.posts : [];
     return (
       <div className="postList-container main-view">
         <div className="postList-card main-view-panel">
-          <h1
-            className="postList-title main-view-title"
-            onClick={this.observePost}
-          >
-            博客档案馆
-          </h1>
+          <h1 className="postList-title main-view-title">博客档案馆</h1>
           <div className="postList-content">
             {postList.map((value, index) => (
               <section className="postList-content-item">

@@ -20,13 +20,12 @@ class Postedit extends Component {
       recommend: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  /*
-	*
-	*数据处理函数
-	*
-	*/
+
+  /**
+   * 数据处理函数
+   * @param event
+   */
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -35,7 +34,7 @@ class Postedit extends Component {
       [name]: value
     });
   }
-  handleSubmit(e) {
+  /*handleSubmit(e) {
     const post = {};
     post.title = this.state.title;
     post.author = this.state.author;
@@ -65,8 +64,8 @@ class Postedit extends Component {
         }
       });
     e.preventDefault();
-  }
-  componentDidMount() {
+  }*/
+  /*componentDidMount() {
     if (this.state.postId) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -94,13 +93,34 @@ class Postedit extends Component {
           console.log(error);
         });
     }
-  }
+  }*/
   render() {
     return (
       <div className="postedit-container main-view">
         <div className="postedit-edit-card main-view-panel">
           <h1 className="postedit-title main-view-title">文章编辑部</h1>
-          <form className="postedit-form" onSubmit={this.handleSubmit}>
+          <form
+            className="postedit-form"
+            onSubmit={e => {
+              const url = this.state.postId
+                ? `/updatepost/${this.state.postId}`
+                : `/admin/addpost`;
+              const post = {};
+              post.title = this.state.title;
+              post.author = this.state.author;
+              post.content = this.state.content;
+              post.label = this.state.label;
+              post.topped = this.state.topped;
+              post.recommend = this.state.recommend;
+              const postParam = {
+                url: url,
+                data: post,
+                requestType: 'ADD_POSTS'
+              };
+              this.props.handleSubmit(postParam);
+              e.preventDefault();
+            }}
+          >
             <div className="postedit-form-body">
               <label className="form-label">
                 <span className="form-input-label">文章标题:</span>

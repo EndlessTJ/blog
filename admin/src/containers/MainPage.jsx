@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
     requestType: 'FETCH_POSTS'
   };
   dispatch(fetchPosts(postParam));
-  dispatch(fetchPosts(requestPost));
+  //dispatch(fetchPosts(requestPost));
 };
 
 export default connect(

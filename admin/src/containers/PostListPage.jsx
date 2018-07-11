@@ -3,14 +3,19 @@ import PostList from '../components/PostList';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  return state;
+  console.log(state);
+  /*return{
+    posts: state.posts.posts
+	}*/
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleSubmit: postParam => {
-    dispatch(fetchPosts(postParam));
-  }
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchData: requestPostList => {
+      dispatch(fetchPosts(requestPostList));
+    }
+  };
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
