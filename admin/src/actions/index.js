@@ -12,15 +12,17 @@ export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 
-export const requestPost = requestType => ({
+export const requestPost = (requestType, section = 'other') => ({
   type: REQUEST_POSTS,
-  requestType: requestType
+  requestType: requestType,
+  section: section
 });
 
-export const receivePosts = (requestType, posts) => ({
+export const receivePosts = (requestType, posts, section = 'other') => ({
   type: requestType,
   actionType: RECEIVE_POSTS,
-  posts: posts
+  posts: posts,
+  section: section
 });
 
 export function fetchPosts(postParam) {
@@ -32,13 +34,14 @@ export function fetchPosts(postParam) {
       mode: 'cors',
       body: postParam.data ? JSON.stringify(postParam.data) : JSON.stringify({})
     };
-    dispatch(requestPost(postParam.requestType));
+    dispatch(requestPost(postParam.requestType, postParam.section));
     return fetch(postParam.url, Init)
       .then(response => response.json())
       .then(posts => {
-        //console.log(posts);
         if (posts.success) {
-          dispatch(receivePosts(postParam.requestType, posts));
+          dispatch(
+            receivePosts(postParam.requestType, posts, postParam.section)
+          );
         }
       });
   };

@@ -12,13 +12,15 @@ const mapStateToProps = state => {
   if (firstAccess.accessState) {
     firstAccess.accessState = false;
     return {
-      firstAccess: true
+      firstAccess: true,
+      loginState: state.loginState.loginState,
+      requestState: state.requestState.state
     };
   } else {
     return {
       firstAccess: firstAccess.accessState,
       loginState: state.loginState.loginState,
-      requestState: state.requestState.state
+      requestState: state.requestMainState.state
     };
   }
 };
@@ -29,10 +31,11 @@ const mapDispatchToProps = dispatch => {
   };
   const requestPost = {
     url: '/getPost',
-    requestType: 'FETCH_POSTS'
+    requestType: 'FETCH_POSTS',
+    section: 'main'
   };
   dispatch(fetchPosts(postParam));
-  //dispatch(fetchPosts(requestPost));
+  dispatch(fetchPosts(requestPost));
 };
 
 export default connect(

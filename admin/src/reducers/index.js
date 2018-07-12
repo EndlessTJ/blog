@@ -16,6 +16,24 @@ const requestState = (state = { state: false }, action) => {
     return state;
   }
 };
+const requestMainState = (state = { state: false }, action) => {
+  if (action.type === ActionTypes.REQUEST_POSTS && action.section === 'main') {
+    return {
+      ...state,
+      state: true
+    };
+  } else if (
+    action.actionType === ActionTypes.RECEIVE_POSTS &&
+    action.section === 'main'
+  ) {
+    return {
+      ...state,
+      state: false
+    };
+  } else {
+    return state;
+  }
+};
 
 const loginState = (state = { loginState: false }, action) => {
   switch (action.type) {
@@ -162,6 +180,7 @@ const tags = (state = [], action) => {
 
 const rootReducer = combineReducers({
   requestState,
+  requestMainState,
   loginState,
   user,
   postList,

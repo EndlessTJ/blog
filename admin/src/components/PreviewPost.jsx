@@ -1,46 +1,10 @@
 import React, { Component } from 'react';
-import { formatDate } from '../data-service/date';
+import { formatDate } from '../middleware';
 import '../preview/PreviewPost.css';
 
 class PreviewPost extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      postId: this.props.match.params.postId,
-      data: {}
-    };
-  }
-  componentDidMount() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let Init = {
-      method: 'POST',
-      credentials: 'include',
-      headers: headers,
-      mode: 'cors'
-    };
-    let url = `/getarticle/${this.state.postId}`;
-    fetch(url, Init)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('有一些错误');
-        }
-      })
-      .then(result => {
-        if (result.success) {
-          this.setState({
-            data: result.data.article
-          });
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
   render() {
-    const article = this.state.data;
+    const article = this.props.article ? this.props.article : {};
     return (
       <div className="preview-article main-view">
         <div className="preview-article-inner">

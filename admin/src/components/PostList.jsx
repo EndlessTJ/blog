@@ -11,14 +11,6 @@ class Postlist extends Component {
   deletePost(postId, event) {
     console.log('删除', postId, event);
   }
-  componentDidMount() {
-    console.log(233);
-    const requestPostList = {
-      url: '/getPost',
-      requestType: 'FETCH_POSTS'
-    };
-    this.props.fetchData(requestPostList);
-  }
   render() {
     const postList = this.props.posts ? this.props.posts : [];
     return (

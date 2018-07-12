@@ -3,18 +3,17 @@ import PostList from '../components/PostList';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  console.log(state);
-  /*return{
+  return {
     posts: state.posts.posts
-	}*/
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchData: requestPostList => {
-      dispatch(fetchPosts(requestPostList));
-    }
+  const requestPostList = {
+    url: '/getPost',
+    requestType: 'FETCH_POSTS'
   };
+  dispatch(fetchPosts(requestPostList));
 };
 export default connect(
   mapStateToProps,
