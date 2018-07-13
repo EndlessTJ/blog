@@ -94,7 +94,9 @@ class Postedit extends Component {
         });
     }
   }*/
-  componentDidMount() {}
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
   render() {
     return (
       <div className="postedit-container main-view">

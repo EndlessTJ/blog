@@ -5,7 +5,7 @@ class Label extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: ''
+      TagName: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -23,7 +23,21 @@ class Label extends Component {
       <div className="label-container main-view">
         <div className="main-view-panel">
           <h1 className="main-view-title">添加标签</h1>
-          <form className="label-form">
+          <form
+            className="label-form"
+            onSubmit={e => {
+              const url = `/admin/addtags`;
+              const tag = {};
+              tag.TagName = this.state.TagName;
+              const postParam = {
+                url: url,
+                data: tag,
+                requestType: 'ADD_TAGS'
+              };
+              this.props.handleSubmit(postParam);
+              e.preventDefault();
+            }}
+          >
             <label className="form-label">
               <span className="form-input-label">标签名:</span>
               <input

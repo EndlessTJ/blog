@@ -3,7 +3,6 @@ import PostEdit from '../components/PostEdit';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     article: state.article
   };

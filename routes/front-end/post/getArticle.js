@@ -15,20 +15,13 @@ module.exports = function (req, res) {
 			content.code = 'DATABASE_ERROR';
 			return res.json(content)
 		}
-		console.log(data)
 		let article = {};
-		article.title = data.title;
-		article.publishData = data.UpdateDate;
-		article._id = data._id;
-		article.author = data.author;
-		article.content = data.content;
 		article.prevArticle = '正在开发中';
 		article.nextArticle = '正在开发中';
 		article.prevLink = '正在开发中';
 		article.nextLink = '正在开发中';
-		article.tags = ['开发中','开发中'];
-
-		content.data.article = article;
+		let newArticle = Object.assign(article, data.postMessage);
+		content.data.article = newArticle;
 		content.success = true;
 		content.code = 'FETCH_DATA';
 		return res.json(content)

@@ -164,6 +164,17 @@ const comments = (state = [], action) => {
       return state;
   }
 };
+const addTags = (state = { addTagsState: false }, action) => {
+  switch (action.type) {
+    case ActionTypes.ADD_TAGS:
+      return {
+        ...state,
+        addTagsState: true
+      };
+    default:
+      return state;
+  }
+};
 const tags = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_TAGS:
@@ -190,7 +201,8 @@ const rootReducer = combineReducers({
   addPostState,
   editPostState,
   draftPostState,
-  article
+  article,
+  addTags
 });
 
 export default rootReducer;

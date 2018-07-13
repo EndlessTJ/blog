@@ -5,6 +5,7 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_TAGS = 'FETCH_TAGS';
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 export const ADD_POST = 'ADD_POSTS';
+export const ADD_TAGS = 'ADD_TAGS';
 export const EDIT_POST = 'EDIT_POSTS';
 export const DRAFT_POST = 'DRAFT_POSTS';
 export const LOGIN_CHECK = 'LOGIN_CHECK';
