@@ -3,8 +3,9 @@ import Label from '../components/Label';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  console.log(state);
-  return state;
+  return {
+    tagState: state.addTags
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -189,6 +189,19 @@ const tags = (state = [], action) => {
   }
 };
 
+const exceptState = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.EXCEPTION_HANDLE:
+      let exceptState = action.posts;
+      return {
+        ...state,
+        exceptState
+      };
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
   requestState,
   requestMainState,
@@ -202,7 +215,8 @@ const rootReducer = combineReducers({
   editPostState,
   draftPostState,
   article,
-  addTags
+  addTags,
+  exceptState
 });
 
 export default rootReducer;

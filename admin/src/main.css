@@ -48,6 +48,8 @@ h1.main-view-title {
   width: 70%;
   border-bottom: 1px solid #ccc;
   border-radius: 0;
+  padding-left: 10px;
+  line-height: 1.2em;
 }
 .form-textarea {
   width: 70%;

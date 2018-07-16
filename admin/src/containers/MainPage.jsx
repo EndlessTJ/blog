@@ -20,7 +20,8 @@ const mapStateToProps = state => {
     return {
       firstAccess: firstAccess.accessState,
       loginState: state.loginState.loginState,
-      requestState: state.requestMainState.state
+      requestState: state.requestMainState.state,
+      exceptState: state.exceptState
     };
   }
 };

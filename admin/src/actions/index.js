@@ -12,6 +12,7 @@ export const LOGIN_CHECK = 'LOGIN_CHECK';
 export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
+export const EXCEPTION_HANDLE = 'EXCEPTION_HANDLE';
 
 export const requestPost = (requestType, section = 'other') => ({
   type: REQUEST_POSTS,
@@ -22,6 +23,12 @@ export const requestPost = (requestType, section = 'other') => ({
 export const receivePosts = (requestType, posts, section = 'other') => ({
   type: requestType,
   actionType: RECEIVE_POSTS,
+  posts: posts,
+  section: section
+});
+export const exceptionHandle = (requestType, posts, section = 'other') => ({
+  type: EXCEPTION_HANDLE,
+  requestType: requestType,
   posts: posts,
   section: section
 });
@@ -42,6 +49,10 @@ export function fetchPosts(postParam) {
         if (posts.success) {
           dispatch(
             receivePosts(postParam.requestType, posts, postParam.section)
+          );
+        } else {
+          dispatch(
+            exceptionHandle(postParam.requestType, posts, postParam.section)
           );
         }
       });

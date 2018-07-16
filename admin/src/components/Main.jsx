@@ -14,6 +14,7 @@ import PostList from '../containers/PostListPage';
 import PostEdit from '../containers/PostEditPage';
 import PreviewPost from '../containers/PreviewPostPage';
 import User from '../containers/UserPage';
+import Dialog from './dialog';
 // import routing
 
 class Main extends Component {
@@ -29,6 +30,9 @@ class Main extends Component {
           <div>
             <Header />
             <div className="main-container">
+              {!this.props.exceptState.success ? (
+                <Dialog exceptState={this.props.exceptState} />
+              ) : null}
               <SlideNav />
               <Route exact path="/admin/main" component={Welcome} />
               <Route path="/admin/main/comment" component={Comment} />
