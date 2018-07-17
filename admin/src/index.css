@@ -92,6 +92,9 @@ html {
   width: 100%;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

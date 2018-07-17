@@ -42,13 +42,11 @@ const loginState = (state = { loginState: false }, action) => {
         ...state,
         loginState: true
       };
-      break;
     case ActionTypes.LOGIN_CHECK:
       return {
         ...state,
         loginState: true
       };
-      break;
     default:
       return state;
   }
@@ -62,7 +60,6 @@ const user = (state = {}, action) => {
         ...state,
         users
       };
-      break;
     case ActionTypes.LOGIN_CHECK:
       users = action.posts.data.user;
       return {
@@ -82,7 +79,6 @@ const postList = (state = [], action) => {
         ...state,
         postList
       };
-      break;
     default:
       return state;
   }
@@ -95,7 +91,6 @@ const posts = (state = [], action) => {
         ...state,
         posts
       };
-      break;
     default:
       return state;
   }
@@ -159,7 +154,6 @@ const comments = (state = [], action) => {
         ...state,
         comments
       };
-      break;
     default:
       return state;
   }
@@ -183,7 +177,6 @@ const tags = (state = [], action) => {
         ...state,
         tags
       };
-      break;
     default:
       return state;
   }

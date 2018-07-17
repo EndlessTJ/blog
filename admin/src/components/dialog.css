@@ -5,8 +5,29 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
 }
 .dialog-inner {
-  width: 100%;
-  height: 100%;
+  width: 40%;
+  min-height: 300px;
+  margin-top: 80px;
+  margin-left: 40%;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
+header.dialog-header {
+  padding: 19px 20px;
+  font-size: 26px;
+  text-align: left;
+  color: #444;
+  font-weight: bold;
+}
+section.dialog-tips {
+  padding: 25px 20px;
+  font-size: 18px;
+  color: #666;
+  text-align: left;
 }

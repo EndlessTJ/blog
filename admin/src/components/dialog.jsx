@@ -12,8 +12,8 @@ class Dialog extends Component {
           <header className="dialog-header">
             <h2>提示</h2>
           </header>
-          <section>
-            <p>{tips.tips}</p>
+          <section className="dialog-tips">
+            <p>标签已存在！</p>
           </section>
         </div>
         {/*{
