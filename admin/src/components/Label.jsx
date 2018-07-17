@@ -5,7 +5,8 @@ class Label extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      TagName: ''
+      TagName: '',
+      toastState: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -18,7 +19,25 @@ class Label extends Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.tagState.addTagsState) {
+      this.setState({
+        TagName: '',
+        toastState: nextProps.tagState.addTagsState
+      });
+    }
+  }
+
   render() {
+    console.log(this.state.toastState);
+    let timer = setTimeout(() => {
+      if (this.state.toastState) {
+        this.setState({
+          toastState: false
+        });
+      }
+      clearTimeout(timer);
+    }, 1000);
     return (
       <div className="label-container main-view">
         <div className="main-view-panel">
@@ -45,7 +64,7 @@ class Label extends Component {
                 name="TagName"
                 className="form-control form-input"
                 placeholder="标签名"
-                value={this.state.tags}
+                value={this.state.TagName}
                 onChange={this.handleInputChange}
               />
             </label>
@@ -57,6 +76,9 @@ class Label extends Component {
               />
             </div>
           </form>
+          {this.state.toastState ? (
+            <div className="toast">添加成功！</div>
+          ) : null}
         </div>
       </div>
     );

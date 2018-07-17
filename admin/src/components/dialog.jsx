@@ -6,26 +6,30 @@ class Dialog extends Component {
     const tips = this.props.exceptState.exceptState
       ? this.props.exceptState.exceptState
       : {};
+    if (tips.tips) {
+      let timer = setTimeout(() => {
+        this.props.callback(true);
+        clearTimeout(timer);
+      }, 1500);
+    }
     return (
-      <div className="dialog">
-        <div className="dialog-inner">
-          <header className="dialog-header">
-            <h2>提示</h2>
-          </header>
-          <section className="dialog-tips">
-            <p>标签已存在！</p>
-          </section>
-        </div>
-        {/*{
-					tips.tips ? <div className="dialog-inner">
-						<header className="dialog-header">
-							<h2>提示</h2>
-						</header>
-						<section>
-							<p>{tips.tips}</p>
-						</section>
-					</div> : null
-				}*/}
+      <div>
+        {tips.tips ? (
+          <div className={tips.tips ? 'dialog dialog-show' : 'dialog'}>
+            <div
+              className={
+                tips.tips ? 'dialog-inner dialog-inner-show' : 'dialog-inner'
+              }
+            >
+              <header className="dialog-header">
+                <h2>提示</h2>
+              </header>
+              <section>
+                <p>{tips.tips}</p>
+              </section>
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }

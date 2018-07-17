@@ -21,6 +21,11 @@ class Main extends Component {
   constructor(props) {
     super(props);
   }
+  dialogHandle(flag = false) {
+    if (flag) {
+      this.parentProps(); // 这里的this，指的是子组件dialog的props
+    }
+  }
   render() {
     return (
       <div>
@@ -31,7 +36,11 @@ class Main extends Component {
             <Header />
             <div className="main-container">
               {!this.props.exceptState.success ? (
-                <Dialog exceptState={this.props.exceptState} />
+                <Dialog
+                  exceptState={this.props.exceptState}
+                  parentProps={this.props.tipsHandle}
+                  callback={this.dialogHandle}
+                />
               ) : null}
               <SlideNav />
               <Route exact path="/admin/main" component={Welcome} />

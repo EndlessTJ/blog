@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Main from '../components/Main';
 import { fetchPosts } from '../actions';
+import { exceptionHandle } from '../actions';
 
 const firstAccess = { accessState: true };
 
@@ -37,6 +38,11 @@ const mapDispatchToProps = dispatch => {
   };
   dispatch(fetchPosts(postParam));
   dispatch(fetchPosts(requestPost));
+  return {
+    tipsHandle: () => {
+      dispatch(exceptionHandle('REMOVE_DIALOG', { tips: '' }));
+    }
+  };
 };
 
 export default connect(
