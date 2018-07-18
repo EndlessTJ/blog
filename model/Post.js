@@ -19,11 +19,19 @@ const PostSchema = new Schema({
 function arrayLimit(value) {
 	return value.length <= 100
 }
-/*PostSchema.virtual('postMessage').get(function () {
+PostSchema.virtual('postMessage').get(function () {
 	return {
 		_id: this._id,
+		title: this.title,
+		author: this.author,
+		content: this.content,
+		tags: this.tags,
+		link: this.link,
+		publishData: this.UpdateDate,
+		topped: this.topped,
+		recommend: this.recommend
 	}
-});*/
+});
 
 
 module.exports = mongoose.model('Post', PostSchema);
