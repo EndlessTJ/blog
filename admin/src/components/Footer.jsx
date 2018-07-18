@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { formatDate } from '../data-service/date';
-import './Footer.css';
-import logo from '../logo.svg';
+import { formatDate } from '../middleware/index';
+import '../assets/style/Footer.css';
+import logo from '../assets/images/logo.svg';
 
 class Footer extends Component {
   constructor() {

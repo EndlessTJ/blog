@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import '../Main/Main.css';
+import '../assets/style/Maincomponent.css';
 
 // import component
 
-import Footer from '../Footer/Footer';
-import Header from '../Header/header';
+import Footer from './Footer';
+import Header from './header';
 import SlideNav from './Slidenav';
 import Welcome from '../containers/WelcomePage';
 import Comment from '../containers/CommentPage';

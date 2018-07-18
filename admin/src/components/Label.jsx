@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../Label/Label.css';
-import Button from '../Buttons/Buttons';
+import '../assets/style/Label.css';
+import Button from './Buttons';
 class Label extends Component {
   constructor(props) {
     super(props);

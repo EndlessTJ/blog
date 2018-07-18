@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { formatDate } from '../middleware';
-import '../preview/PreviewPost.css';
+import '../assets/style/PreviewPost.css';
 
 class PreviewPost extends Component {
   render() {

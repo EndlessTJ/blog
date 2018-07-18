@@ -51,6 +51,7 @@ export function fetchPosts(postParam) {
             receivePosts(postParam.requestType, posts, postParam.section)
           );
         } else {
+          console.log('检测登录时是否弹出', posts);
           dispatch(
             exceptionHandle(postParam.requestType, posts, postParam.section)
           );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../User/User.css';
-import Button from '../Buttons/Buttons';
+import '../assets/style/User.css';
+import Button from './Buttons';
 class User extends Component {
   constructor(props) {
     super(props);

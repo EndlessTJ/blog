@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../PostEdit/PostEdit.css';
+import '../assets/style/PostEdit.css';
 
 // import components
-import Button from '../Buttons/Buttons';
+import Button from './Buttons';
 
 class Postedit extends Component {
   constructor(props) {
@@ -34,66 +34,6 @@ class Postedit extends Component {
       [name]: value
     });
   }
-  /*handleSubmit(e) {
-    const post = {};
-    post.title = this.state.title;
-    post.author = this.state.author;
-    post.content = this.state.content;
-    post.label = this.state.label;
-    post.topped = this.state.topped;
-    post.recommend = this.state.recommend;
-    // 请求后台
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let Init = {
-      method: 'POST',
-      credentials: 'include',
-      headers: headers,
-      mode: 'cors',
-      body: JSON.stringify(post)
-    };
-    let url = this.state.postId
-      ? `/updatepost/${this.state.postId}`
-      : `/admin/addpost`;
-    fetch(url, Init)
-      .then(response => {
-        return response.json();
-      })
-      .then(result => {
-        if (result.success) {
-        }
-      });
-    e.preventDefault();
-  }*/
-  /*componentDidMount() {
-    if (this.state.postId) {
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-      let Init = {
-        method: 'POST',
-        credentials: 'include',
-        headers: headers,
-        mode: 'cors'
-      };
-      let url = `/getarticle/${this.state.postId}`;
-      fetch(url, Init)
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error('有一些错误');
-          }
-        })
-        .then(result => {
-          if (result.success) {
-            console.log(result);
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  }*/
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
   }

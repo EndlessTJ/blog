@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './dialog.css';
+import '../assets/style/dialog.css';
 
 class Dialog extends Component {
   render() {

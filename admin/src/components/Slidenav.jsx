@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../SlideNav/Slidenav.css';
+import '../assets/style/Slidenav.css';
 
 class SlideNav extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../Comment/Comment.css';
+import '../assets/style/Comment.css';
 
 class Comment extends Component {
   render() {

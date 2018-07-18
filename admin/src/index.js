@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/style/index.css';
 import App from './containers/App';
 import configureStore from './store/configureStore';
 import { BrowserRouter as Router } from 'react-router-dom';

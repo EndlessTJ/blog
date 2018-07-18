@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../middleware';
-import '../PostList/PostList.css';
+import '../assets/style/PostList.css';
 
 class Postlist extends Component {
   constructor(props) {

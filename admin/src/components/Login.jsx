@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import '../Login/Login.css';
+import '../assets/style/Login.css';
 // import routing
 
 class Login extends Component {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import '../App.css';
-import '../main.css';
+import '../assets/style/App.css';
+import '../assets/style/main.css';
 
 // import component
 
