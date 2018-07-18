@@ -5,8 +5,7 @@ class Label extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      TagName: '',
-      toastState: false
+      TagName: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -22,22 +21,16 @@ class Label extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.tagState.addTagsState) {
       this.setState({
-        TagName: '',
-        toastState: nextProps.tagState.addTagsState
+        TagName: ''
       });
     }
   }
 
   render() {
-    console.log(this.state.toastState);
     let timer = setTimeout(() => {
-      if (this.state.toastState) {
-        this.setState({
-          toastState: false
-        });
-      }
+      this.props.toastHandle();
       clearTimeout(timer);
-    }, 1000);
+    }, 2000);
     return (
       <div className="label-container main-view">
         <div className="main-view-panel">
@@ -76,7 +69,7 @@ class Label extends Component {
               />
             </div>
           </form>
-          {this.state.toastState ? (
+          {this.props.tagState.addTagsState ? (
             <div className="toast">添加成功！</div>
           ) : null}
         </div>

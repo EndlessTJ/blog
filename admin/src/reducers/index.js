@@ -165,6 +165,11 @@ const addTags = (state = { addTagsState: false }, action) => {
         ...state,
         addTagsState: true
       };
+    case 'RESET_TOAST':
+      return {
+        ...state,
+        addTagsState: false
+      };
     default:
       return state;
   }

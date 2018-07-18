@@ -6,12 +6,3 @@
 .label-form {
   margin-top: 70px;
 }
-.toast {
-  position: absolute;
-  left: 45%;
-  top: 20px;
-  padding: 5px 15px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
-}

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Main from '../components/Main';
-import { fetchPosts } from '../actions';
-import { exceptionHandle } from '../actions';
+import { fetchPosts, exceptionHandle } from '../actions';
 
 const firstAccess = { accessState: true };
 
