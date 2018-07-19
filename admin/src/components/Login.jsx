@@ -17,7 +17,7 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loginState) {
-      this.props.history.push('/admin/main');
+      this.props.history.push('/admin/main/index');
     }
   }
   handleUsername(e) {

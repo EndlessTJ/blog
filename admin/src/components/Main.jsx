@@ -43,7 +43,7 @@ class Main extends Component {
                 />
               ) : null}
               <SlideNav />
-              <Route exact path="/admin/main" component={Welcome} />
+              <Route path="/admin/main/index" component={Welcome} />
               <Route path="/admin/main/comment" component={Comment} />
               <Route path="/admin/main/label" component={Label} />
               <Route path="/admin/main/postlist" component={PostList} />
