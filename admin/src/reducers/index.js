@@ -70,6 +70,22 @@ const user = (state = {}, action) => {
       return state;
   }
 };
+const addUserState = (state = { addUserState: false }, action) => {
+  switch (action.type) {
+    case ActionTypes.ADD_USERS:
+      return {
+        ...state,
+        addUserState: true
+      };
+    case 'RESET_TOAST':
+      return {
+        ...state,
+        addUserState: false
+      };
+    default:
+      return state;
+  }
+};
 
 const postList = (state = [], action) => {
   switch (action.type) {
@@ -214,7 +230,8 @@ const rootReducer = combineReducers({
   draftPostState,
   article,
   addTags,
-  exceptState
+  exceptState,
+  addUserState
 });
 
 export default rootReducer;

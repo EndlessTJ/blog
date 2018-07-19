@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import logo from '../assets/images/logo.svg';
 import '../assets/style/header.css';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { user: 'tianjin' };
-  }
   render() {
     return (
       <header className="header">
@@ -17,4 +14,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    nickname: state.user.users.nickname
+  };
+};
+
+export default connect(mapStateToProps)(Header);

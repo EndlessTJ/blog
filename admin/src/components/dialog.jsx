@@ -12,9 +12,14 @@ class Dialog extends Component {
         clearTimeout(timer);
       }, 1500);
     }
+    /**
+     * tips.code !== 'USER_NOT_LOGIN' 为了阻止当登录过期，刷新页面时会检测登录，
+     * 此时如果没有这个条件则会弹出未登录提示，但此时页面会跳转到登录页面，说以当登录成功进入页面时还会显示出提示框一段时间,
+     * 为了让提示框不出现，阻止USER_NOT_LOGIN时弹出提示
+     */
     return (
       <div>
-        {tips.tips ? (
+        {tips.tips && tips.code !== 'USER_NOT_LOGIN' ? (
           <div className={tips.tips ? 'dialog dialog-show' : 'dialog'}>
             <div
               className={

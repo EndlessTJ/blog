@@ -13,15 +13,12 @@ module.exports = function (req, res) {
 
 	if (!req.session.user_id && req.signedCookies.userId) {
 			const check_id = req.signedCookies.userId;
-			console.log('checkid',check_id);
 			User.findById(check_id).exec((err, user) => {
 				if (err) {
 					content.tips = 'cookie信息失效';
 					content.code = 'COOKIE_ERROR';
 					return res.json(content)
 				}
-
-
 				user.activeDate = Date.now();
 				user.save();
 				req.session.regenerate((err) => {
@@ -55,9 +52,8 @@ module.exports = function (req, res) {
 		})
 
 	} else {
-
 		content.tips = '用户未登录';
-		content.code = 'USER_NOR_LOGIN';
+		content.code = 'USER_NOT_LOGIN';
 		res.json(content)
 	}
 };

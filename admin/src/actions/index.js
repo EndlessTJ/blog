@@ -13,6 +13,7 @@ export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 export const EXCEPTION_HANDLE = 'EXCEPTION_HANDLE';
+export const ADD_USERS = 'ADD_USERS';
 
 export const requestPost = (requestType, section = 'other') => ({
   type: REQUEST_POSTS,
@@ -51,7 +52,6 @@ export function fetchPosts(postParam) {
             receivePosts(postParam.requestType, posts, postParam.section)
           );
         } else {
-          console.log('检测登录时是否弹出', posts);
           dispatch(
             exceptionHandle(postParam.requestType, posts, postParam.section)
           );

@@ -13,11 +13,21 @@ class User extends Component {
       editPrivilege: false,
       accessAdmin: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-  handleSubmit(e) {}
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.addState) {
+      this.setState({
+        username: '',
+        password: '',
+        nickname: '',
+        role: '',
+        delPrivilege: false,
+        editPrivilege: false,
+        accessAdmin: false
+      });
+    }
+  }
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -27,15 +37,39 @@ class User extends Component {
     });
   }
   render() {
+    let timer = setTimeout(() => {
+      this.props.toastHandle();
+      clearTimeout(timer);
+    }, 2000);
     return (
       <div className="user-container main-view">
         <div className="main-view-panel">
           <h1 className="main-view-title">添加账号</h1>
-          <form className="user-form">
+          <form
+            className="user-form"
+            onSubmit={e => {
+              const user = {};
+              user.username = this.state.username;
+              user.password = this.state.password;
+              user.nickname = this.state.nickname;
+              user.role = this.state.role;
+              user.delPrivilege = this.state.delPrivilege;
+              user.editPrivilege = this.state.editPrivilege;
+              user.accessAdmin = this.state.accessAdmin;
+              const postParam = {
+                url: '/admin/users',
+                requestType: 'ADD_USERS',
+                data: user
+              };
+              this.props.handleSubmit(postParam);
+              e.preventDefault();
+            }}
+          >
             <label className="form-label">
               <span className="form-input-label">用户名:</span>
               <input
                 type="text"
+                autocomplete="new-password"
                 name="username"
                 className="form-control form-input"
                 placeholder="用户名"
@@ -47,6 +81,7 @@ class User extends Component {
               <span className="form-input-label">昵称:</span>
               <input
                 type="text"
+                autocomplete="new-password"
                 name="nickname"
                 className="form-control form-input"
                 placeholder="昵称"
@@ -58,6 +93,7 @@ class User extends Component {
               <span className="form-input-label">密码:</span>
               <input
                 type="password"
+                autocomplete="new-password"
                 name="password"
                 className="form-control form-input"
                 placeholder="密码"
@@ -116,6 +152,7 @@ class User extends Component {
               />
             </div>
           </form>
+          {this.props.addState ? <div className="toast">添加成功！</div> : null}
         </div>
       </div>
     );
