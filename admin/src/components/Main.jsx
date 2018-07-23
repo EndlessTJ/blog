@@ -14,6 +14,8 @@ import PostList from '../containers/PostListPage';
 import PostEdit from '../containers/PostEditPage';
 import PreviewPost from '../containers/PreviewPostPage';
 import User from '../containers/UserPage';
+import UserList from '../containers/userListPage';
+import TagsList from '../containers/labelListPage';
 import Dialog from './dialog';
 // import routing
 
@@ -54,6 +56,8 @@ class Main extends Component {
                 component={PreviewPost}
               />
               <Route path="/admin/main/editpost/:postId" component={PostEdit} />
+              <Route path="/admin/main/userlist" component={UserList} />
+              <Route path="/admin/main/tagslist" component={TagsList} />
             </div>
             <Footer />
           </div>

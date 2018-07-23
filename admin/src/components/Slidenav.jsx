@@ -39,8 +39,24 @@ class SlideNav extends Component {
             </NavLink>
           </div>
           <div className="slideNav-menu-item">
+            <NavLink
+              to="/admin/main/tagslist"
+              activeClassName="slideNav-active"
+            >
+              标签列表
+            </NavLink>
+          </div>
+          <div className="slideNav-menu-item">
             <NavLink to="/admin/main/user" activeClassName="slideNav-active">
               添加用户
+            </NavLink>
+          </div>
+          <div className="slideNav-menu-item">
+            <NavLink
+              to="/admin/main/userlist"
+              activeClassName="slideNav-active"
+            >
+              用户列表
             </NavLink>
           </div>
         </div>
