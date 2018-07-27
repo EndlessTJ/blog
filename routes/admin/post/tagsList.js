@@ -11,13 +11,18 @@ module.exports = function (req, res) {
 	};
 	content.success = false;
 	content.code = '';
-	Tags.find((err, data) => {
+	Tags.find().populate({
+		path: 'user',
+		select: '_id username'
+	}).exec((err, data) => {
 		if (err) {
 			console.log(err);
 			content.code = 'DATABASE_ERROR';
 			return res.json(content)
 		}
-		content.data.tags = data;
+		data.forEach((value) => {
+			content.data.tags.push(value.tagMessage)
+		});
 		content.success = true;
 		content.code = 'FETCH_DATA';
 		return res.json(content)

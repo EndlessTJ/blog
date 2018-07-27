@@ -8,7 +8,7 @@ class User extends Component {
       username: '',
       password: '',
       nickname: '',
-      role: '',
+      role: 'user',
       delPrivilege: false,
       editPrivilege: false,
       accessAdmin: false

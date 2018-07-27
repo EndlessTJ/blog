@@ -27,6 +27,7 @@ function arrayLimit(value) {
 UserSchema.virtual('adminMessage').get(function () {
 	return {
 		_id: this._id,
+		username: this.username,
 		nickname: this.nickname,
 		delPrivilege: this.delPrivilege,
 		editPrivilege: this.editPrivilege,

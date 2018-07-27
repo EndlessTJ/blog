@@ -111,3 +111,36 @@ h1.main-view-title {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 30px;
 }
+
+/*表格样式*/
+table {
+  width: 100%;
+  text-align: center;
+}
+thead > tr {
+  border-bottom: 2px solid #ececec;
+}
+tbody > tr {
+  border-bottom: 1px dashed #ececec;
+  margin-bottom: 10px;
+}
+table th {
+  font-weight: 600;
+  line-height: 2.5rem;
+}
+table td {
+  line-height: 2.3rem;
+}
+.operation {
+  display: flex;
+  justify-content: space-between;
+}
+.operation > a {
+  color: #455a64;
+  line-height: 1.3rem;
+  cursor: pointer;
+}
+.operation > a:hover {
+  color: #434343;
+  text-decoration: underline;
+}

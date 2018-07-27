@@ -3,17 +3,18 @@ import TagsList from '../components/labelList';
 import { fetchPosts, receivePosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    tags: state.tags.tags
+  };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  handleSubmit: postParam => {
-    dispatch(fetchPosts(postParam));
-  },
-  toastHandle: () => {
-    dispatch(receivePosts('RESET_TOAST', {}));
-  }
-});
+const mapDispatchToProps = dispatch => {
+  const requestPostList = {
+    url: '/admin/tagslist',
+    requestType: 'FETCH_TAGS'
+  };
+  dispatch(fetchPosts(requestPostList));
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

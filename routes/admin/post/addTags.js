@@ -13,6 +13,7 @@ module.exports = function (req, res) {
 	//将请求数据取出单独储存，避免多次操作req（有大量数据），影响性能
 	content.tags = req.body;
 	content.tags.CreateDate = new Date();
+	content.tags.user = req.session.user_id;
 	content.success = false;
 	content.code = '';
 	filter.TagName = content.tags.TagName;

@@ -4,6 +4,7 @@ const ObjectId  =  Schema.Types.ObjectId;
 const TagSchema = new Schema({
 	TagName: {type: String, required: true, trim: true, index: true},
 	post: [{type: ObjectId, ref: 'Post'}],
+	user: { type: ObjectId, ref: 'User'},
 	CreateDate: {type: Date, required: true},
 });
 TagSchema.virtual('tagMessage').get(function () {
@@ -11,7 +12,8 @@ TagSchema.virtual('tagMessage').get(function () {
 		_id: this._id,
 		TagName: this.TagName,
 		post: this.post,
-		createData: this.CreateDate
+		createDate: this.CreateDate,
+		user: this.user
 	}
 });
 

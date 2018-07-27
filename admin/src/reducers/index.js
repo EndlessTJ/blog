@@ -70,6 +70,18 @@ const user = (state = {}, action) => {
       return state;
   }
 };
+const userList = (state = [], action) => {
+  switch (action.type) {
+    case ActionTypes.FETCH_USERS:
+      let userList = action.posts.data.users;
+      return {
+        ...state,
+        userList
+      };
+    default:
+      return state;
+  }
+};
 const addUserState = (state = { addUserState: false }, action) => {
   switch (action.type) {
     case ActionTypes.ADD_USERS:
@@ -193,7 +205,7 @@ const addTags = (state = { addTagsState: false }, action) => {
 const tags = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_TAGS:
-      let tags = action.posts;
+      let tags = action.posts.data.tags;
       return {
         ...state,
         tags
@@ -221,6 +233,7 @@ const rootReducer = combineReducers({
   requestMainState,
   loginState,
   user,
+  userList,
   postList,
   posts,
   comments,

@@ -20,7 +20,7 @@ module.exports = function (req, res) {
 	//将请求数据取出单独储存，避免多次操作req（有大量数据），影响性能
 	content.user = req.body;
 	content.user.createDate = new Date();
-
+	content.user.activeDate = new Date();
 	content.user.password = passwordHashSlat(content.user.password).passwordHash;
 	content.user.salt = passwordHashSlat(content.user.password).salt;
 	content.success = false;

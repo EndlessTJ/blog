@@ -3,13 +3,15 @@ import UserList from '../components/userList';
 import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    userList: state.userList.userList
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   const requestPostList = {
-    url: '/',
-    requestType: 'FETCH_POSTS'
+    url: '/admin/userslist',
+    requestType: 'FETCH_USERS'
   };
   dispatch(fetchPosts(requestPostList));
 };
