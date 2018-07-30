@@ -26,10 +26,10 @@ class Postlist extends Component {
                     作者：<b>{value.author}</b>
                   </span>
                   <span className="postList-message-item">
-                    喜欢：<b>开发中。。</b>
+                    喜欢：<b>开发中</b>
                   </span>
                   <span className="postList-message-item">
-                    评论：<b>开发中。。</b>
+                    评论：<b>开发中</b>
                   </span>
                   <span className="postList-message-item">
                     创建时间：<b>{formatDate(value.date, 'symbol', false)}</b>
