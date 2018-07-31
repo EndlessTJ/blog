@@ -215,13 +215,25 @@ const exceptState = (state = {}, action) => {
       return state;
   }
 };
-
+const editUser = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.RECEIVE_USER_TO_EDIT:
+      let editUser = action.posts.data.user;
+      return {
+        ...state,
+        ...editUser
+      };
+    default:
+      return state;
+  }
+};
 const rootReducer = combineReducers({
   requestState,
   requestMainState,
   loginState,
   user,
   userList,
+  editUser,
   postList,
   posts,
   comments,

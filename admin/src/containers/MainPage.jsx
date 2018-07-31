@@ -13,13 +13,13 @@ const mapStateToProps = state => {
     firstAccess.accessState = false;
     return {
       firstAccess: true,
-      loginState: state.loginState,
+      loginState: state.loginState.loginState,
       requestState: state.requestState.state
     };
   } else {
     return {
       firstAccess: firstAccess.accessState,
-      loginState: state.loginState,
+      loginState: state.loginState.loginState,
       requestState: state.requestMainState.state,
       exceptState: state.exceptState
     };

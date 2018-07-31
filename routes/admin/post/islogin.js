@@ -10,7 +10,6 @@ module.exports = function (req, res) {
 		user: {}
 	};
 	content.success = false;
-
 	if (!req.session.user_id && req.signedCookies.userId) {
 			const check_id = req.signedCookies.userId;
 			User.findById(check_id).exec((err, user) => {

@@ -16,6 +16,20 @@ class User extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   componentWillReceiveProps(nextProps) {
+    if (
+      Object.keys(nextProps.editUser).length &&
+      nextProps.match.params.userId
+    ) {
+      this.setState({
+        username: nextProps.editUser.username,
+        password: '********',
+        nickname: nextProps.editUser.nickname,
+        role: nextProps.editUser.role,
+        delPrivilege: nextProps.editUser.delPrivilege,
+        editPrivilege: nextProps.editUser.editPrivilege,
+        accessAdmin: nextProps.editUser.accessAdmin
+      });
+    }
     if (nextProps.addState) {
       this.setState({
         username: '',

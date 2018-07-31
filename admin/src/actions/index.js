@@ -5,6 +5,7 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_TAGS = 'FETCH_TAGS';
 export const DELETE_TAGS = 'DELETE_TAGS';
 export const FETCH_USERS = 'FETCH_USERS';
+export const RECEIVE_USER_TO_EDIT = 'RECEIVE_USER_TO_EDIT';
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 export const ADD_POST = 'ADD_POSTS';
 export const ADD_TAGS = 'ADD_TAGS';

@@ -80,7 +80,7 @@ class UserList extends Component {
                     <td>
                       <div className="operation">
                         <Link
-                          to={`/admin/main/user${value._id}`}
+                          to={`/admin/main/user/${value._id}`}
                           className="edit"
                         >
                           编辑

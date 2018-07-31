@@ -50,6 +50,7 @@ class Main extends Component {
               <Route path="/admin/main/label" component={Label} />
               <Route path="/admin/main/postlist" component={PostList} />
               <Route path="/admin/main/postedit" component={PostEdit} />
+              <Route path="/admin/main/user/:userId" component={User} />
               <Route path="/admin/main/user" component={User} />
               <Route
                 path="/admin/main/previewpost/:postId"
