@@ -12,7 +12,7 @@ module.exports = routes = (app) => {
 	app.post('/admin/addpost',require('./admin/post/addPosts'));
 	app.post('/admin/addtags',require('./admin/post/addTags'));
 	app.post('/admin/users',require('./admin/post/addUser'));
-	app.post('/admin/tagslist',require('./admin/post/tagsList'));
+	app.post('/admin/tagslist/:tagsid?',require('./admin/post/tagsList'));
 	app.post('/admin/userslist',require('./admin/post/userList'));
 
 

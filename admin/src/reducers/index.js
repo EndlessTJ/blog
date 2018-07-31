@@ -55,16 +55,16 @@ const loginState = (state = { loginState: false }, action) => {
 const user = (state = {}, action) => {
   switch (action.type) {
     case ActionTypes.ADMIN_LOGIN:
-      let users = action.posts.data.user;
+      let user = action.posts.data.user;
       return {
         ...state,
-        users
+        ...user
       };
     case ActionTypes.LOGIN_CHECK:
-      users = action.posts.data.user;
+      user = action.posts.data.user;
       return {
         ...state,
-        users
+        ...user
       };
     default:
       return state;
@@ -74,10 +74,7 @@ const userList = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_USERS:
       let userList = action.posts.data.users;
-      return {
-        ...state,
-        userList
-      };
+      return [...state, ...userList];
     default:
       return state;
   }
@@ -103,10 +100,7 @@ const postList = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:
       let postList = action.posts.data.post.map(post => post._id);
-      return {
-        ...state,
-        postList
-      };
+      return [...state, ...postList];
     default:
       return state;
   }
@@ -115,10 +109,7 @@ const posts = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:
       let posts = action.posts.data.post;
-      return {
-        ...state,
-        posts
-      };
+      return [...state, ...posts];
     default:
       return state;
   }
@@ -167,7 +158,7 @@ const article = (state = {}, action) => {
       let article = action.posts.data.article;
       return {
         ...state,
-        article
+        ...article
       };
     default:
       return state;
@@ -178,10 +169,7 @@ const comments = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_COMMENTS:
       let comments = action.posts;
-      return {
-        ...state,
-        comments
-      };
+      return [...state, ...comments];
     default:
       return state;
   }
@@ -206,10 +194,10 @@ const tags = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_TAGS:
       let tags = action.posts.data.tags;
-      return {
-        ...state,
-        tags
-      };
+      return [...state, ...tags];
+    case ActionTypes.DELETE_TAGS:
+      let filterId = action.posts.data.delTag._id;
+      return state.filter(tag => tag._id !== filterId);
     default:
       return state;
   }

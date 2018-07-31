@@ -35,9 +35,7 @@ class TagsList extends Component {
                       <span className="tag-name">{value.TagName}</span>
                     </td>
                     <td>
-                      <span className="username">
-                        {/*{value.user.username}*/}更改数据库条目
-                      </span>
+                      <span className="username">{value.user.username}</span>
                     </td>
                     <td>
                       <span className="time">
@@ -45,8 +43,13 @@ class TagsList extends Component {
                       </span>
                     </td>
                     <td>
-                      <div className="operation">
-                        <a className="delete">删除</a>
+                      <div className="operation taglist-operation">
+                        <a
+                          className="delete"
+                          onClick={() => this.props.deleteTag(value._id)}
+                        >
+                          删除
+                        </a>
                       </div>
                     </td>
                   </tr>

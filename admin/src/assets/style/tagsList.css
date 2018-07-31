@@ -3,6 +3,6 @@
   position: relative;
   color: #444;
 }
-.operation {
+.operation.taglist-operation {
   justify-content: center;
 }

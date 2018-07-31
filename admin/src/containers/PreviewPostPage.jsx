@@ -4,7 +4,7 @@ import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    article: state.article.article
+    article: state.article
   };
 };
 

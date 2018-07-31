@@ -4,7 +4,7 @@ import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    userList: state.userList.userList
+    userList: state.userList
   };
 };
 
