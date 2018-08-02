@@ -104,7 +104,9 @@ class Postedit extends Component {
                   onChange={this.handleInputChange}
                   value={this.state.label}
                 >
-                  <option value="javascript">javascript</option>
+                  <option selected value="javascript">
+                    javascript
+                  </option>
                   <option value="前端">前端</option>
                   <option value="nodejs">nodejs</option>
                   <option value="Python">Python</option>

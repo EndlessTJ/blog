@@ -10,7 +10,7 @@ const mapStateToProps = state => {
     nickname: state.user.nickname,
     pageView: 234,
     userRise: 23,
-    posts: state.posts,
+    posts: state.posts[0],
     activeDate: activeDate
   };
 };

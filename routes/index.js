@@ -11,7 +11,7 @@ module.exports = routes = (app) => {
 	app.post('/admin/islogin', formdata.array(),require('./admin/post/islogin'));
 	app.post('/admin/addpost',require('./admin/post/addPosts'));
 	app.post('/admin/addtags',require('./admin/post/addTags'));
-	app.post('/admin/users',require('./admin/post/addUser'));
+	app.post('/admin/users/:userid?',require('./admin/post/addUser'));
 	app.post('/admin/tagslist/:tagsid?',require('./admin/post/tagsList'));
 	app.post('/admin/userslist/:userid?',require('./admin/post/userList'));
 

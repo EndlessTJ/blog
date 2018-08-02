@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import '../assets/style/User.css';
 import Button from './Buttons';
 class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userId: '',
       username: '',
       password: '',
       nickname: '',
@@ -16,20 +18,6 @@ class User extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-    if (
-      Object.keys(nextProps.editUser).length &&
-      nextProps.match.params.userId
-    ) {
-      this.setState({
-        username: nextProps.editUser.username,
-        password: '********',
-        nickname: nextProps.editUser.nickname,
-        role: nextProps.editUser.role,
-        delPrivilege: nextProps.editUser.delPrivilege,
-        editPrivilege: nextProps.editUser.editPrivilege,
-        accessAdmin: nextProps.editUser.accessAdmin
-      });
-    }
     if (nextProps.addState) {
       this.setState({
         username: '',
@@ -39,6 +27,21 @@ class User extends Component {
         delPrivilege: false,
         editPrivilege: false,
         accessAdmin: false
+      });
+    }
+    if (
+      Object.keys(nextProps.editUser).length &&
+      nextProps.match.params.userId
+    ) {
+      this.setState({
+        userId: nextProps.editUser._id,
+        username: nextProps.editUser.username,
+        password: '********',
+        nickname: nextProps.editUser.nickname,
+        role: nextProps.editUser.role,
+        delPrivilege: nextProps.editUser.delPrivilege,
+        editPrivilege: nextProps.editUser.editPrivilege,
+        accessAdmin: nextProps.editUser.accessAdmin
       });
     }
   }
@@ -52,7 +55,10 @@ class User extends Component {
   }
   render() {
     let timer = setTimeout(() => {
-      this.props.toastHandle();
+      if (this.props.addState) {
+        this.props.toastHandle();
+        this.props.history.push('/admin/main/user');
+      }
       clearTimeout(timer);
     }, 2000);
     return (
@@ -70,8 +76,11 @@ class User extends Component {
               user.delPrivilege = this.state.delPrivilege;
               user.editPrivilege = this.state.editPrivilege;
               user.accessAdmin = this.state.accessAdmin;
+              const url = this.state.userId
+                ? `/admin/users/${this.state.userId}`
+                : `/admin/users`;
               const postParam = {
-                url: '/admin/users',
+                url: url,
                 requestType: 'ADD_USERS',
                 data: user
               };
@@ -123,7 +132,9 @@ class User extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.role}
               >
-                <option value="user">user</option>
+                <option selected value="user">
+                  user
+                </option>
                 <option value="admin">admin</option>
                 <option value="author">author</option>
               </select>
@@ -166,11 +177,11 @@ class User extends Component {
               />
             </div>
           </form>
-          {this.props.addState ? <div className="toast">添加成功！</div> : null}
+          {this.props.addState ? <div className="toast">操作成功！</div> : null}
         </div>
       </div>
     );
   }
 }
 
-export default User;
+export default withRouter(User);

@@ -11,7 +11,6 @@ module.exports = function (req, res) {
 	};
 	content.success = false;
 	content.code = '';
-	console.log(req.params)
 	if (req.params.userid) {
 		const userId = req.params.userid
 		User.findById(userId).exec((err, data) => {
