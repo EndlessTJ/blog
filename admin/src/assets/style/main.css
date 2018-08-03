@@ -136,11 +136,11 @@ table td {
   justify-content: space-between;
 }
 .operation > a {
-  color: #455a64;
+  color: #00c853;
   line-height: 1.3rem;
   cursor: pointer;
 }
 .operation > a:hover {
-  color: #434343;
+  color: #69f0ae;
   text-decoration: underline;
 }

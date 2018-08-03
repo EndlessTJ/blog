@@ -4,7 +4,7 @@ import { fetchPosts, receivePosts } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    tags: state.tags[0]
+    tags: state.tags
   };
 };
 

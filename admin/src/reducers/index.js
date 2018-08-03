@@ -80,6 +80,15 @@ const userList = (state = [], action) => {
           ...item
         };
       });
+    case ActionTypes.BAN_COUNT:
+      let user = action.posts.data.user;
+      return state.map(item => {
+        if (item._id === user._id) {
+          return user;
+        } else {
+          return item;
+        }
+      });
     default:
       return state;
   }
@@ -199,7 +208,12 @@ const tags = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_TAGS:
       let tags = action.posts.data.tags;
-      return [...state, tags];
+      return tags.map((item, index) => {
+        return {
+          ...state[index],
+          ...item
+        };
+      });
     case ActionTypes.DELETE_TAGS:
       let filterId = action.posts.data.delTag._id;
       return state.filter(tag => tag._id !== filterId);

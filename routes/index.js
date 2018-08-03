@@ -14,6 +14,7 @@ module.exports = routes = (app) => {
 	app.post('/admin/users/:userid?',require('./admin/post/addUser'));
 	app.post('/admin/tagslist/:tagsid?',require('./admin/post/tagsList'));
 	app.post('/admin/userslist/:userid?',require('./admin/post/userList'));
+	app.post('/admin/bancount/:userid',require('./admin/post/banCount'));
 
 
 	app.post('/updatepost/:postid', require('./admin/post/updatepost'));

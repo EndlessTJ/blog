@@ -9,6 +9,7 @@ const UserSchema = new Schema({
 	posts: [{type: ObjectId, ref: 'Post'}],
 	comments: [{type: ObjectId, ref: 'Comment'}],
 	nickname: {type: String,trim: true},
+	isDisabled: {type: Boolean, default: false},
 	salt: {type: String, required: true, trim: true},
 	role: {type: String, trim: true, default: 'user'},
 	automaticLogin: {type: Boolean, default: false},
@@ -34,6 +35,7 @@ UserSchema.virtual('adminMessage').get(function () {
 		accessAdmin: this.accessAdmin,
 		activeDate: this.activeDate,
 		role: this.role,
+		isDisabled: this.isDisabled
 	}
 });
 

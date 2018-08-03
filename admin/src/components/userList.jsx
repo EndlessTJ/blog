@@ -33,6 +33,9 @@ class UserList extends Component {
                     <b>编辑权限</b>
                   </th>
                   <th>
+                    <b>是否禁封</b>
+                  </th>
+                  <th>
                     <b>最近活跃</b>
                   </th>
                   <th>
@@ -42,9 +45,14 @@ class UserList extends Component {
               </thead>
               <tbody>
                 {userList.map((value, index) => (
-                  <tr className="userList-content-item">
+                  <tr
+                    className={
+                      value.isDisabled
+                        ? 'userList-content-item isDisabled'
+                        : 'userList-content-item'
+                    }
+                  >
                     <td>
-                      {' '}
                       <span className="username">{value.username}</span>
                     </td>
                     <td>
@@ -69,6 +77,11 @@ class UserList extends Component {
                       </span>
                     </td>
                     <td>
+                      <span className="editPrivilege">
+                        {value.isDisabled ? '是' : '否'}
+                      </span>
+                    </td>
+                    <td>
                       <span className="activeDate">
                         {formatDate(
                           value.activeDate[value.activeDate.length - 1],
@@ -85,7 +98,17 @@ class UserList extends Component {
                         >
                           编辑
                         </Link>
-                        <a className="ban-account">禁封</a>
+                        {value.isDisabled ? null : (
+                          <a
+                            className="ban-account"
+                            onClick={e => {
+                              this.props.banCount(value._id);
+                              e.preventDefault();
+                            }}
+                          >
+                            禁封
+                          </a>
+                        )}
                       </div>
                     </td>
                   </tr>

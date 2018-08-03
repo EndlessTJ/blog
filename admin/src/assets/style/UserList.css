@@ -3,3 +3,12 @@
   position: relative;
   color: #444;
 }
+.userList-content-item.isDisabled {
+  color: #9e9e9e;
+}
+.operation > .ban-account {
+  color: #f50057;
+}
+.operation > .ban-account:hover {
+  color: #ff4081;
+}

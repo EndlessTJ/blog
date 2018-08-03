@@ -6,6 +6,7 @@ class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      button: '添加账号',
       userId: '',
       username: '',
       password: '',
@@ -13,7 +14,8 @@ class User extends Component {
       role: 'user',
       delPrivilege: false,
       editPrivilege: false,
-      accessAdmin: false
+      accessAdmin: false,
+      isDisabled: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -26,7 +28,8 @@ class User extends Component {
         role: '',
         delPrivilege: false,
         editPrivilege: false,
-        accessAdmin: false
+        accessAdmin: false,
+        isDisabled: false
       });
     }
     if (
@@ -34,6 +37,7 @@ class User extends Component {
       nextProps.match.params.userId
     ) {
       this.setState({
+        button: '确认修改',
         userId: nextProps.editUser._id,
         username: nextProps.editUser.username,
         password: '********',
@@ -41,7 +45,8 @@ class User extends Component {
         role: nextProps.editUser.role,
         delPrivilege: nextProps.editUser.delPrivilege,
         editPrivilege: nextProps.editUser.editPrivilege,
-        accessAdmin: nextProps.editUser.accessAdmin
+        accessAdmin: nextProps.editUser.accessAdmin,
+        isDisabled: nextProps.editUser.isDisabled
       });
     }
   }
@@ -76,6 +81,7 @@ class User extends Component {
               user.delPrivilege = this.state.delPrivilege;
               user.editPrivilege = this.state.editPrivilege;
               user.accessAdmin = this.state.accessAdmin;
+              user.isDisabled = this.state.isDisabled;
               const url = this.state.userId
                 ? `/admin/users/${this.state.userId}`
                 : `/admin/users`;
@@ -169,11 +175,21 @@ class User extends Component {
                 checked={this.state.accessAdmin}
               />
             </label>
+            <label className="form-label">
+              <span className="form-input-label">是否禁封:</span>
+              <input
+                name="isDisabled"
+                type="checkbox"
+                className="form-control form-radio"
+                onChange={this.handleInputChange}
+                checked={this.state.isDisabled}
+              />
+            </label>
             <div className="user-button-rows">
               <Button
                 buttonClass="buttons-primary"
                 buttonType="submit"
-                text="添加账号"
+                text={this.state.button}
               />
             </div>
           </form>

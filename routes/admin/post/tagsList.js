@@ -12,7 +12,7 @@ module.exports = function (req, res) {
 	content.success = false;
 	content.code = '';
 	if (req.params.tagsid){
-		const tags_id = req.params.tagsid
+		const tags_id = req.params.tagsid;
 		Tags.findByIdAndDelete(tags_id).exec((err, data) => {
 			if (err) {
 				console.log(err);

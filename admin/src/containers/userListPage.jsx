@@ -14,6 +14,15 @@ const mapDispatchToProps = dispatch => {
     requestType: 'FETCH_USERS'
   };
   dispatch(fetchPosts(requestPostList));
+  return {
+    banCount: userId => {
+      const banData = {
+        url: `/admin/bancount/${userId}`,
+        requestType: 'BAN_COUNT'
+      };
+      dispatch(fetchPosts(banData));
+    }
+  };
 };
 export default connect(
   mapStateToProps,
