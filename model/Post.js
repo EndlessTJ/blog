@@ -7,6 +7,7 @@ const PostSchema = new Schema({
 	content: {type: 'String', required: true},
 	comments: [{type: ObjectId, ref: 'Comment'}],
 	tags: [{type: ObjectId, ref: 'Tag'}],
+	postState:{type:'String', required: true, default: 'draft'},
 	link: {type: String, required: true, trim: true},
 	topped: {type: Boolean, default: false},
 	recommend: {type: Boolean, default: false},
@@ -29,7 +30,8 @@ PostSchema.virtual('postMessage').get(function () {
 		link: this.link,
 		publishData: this.UpdateDate,
 		topped: this.topped,
-		recommend: this.recommend
+		recommend: this.recommend,
+		postState: this.postState
 	}
 });
 

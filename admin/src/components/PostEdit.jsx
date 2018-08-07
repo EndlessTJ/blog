@@ -15,6 +15,7 @@ class Postedit extends Component {
       title: '',
       author: '',
       content: '',
+      postState: '',
       label: '',
       topped: false,
       recommend: false
@@ -41,7 +42,7 @@ class Postedit extends Component {
     return (
       <div className="postedit-container main-view">
         <div className="postedit-edit-card main-view-panel">
-          <h1 className="postedit-title main-view-title">文章编辑部</h1>
+          <h1 className="postedit-title main-view-title">文章编辑</h1>
           <form
             className="postedit-form"
             onSubmit={e => {
@@ -53,6 +54,7 @@ class Postedit extends Component {
               post.author = this.state.author;
               post.content = this.state.content;
               post.label = this.state.label;
+              post.postState = this.state.postState;
               post.topped = this.state.topped;
               post.recommend = this.state.recommend;
               const postParam = {
@@ -95,6 +97,20 @@ class Postedit extends Component {
                   onChange={this.handleInputChange}
                   value={this.state.content}
                 />
+              </label>
+              <label className="form-label">
+                <span className="form-input-label">状态:</span>
+                <select
+                  name="label"
+                  className="form-control form-select"
+                  onChange={this.handleInputChange}
+                  value={this.state.postState}
+                >
+                  <option selected value="draft">
+                    草稿
+                  </option>
+                  <option value="published">发布</option>
+                </select>
               </label>
               <label className="form-label">
                 <span className="form-input-label">选择标签:</span>
