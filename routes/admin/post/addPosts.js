@@ -10,7 +10,6 @@ module.exports = function (req, res) {
 		content.post = req.body;
 		content.post.CreateDate = new Date();
 		content.post.UpdateDate = new Date();
-
 		Post.create(content.post, function (err, data) {
 			if (err) {
 				console.log('数据库出错:',err)

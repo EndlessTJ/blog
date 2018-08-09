@@ -18,9 +18,8 @@ module.exports = routes = (app) => {
 
 
 	app.post('/updatepost/:postid', require('./admin/post/updatepost'));
-	// app.post('/admin/postlist',require('./admin/post/postList'));
-
-	// 前台路由
+	app.post('/mdrender', require('./public-fetch/markdownRender'));
+	// 前台路由'
 	/*页面请求路由*/
 	app.get('/', require('./front-end/views/index'));
 	app.get('/index', require('./front-end/views/index'));

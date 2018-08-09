@@ -4,7 +4,8 @@ import { fetchPosts } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    article: state.article
+    article: state.article,
+    html: state.postHtml.html
   };
 };
 
@@ -20,6 +21,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleSubmit: postParam => {
       dispatch(fetchPosts(postParam));
+    },
+    renderMarkDown: mdParam => {
+      dispatch(fetchPosts(mdParam));
     }
   };
 };

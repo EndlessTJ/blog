@@ -79,7 +79,7 @@ class Postedit extends Component {
                 />
               </label>
               <label className="form-label">
-                <span className="form-input-label">作者:</span>
+                <span className="form-input-label">文章作者:</span>
                 <input
                   name="author"
                   type="text"
@@ -90,16 +90,7 @@ class Postedit extends Component {
                 />
               </label>
               <label className="form-label">
-                <span className="form-textarea-label">文章内容:</span>
-                <textarea
-                  name="content"
-                  className="form-control form-textarea"
-                  onChange={this.handleInputChange}
-                  value={this.state.content}
-                />
-              </label>
-              <label className="form-label">
-                <span className="form-input-label">状态:</span>
+                <span className="form-input-label">文章状态:</span>
                 <select
                   name="label"
                   className="form-control form-select"
@@ -129,25 +120,85 @@ class Postedit extends Component {
                   <option value="机器学习">机器学习</option>
                 </select>
               </label>
+              <div className="label-rows">
+                <label className="form-label checkbox">
+                  <span className="form-input-label">是否顶置:</span>
+                  <input
+                    name="topped"
+                    type="checkbox"
+                    className="form-control form-radio"
+                    onChange={this.handleInputChange}
+                    checked={this.state.topped}
+                  />
+                </label>
+                <label className="form-label checkbox">
+                  <span className="form-input-label">是否推荐:</span>
+                  <input
+                    name="recommend"
+                    type="checkbox"
+                    className="form-control form-radio"
+                    onChange={this.handleInputChange}
+                    checked={this.state.recommend}
+                  />
+                </label>
+              </div>
               <label className="form-label">
-                <span className="form-input-label">是否顶置:</span>
-                <input
-                  name="topped"
-                  type="checkbox"
-                  className="form-control form-radio"
-                  onChange={this.handleInputChange}
-                  checked={this.state.topped}
-                />
-              </label>
-              <label className="from-label">
-                <span className="form-input-label">是否推荐:</span>
-                <input
-                  name="recommend"
-                  type="checkbox"
-                  className="form-control form-radio"
-                  onChange={this.handleInputChange}
-                  checked={this.state.recommend}
-                />
+                <div className="post-wrapper">
+                  <header className="toolbar">
+                    <span className="md-icon float-left" title="标题">
+                      <span className="icon icon-header" />
+                      <b>标题</b>
+                    </span>
+                    <span className="md-icon float-left" title="加粗">
+                      <i className="icon icon-bold" />
+                      <b>加粗</b>
+                    </span>
+                    <span className="md-icon float-left" title="引用">
+                      <i className="icon icon-quote" />
+                      <b>引用</b>
+                    </span>
+                    <span className="md-icon float-left" title="代码">
+                      <i className="icon icon-code" />
+                      <b>代码</b>
+                    </span>
+                    <span className="md-icon float-left" title="链接">
+                      <i className="icon icon-link" />
+                      <b>链接</b>
+                    </span>
+                    <span className="md-icon float-left" title="图片">
+                      <i className="icon icon-image" />
+                      <b>图片</b>
+                    </span>
+                    <span className="md-icon float-left" title="视频">
+                      <i className="icon icon-video" />
+                      <b>视频</b>
+                    </span>
+                    <span
+                      className="md-icon float-right"
+                      title="预览"
+                      onClick={e => {
+                        let mdParams = {
+                          url: '/mdrender',
+                          data: { mdData: this.state.content },
+                          requestType: 'MD_RENDER'
+                        };
+                        this.props.renderMarkDown(mdParams);
+                        e.preventDefault();
+                      }}
+                    >
+                      <i className="icon icon-md" />
+                      <b>预览</b>
+                    </span>
+                  </header>
+                  <div className="content-input">
+                    <textarea
+                      name="content"
+                      className="form-control form-textarea"
+                      onChange={this.handleInputChange}
+                      value={this.state.content}
+                    />
+                  </div>
+                </div>
               </label>
               <div className="postedit-button-rows">
                 <Button

@@ -7,3 +7,37 @@
   justify-content: center;
   margin-top: 40px;
 }
+.post-wrapper {
+  width: 100%;
+  border: 1px solid #cfd8dc;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.post-wrapper > .toolbar {
+  padding: 10px 0;
+  border-bottom: 1px solid #cfd8dc;
+}
+.toolbar:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.toolbar > .md-icon {
+  margin: 0 10px;
+  opacity: 0.5;
+  padding: 3px 5px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.md-icon > b {
+  font-weight: 600;
+}
+.md-icon:hover {
+  background: #eee;
+}
+.content-input > textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+}

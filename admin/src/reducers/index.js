@@ -178,7 +178,18 @@ const article = (state = {}, action) => {
       return state;
   }
 };
-
+const postHtml = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.MD_RENDER:
+      let postHtml = action.posts.data;
+      return {
+        ...state,
+        ...postHtml
+      };
+    default:
+      return state;
+  }
+};
 const comments = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.FETCH_COMMENTS:
@@ -255,6 +266,7 @@ const rootReducer = combineReducers({
   editUser,
   postList,
   posts,
+  postHtml,
   comments,
   tags,
   addPostState,

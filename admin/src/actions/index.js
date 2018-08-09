@@ -18,6 +18,7 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 export const EXCEPTION_HANDLE = 'EXCEPTION_HANDLE';
 export const ADD_USERS = 'ADD_USERS';
+export const MD_RENDER = 'MD_RENDER';
 
 export const requestPost = (requestType, section = 'other') => ({
   type: REQUEST_POSTS,
