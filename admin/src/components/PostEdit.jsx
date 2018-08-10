@@ -200,6 +200,7 @@ class Postedit extends Component {
                   </div>
                 </div>
               </label>
+              <div dangerouslySetInnerHTML={{ __html: this.props.html }} />
               <div className="postedit-button-rows">
                 <Button
                   buttonClass="buttons-primary"

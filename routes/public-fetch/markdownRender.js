@@ -13,6 +13,7 @@ module.exports = function (req, res) {
 	Marked.setOptions({
 		headerIds: true,
 		highlight: function (code) {
+			//console.log(hljs.highlightBlock(code).value)
 			return hljs.highlightAuto(code).value
 		},
 		headerPrefix: '',
@@ -22,7 +23,7 @@ module.exports = function (req, res) {
   Marked(data, (err, data) => {
 		if (err) {
 			content.code = 'RENDER_ERROR';
-			console.log('markdown渲染错误');
+			console.log(err,'markdown渲染错误');
 			return res.json(content)
 		}
 		content.data.html = data;
