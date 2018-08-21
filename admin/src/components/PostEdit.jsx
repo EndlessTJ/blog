@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/style/PostEdit.css';
+import '../assets/style/markdown.css';
 
 // import components
 import Button from './Buttons';
@@ -18,7 +19,8 @@ class Postedit extends Component {
       postState: '',
       label: '',
       topped: false,
-      recommend: false
+      recommend: false,
+      mdPreview: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -183,6 +185,9 @@ class Postedit extends Component {
                           requestType: 'MD_RENDER'
                         };
                         this.props.renderMarkDown(mdParams);
+                        this.setState({
+                          mdPreview: !this.state.mdPreview
+                        });
                         e.preventDefault();
                       }}
                     >
@@ -191,16 +196,23 @@ class Postedit extends Component {
                     </span>
                   </header>
                   <div className="content-input">
-                    <textarea
-                      name="content"
-                      className="form-control form-textarea"
-                      onChange={this.handleInputChange}
-                      value={this.state.content}
-                    />
+                    {this.state.mdPreview ? (
+                      <article
+                        className="markdown-body"
+                        id="preview"
+                        dangerouslySetInnerHTML={{ __html: this.props.html }}
+                      />
+                    ) : (
+                      <textarea
+                        name="content"
+                        className="form-control form-textarea"
+                        onChange={this.handleInputChange}
+                        value={this.state.content}
+                      />
+                    )}
                   </div>
                 </div>
               </label>
-              <div dangerouslySetInnerHTML={{ __html: this.props.html }} />
               <div className="postedit-button-rows">
                 <Button
                   buttonClass="buttons-primary"
