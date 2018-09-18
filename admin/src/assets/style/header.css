@@ -1,15 +1,10 @@
-.header-logo {
-  animation: logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .header {
   background-color: #006064;
   padding: 20px;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 0px;
   box-sizing: border-box;
-  height: 140px;
+  height: 64px;
 }
 
 .header-title {

@@ -8,6 +8,7 @@ import Button from './Buttons';
 class Postedit extends Component {
   constructor(props) {
     super(props);
+    this.conRef = React.createRef();
     const postId = this.props.match.params.postId
       ? this.props.match.params.postId
       : '';
@@ -23,6 +24,7 @@ class Postedit extends Component {
       mdPreview: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.addMarkDown = this.addMarkDown.bind(this);
   }
 
   /**
@@ -36,6 +38,9 @@ class Postedit extends Component {
     this.setState({
       [name]: value
     });
+  }
+  addMarkDown() {
+    console.log(this.conRef);
   }
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
@@ -208,6 +213,8 @@ class Postedit extends Component {
                         className="form-control form-textarea"
                         onChange={this.handleInputChange}
                         value={this.state.content}
+                        ref={this.conRef}
+                        onFocus={this.addMarkDown}
                       />
                     )}
                   </div>
