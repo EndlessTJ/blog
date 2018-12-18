@@ -39,8 +39,61 @@ class Postedit extends Component {
       [name]: value
     });
   }
-  addMarkDown() {
-    console.log(this.conRef);
+  addMarkDown(e, type) {
+    const startPosition = this.conRef.current.selectionStart;
+    const endPosition = this.conRef.current.selectionEnd;
+    const postValue = this.state.content;
+    const valueLength = postValue.length;
+    if (startPosition === endPosition) {
+      let beforeValue = postValue.slice(0, startPosition);
+      let laterValue = postValue.slice(endPosition, valueLength);
+      if (type === 'title') {
+        this.setState({
+          content: `${beforeValue}\n## 输入标题\n${laterValue}`
+        });
+      } else if (type === 'bold') {
+        this.setState({
+          content: `${beforeValue}**加粗的内容**${laterValue}`
+        });
+      } else if (type === 'quote') {
+        this.setState({
+          content: `${beforeValue}\n> ${laterValue}`
+        });
+      } else if (type === 'code') {
+        this.setState({
+          content: `${beforeValue}\n\`\`\`\n添加代码\`\`\`\n ${laterValue}`
+        });
+      } else if (type === 'link') {
+        this.setState({
+          content: `${beforeValue}[链接描述](链接地址)${laterValue}`
+        });
+      }
+    } else {
+      let beforeValue = postValue.slice(0, startPosition);
+      let centerValue = postValue.slice(startPosition, endPosition);
+      let laterValue = postValue.slice(endPosition, valueLength);
+      if (type === 'title') {
+        this.setState({
+          content: `${beforeValue}\n## ${centerValue}\n${laterValue}`
+        });
+      } else if (type === 'bold') {
+        this.setState({
+          content: `${beforeValue}**${centerValue}**${laterValue}`
+        });
+      } else if (type === 'quote') {
+        this.setState({
+          content: `${beforeValue}\n> ${centerValue}\n${laterValue}`
+        });
+      } else if (type === 'code') {
+        this.setState({
+          content: `${beforeValue}\n\`\`\`\n${centerValue}\n\`\`\`\n ${laterValue}`
+        });
+      } else if (type === 'link') {
+        this.setState({
+          content: `${beforeValue}[${centerValue}](链接地址)${laterValue}`
+        });
+      }
+    }
   }
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
@@ -152,31 +205,59 @@ class Postedit extends Component {
               <label className="form-label">
                 <div className="post-wrapper">
                   <header className="toolbar">
-                    <span className="md-icon float-left" title="标题">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'title')}
+                      title="标题"
+                    >
                       <span className="icon icon-header" />
                       <b>标题</b>
                     </span>
-                    <span className="md-icon float-left" title="加粗">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'bold')}
+                      title="加粗"
+                    >
                       <i className="icon icon-bold" />
                       <b>加粗</b>
                     </span>
-                    <span className="md-icon float-left" title="引用">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'quote')}
+                      title="引用"
+                    >
                       <i className="icon icon-quote" />
                       <b>引用</b>
                     </span>
-                    <span className="md-icon float-left" title="代码">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'code')}
+                      title="代码"
+                    >
                       <i className="icon icon-code" />
                       <b>代码</b>
                     </span>
-                    <span className="md-icon float-left" title="链接">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'link')}
+                      title="链接"
+                    >
                       <i className="icon icon-link" />
                       <b>链接</b>
                     </span>
-                    <span className="md-icon float-left" title="图片">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'image')}
+                      title="图片"
+                    >
                       <i className="icon icon-image" />
                       <b>图片</b>
                     </span>
-                    <span className="md-icon float-left" title="视频">
+                    <span
+                      className="md-icon float-left"
+                      onClick={e => this.addMarkDown(e, 'video')}
+                      title="视频"
+                    >
                       <i className="icon icon-video" />
                       <b>视频</b>
                     </span>
@@ -214,7 +295,6 @@ class Postedit extends Component {
                         onChange={this.handleInputChange}
                         value={this.state.content}
                         ref={this.conRef}
-                        onFocus={this.addMarkDown}
                       />
                     )}
                   </div>

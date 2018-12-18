@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jinta/Documents/webstorm/blog/front-end/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/jinta/Documents/projects/blog/front-end/src/styles.css */"./src/styles.css");
 
 
 /***/ })
