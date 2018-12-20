@@ -12,9 +12,6 @@
     "type": "git",
     "url": "https://github.com/EndlessTJ/blog"
   },
-  "engines": {
-    "node": "v10.9.0"
-  },
   "contributors": [
     {
       "name": "TianJin",
