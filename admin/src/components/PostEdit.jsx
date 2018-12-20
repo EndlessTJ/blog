@@ -16,6 +16,7 @@ class Postedit extends Component {
       postId: postId,
       title: '',
       author: '',
+      link: '',
       content: '',
       postState: '',
       label: '',
@@ -150,9 +151,21 @@ class Postedit extends Component {
                 />
               </label>
               <label className="form-label">
+                <span className="form-input-label">文章关键词:</span>
+                <input
+                  name="link"
+                  type="text"
+                  className="form-control form-input"
+                  placeholder="请输入文章关键词"
+                  onChange={this.handleInputChange}
+                  value={this.state.link}
+                  required
+                />
+              </label>
+              <label className="form-label">
                 <span className="form-input-label">文章状态:</span>
                 <select
-                  name="label"
+                  name="postState"
                   className="form-control form-select"
                   onChange={this.handleInputChange}
                   value={this.state.postState}

@@ -13,7 +13,7 @@
     "url": "https://github.com/EndlessTJ/blog"
   },
   "engines": {
-    "node": "v9.10.1"
+    "node": "v10.9.0"
   },
   "contributors": [
     {

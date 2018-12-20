@@ -16,7 +16,7 @@ const app = express();
 
 // 设置static的options项
 const staticOptions = {
-	dotfiles: 'ignore',
+  dotfiles: 'ignore',
   etag: false,
   extensions: ['pug'],
   index: false,
